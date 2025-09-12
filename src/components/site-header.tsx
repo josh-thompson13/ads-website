@@ -57,12 +57,12 @@ export function SiteHeader() {
 
   // Ensure mobile menu does not auto-open or persist across breakpoint changes
   useEffect(() => {
-    const mql = window.matchMedia('(min-width: 1280px)'); // xl breakpoint
+    const mql = window.matchMedia("(min-width: 1280px)"); // xl breakpoint
     const handleChange = () => setOpen(false);
-    mql.addEventListener('change', handleChange);
+    mql.addEventListener("change", handleChange);
     // close on mount to avoid accidental open due to hot reload/state carryover
     handleChange();
-    return () => mql.removeEventListener('change', handleChange);
+    return () => mql.removeEventListener("change", handleChange);
   }, []);
 
   const Chevron = ({ open }: { open: boolean }) => (
@@ -90,8 +90,8 @@ export function SiteHeader() {
           <Image
             src="/logo_no_text.png"
             alt="Australian Drone Solutions logo"
-            width={32}
-            height={32}
+            width={75}
+            height={0}
             priority
           />
           <span className="font-bold text-lg tracking-tight whitespace-nowrap">
@@ -306,7 +306,10 @@ export function SiteHeader() {
               </div>
             )}
           </div>
-          <Link href="/service-area" className="hover:text-secondary-hover shrink-0">
+          <Link
+            href="/service-area"
+            className="hover:text-secondary-hover shrink-0"
+          >
             Service Area
           </Link>
         </nav>
@@ -334,7 +337,11 @@ export function SiteHeader() {
               strokeWidth="2"
               className="h-5 w-5"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
             </svg>
           ) : (
             <svg
@@ -345,13 +352,20 @@ export function SiteHeader() {
               strokeWidth="2"
               className="h-5 w-5"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M3 6h18M3 12h18M3 18h18" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M3 6h18M3 12h18M3 18h18"
+              />
             </svg>
           )}
         </button>
       </div>
       {open && (
-        <div id="mobile-menu" className="xl:hidden border-t border-neutral-200 bg-white shadow-sm">
+        <div
+          id="mobile-menu"
+          className="xl:hidden border-t border-neutral-200 bg-white shadow-sm"
+        >
           <div className="mx-auto max-w-6xl px-4">
             <nav className="py-3">
               <ul className="divide-y divide-neutral-200">
@@ -381,7 +395,10 @@ export function SiteHeader() {
                     <Chevron open={sprayingOpen} />
                   </button>
                   {sprayingOpen && (
-                    <ul id="mobile-spraying" className="mt-2 grid gap-1 pl-1 text-sm text-neutral-700">
+                    <ul
+                      id="mobile-spraying"
+                      className="mt-2 grid gap-1 pl-1 text-sm text-neutral-700"
+                    >
                       <li>
                         <Link
                           href="/services/spraying"
@@ -392,22 +409,38 @@ export function SiteHeader() {
                         </Link>
                       </li>
                       <li>
-                        <Link href="/services/spraying/weed-control" className="hover:text-secondary-hover" onClick={() => setOpen(false)}>
+                        <Link
+                          href="/services/spraying/weed-control"
+                          className="hover:text-secondary-hover"
+                          onClick={() => setOpen(false)}
+                        >
                           Weed Control (Herbicide)
                         </Link>
                       </li>
                       <li>
-                        <Link href="/services/spraying/disease-management" className="hover:text-secondary-hover" onClick={() => setOpen(false)}>
+                        <Link
+                          href="/services/spraying/disease-management"
+                          className="hover:text-secondary-hover"
+                          onClick={() => setOpen(false)}
+                        >
                           Disease Management (Fungicide)
                         </Link>
                       </li>
                       <li>
-                        <Link href="/services/spraying/pest-control" className="hover:text-secondary-hover" onClick={() => setOpen(false)}>
+                        <Link
+                          href="/services/spraying/pest-control"
+                          className="hover:text-secondary-hover"
+                          onClick={() => setOpen(false)}
+                        >
                           Pest Control (Insecticide)
                         </Link>
                       </li>
                       <li>
-                        <Link href="/services/spraying/special-applications" className="hover:text-secondary-hover" onClick={() => setOpen(false)}>
+                        <Link
+                          href="/services/spraying/special-applications"
+                          className="hover:text-secondary-hover"
+                          onClick={() => setOpen(false)}
+                        >
                           Special Applications
                         </Link>
                       </li>
@@ -431,29 +464,52 @@ export function SiteHeader() {
                     <Chevron open={seedingOpen} />
                   </button>
                   {seedingOpen && (
-                    <ul id="mobile-seeding" className="mt-2 grid gap-1 pl-1 text-sm text-neutral-700">
+                    <ul
+                      id="mobile-seeding"
+                      className="mt-2 grid gap-1 pl-1 text-sm text-neutral-700"
+                    >
                       <li>
-                        <Link href="/services/seeding-spreading" className="font-medium hover:text-secondary-hover" onClick={() => setOpen(false)}>
+                        <Link
+                          href="/services/seeding-spreading"
+                          className="font-medium hover:text-secondary-hover"
+                          onClick={() => setOpen(false)}
+                        >
                           View all Seeding & Spreading →
                         </Link>
                       </li>
                       <li>
-                        <Link href="/services/seeding-spreading/pasture-reseeding" className="hover:text-secondary-hover" onClick={() => setOpen(false)}>
+                        <Link
+                          href="/services/seeding-spreading/pasture-reseeding"
+                          className="hover:text-secondary-hover"
+                          onClick={() => setOpen(false)}
+                        >
                           Pasture Reseeding
                         </Link>
                       </li>
                       <li>
-                        <Link href="/services/seeding-spreading/revegetation-projects" className="hover:text-secondary-hover" onClick={() => setOpen(false)}>
+                        <Link
+                          href="/services/seeding-spreading/revegetation-projects"
+                          className="hover:text-secondary-hover"
+                          onClick={() => setOpen(false)}
+                        >
                           Revegetation Projects
                         </Link>
                       </li>
                       <li>
-                        <Link href="/services/seeding-spreading/cover-crops" className="hover:text-secondary-hover" onClick={() => setOpen(false)}>
+                        <Link
+                          href="/services/seeding-spreading/cover-crops"
+                          className="hover:text-secondary-hover"
+                          onClick={() => setOpen(false)}
+                        >
                           Cover Crops
                         </Link>
                       </li>
                       <li>
-                        <Link href="/services/seeding-spreading/granular-application" className="hover:text-secondary-hover" onClick={() => setOpen(false)}>
+                        <Link
+                          href="/services/seeding-spreading/granular-application"
+                          className="hover:text-secondary-hover"
+                          onClick={() => setOpen(false)}
+                        >
                           Granular Application
                         </Link>
                       </li>
@@ -477,29 +533,52 @@ export function SiteHeader() {
                     <Chevron open={surveyingOpen} />
                   </button>
                   {surveyingOpen && (
-                    <ul id="mobile-surveying" className="mt-2 grid gap-1 pl-1 text-sm text-neutral-700">
+                    <ul
+                      id="mobile-surveying"
+                      className="mt-2 grid gap-1 pl-1 text-sm text-neutral-700"
+                    >
                       <li>
-                        <Link href="/services/surveying-mapping" className="font-medium hover:text-secondary-hover" onClick={() => setOpen(false)}>
+                        <Link
+                          href="/services/surveying-mapping"
+                          className="font-medium hover:text-secondary-hover"
+                          onClick={() => setOpen(false)}
+                        >
                           View all Surveying & Mapping →
                         </Link>
                       </li>
                       <li>
-                        <Link href="/services/surveying-mapping/farm-mapping" className="hover:text-secondary-hover" onClick={() => setOpen(false)}>
+                        <Link
+                          href="/services/surveying-mapping/farm-mapping"
+                          className="hover:text-secondary-hover"
+                          onClick={() => setOpen(false)}
+                        >
                           Farm Mapping
                         </Link>
                       </li>
                       <li>
-                        <Link href="/services/surveying-mapping/land-surveys" className="hover:text-secondary-hover" onClick={() => setOpen(false)}>
+                        <Link
+                          href="/services/surveying-mapping/land-surveys"
+                          className="hover:text-secondary-hover"
+                          onClick={() => setOpen(false)}
+                        >
                           Land Surveys
                         </Link>
                       </li>
                       <li>
-                        <Link href="/services/surveying-mapping/infrastructure-inspections" className="hover:text-secondary-hover" onClick={() => setOpen(false)}>
+                        <Link
+                          href="/services/surveying-mapping/infrastructure-inspections"
+                          className="hover:text-secondary-hover"
+                          onClick={() => setOpen(false)}
+                        >
                           Infrastructure Inspections
                         </Link>
                       </li>
                       <li>
-                        <Link href="/services/surveying-mapping/environmental-monitoring" className="hover:text-secondary-hover" onClick={() => setOpen(false)}>
+                        <Link
+                          href="/services/surveying-mapping/environmental-monitoring"
+                          className="hover:text-secondary-hover"
+                          onClick={() => setOpen(false)}
+                        >
                           Environmental Monitoring
                         </Link>
                       </li>

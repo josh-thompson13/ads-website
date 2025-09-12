@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Spraying Services",
-  description: "Herbicide, fungicide and insecticide spraying, plus special applications across SE QLD & Northern NSW.",
+  description: "Herbicide, fungicide and insecticide spraying, plus special applications across South East QLD & Northern NSW.",
   alternates: { canonical: "/services/spraying" },
 };
 
@@ -31,4 +31,3 @@ export default function SprayingIndexPage() {
     </section>
   );
 }
-

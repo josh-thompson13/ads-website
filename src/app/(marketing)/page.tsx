@@ -7,14 +7,14 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Drone Spraying Gold Coast & SE QLD",
+  title: "Drone Solutions South East QLD & Northern NSW",
   description:
-    "Precision drone solutions across South East QLD and Northern NSW. Weed, crop, and fire ant baiting by licensed, CASA-compliant operators.",
+    "Precision drone solutions across South East QLD and Northern NSW. Spraying, seeding & spreading, and surveying & mapping by licensed, CASA-compliant operators.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Drone Spraying Gold Coast & SE QLD | ADS",
+    title: "Drone Solutions South East QLD & Northern NSW | ADS",
     description:
-      "Targeted aerial spraying. Faster, safer, and precise across SE QLD.",
+      "Precision drone solutions across South East QLD & Northern NSW.",
     url: "/",
   },
 };
@@ -31,13 +31,13 @@ export default function HomePage() {
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-              Precision drone spraying across SE Queensland
+              Precision drone solutions across South East QLD and Northern NSW
             </h1>
             <p className="mt-3 text-neutral-700 text-lg">
-              Gold Coast–based, servicing SE QLD & Northern NSW.
+              Gold Coast–based, servicing South East QLD & Northern NSW.
             </p>
             <p className="mt-4 text-neutral-700">
-              Targeted aerial spraying. Faster, safer, and precise.
+              Targeted drone operations. Faster, safer, and precise.
             </p>
             <div className="mt-6 flex gap-3">
               <Link href="/contact">
@@ -61,7 +61,7 @@ export default function HomePage() {
           <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden border">
             <Image
               src="/hero_spraying.jpg"
-              alt="Drone spraying over farmland near the Gold Coast"
+              alt="Drone operations over farmland near the Gold Coast"
               fill
               priority
               sizes="(min-width: 768px) 50vw, 100vw"
@@ -76,19 +76,19 @@ export default function HomePage() {
         <div className="mt-6 grid md:grid-cols-3 gap-6">
           {[
             {
-              title: "Weed Spraying",
-              desc: "Spot and blanket applications for acreage, parks and roadside. Minimise drift, maximise efficacy.",
-              href: "/services/weed-spraying",
+              title: "Spraying",
+              desc: "Weed control, disease management, pest control and special applications.",
+              href: "/services/spraying",
             },
             {
-              title: "Crop Spraying",
-              desc: "Variable-rate aerial application to protect yield while reducing ground compaction and labour.",
-              href: "/services/crop-spraying",
+              title: "Seeding & Spreading",
+              desc: "Pasture reseeding, revegetation, cover crops and granular application.",
+              href: "/services/seeding-spreading",
             },
             {
-              title: "Fire Ant Eradication",
-              desc: "Rapid bait application aligned with QLD guidance for containment and eradication.",
-              href: "/services/fire-ant-eradication",
+              title: "Surveying & Mapping",
+              desc: "Farm mapping, land surveys, inspections and environmental monitoring.",
+              href: "/services/surveying-mapping",
             },
           ].map((s) => (
             <div
@@ -154,8 +154,8 @@ export default function HomePage() {
       </section>
 
       <CtaBanner
-        title="Need aerial spraying?"
-        subtitle="We service SE QLD & Northern NSW."
+        title="Need drone services?"
+        subtitle="We service South East QLD & Northern NSW."
       />
     </>
   );

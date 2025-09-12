@@ -3,7 +3,7 @@ import ServiceAreaMap from "@/components/map/ServiceAreaMap";
 
 export const metadata: Metadata = {
   title: "Service Area",
-  description: "Gold Coast–based drone spraying servicing SE QLD & Northern NSW: Brisbane, Ipswich, Toowoomba, Sunshine Coast, Tweed, Byron.",
+  description: "Gold Coast–based drone services across South East QLD & Northern NSW: Brisbane, Ipswich, Toowoomba, Sunshine Coast, Tweed, Byron.",
   alternates: { canonical: "/service-area" },
 };
 

@@ -5,7 +5,7 @@ import { allPosts } from "@/lib/contentlayer";
 
 export const metadata: Metadata = {
   title: "Blog",
-  description: "Insights on drone spraying, fire ant baiting, and stewardship across SE QLD.",
+  description: "Insights on drone operations, including spraying and baiting, across South East QLD & Northern NSW.",
   alternates: { canonical: "/blog" },
 };
 

@@ -3,7 +3,7 @@ import { QuoteForm } from "@/components/forms/QuoteForm";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Get a fast quote for drone spraying. Call, email, or request a site assessment.",
+  description: "Get a fast quote for drone services. Call, email, or request a site assessment.",
   alternates: { canonical: "/contact" },
 };
 
@@ -23,7 +23,7 @@ export default function ContactPage() {
         <aside className="space-y-2">
           <p><strong>Phone:</strong> <a href="tel:+6104xxxxxxxx" className="text-secondary-hover hover:underline">+61 (0)4xx xxx xxx</a></p>
           <p><strong>Email:</strong> <a href="mailto:hello@australiandronesolutions.com.au" className="text-secondary-hover hover:underline">hello@australiandronesolutions.com.au</a></p>
-          <p><strong>Region:</strong> SE QLD & Northern NSW</p>
+          <p><strong>Region:</strong> South East QLD & Northern NSW</p>
           <a className="inline-block mt-2 text-secondary-hover hover:underline" href="#">Book a site assessment</a>
         </aside>
       </div>

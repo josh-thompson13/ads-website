@@ -11,7 +11,7 @@ export default function GalleryClient() {
       <div className="mt-6 columns-1 sm:columns-2 md:columns-3 gap-4 [column-fill:_balance] *:mb-4">
         {images.map((src, i) => (
           <button key={i} className="block w-full" onClick={() => setOpenSrc(src)} aria-label="Open image">
-            <Image src={src} alt={`Drone spraying gallery image ${i + 1}`} width={800} height={600} className="w-full h-auto rounded-xl border" />
+            <Image src={src} alt={`Drone operations gallery image ${i + 1}`} width={800} height={600} className="w-full h-auto rounded-xl border" />
           </button>
         ))}
       </div>
@@ -26,4 +26,3 @@ export default function GalleryClient() {
     </section>
   );
 }
-

@@ -3,7 +3,7 @@ import GalleryClient from "./GalleryClient";
 
 export const metadata: Metadata = {
   title: "Gallery",
-  description: "A look at our drone operations across SE QLD & Northern NSW.",
+  description: "A look at our drone operations across South East QLD & Northern NSW.",
   alternates: { canonical: "/gallery" },
 };
 

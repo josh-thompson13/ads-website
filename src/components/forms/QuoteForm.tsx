@@ -13,13 +13,23 @@ const services = [
   "Weed Spraying",
   "Crop Spraying",
   "Fire Ant Eradication",
+  "Seeding & Spreading",
+  "Surveying & Mapping",
+  "General Enquiry",
 ];
 
 const quoteSchema = z.object({
   name: z.string().min(2, "Please enter your name"),
   email: z.string().email("Enter a valid email"),
   phone: z.string().min(8, "Enter a valid phone number"),
-  service: z.enum(["Weed Spraying", "Crop Spraying", "Fire Ant Eradication"], {
+  service: z.enum([
+    "Weed Spraying",
+    "Crop Spraying",
+    "Fire Ant Eradication",
+    "Seeding & Spreading",
+    "Surveying & Mapping",
+    "General Enquiry",
+  ], {
     required_error: "Please choose a service",
   }),
   propertySize: z.string().min(1, "Please specify property size (e.g. ha)"),
@@ -164,4 +174,3 @@ export function QuoteForm({ inline = false }: { inline?: boolean }) {
     </form>
   );
 }
-

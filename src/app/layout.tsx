@@ -20,24 +20,24 @@ const siteUrl = "https://www.australiandronesolutions.com.au";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Australian Drone Solutions | Drone Spraying Gold Coast & SE QLD",
+    default: "Australian Drone Solutions | Drone Services South East QLD & Northern NSW",
     template: "%s | Australian Drone Solutions",
   },
   description:
-    "Gold Coast–based drone spraying specialists. Weed, crop and fire ant baiting across SE QLD & Northern NSW.",
+    "Gold Coast–based drone solutions across South East QLD & Northern NSW. Spraying, seeding & spreading, and surveying & mapping by licensed, CASA-compliant operators.",
   openGraph: {
     type: "website",
     url: siteUrl,
     title: "Australian Drone Solutions",
     description:
-      "Targeted aerial spraying. Faster, safer, and precise across SE QLD.",
+      "Precision drone solutions across South East QLD & Northern NSW.",
     siteName: "Australian Drone Solutions",
   },
   twitter: {
     card: "summary_large_image",
     title: "Australian Drone Solutions",
     description:
-      "Targeted aerial spraying. Faster, safer, and precise across SE QLD.",
+      "Precision drone solutions across South East QLD & Northern NSW.",
   },
   alternates: {
     canonical: siteUrl,

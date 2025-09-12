@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "Services",
-  description: "Professional drone services: Spraying, Seeding & Spreading, and Surveying & Mapping across SE QLD & Northern NSW.",
+  description: "Professional drone services: Spraying, Seeding & Spreading, and Surveying & Mapping across South East QLD & Northern NSW.",
   alternates: { canonical: "/services" },
 };
 
