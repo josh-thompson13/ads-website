@@ -3,14 +3,14 @@ import Link from "next/link";
 export function SiteFooter() {
   const year = new Date().getFullYear();
   return (
-    <footer className="border-t border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-950">
+    <footer className="border-t border-neutral-200 bg-neutral-50">
       <div className="mx-auto max-w-6xl px-4 py-10 grid gap-8 md:grid-cols-4">
         <div>
           <div className="flex items-center gap-2 mb-3">
-            <span className="h-8 w-8 rounded-md bg-teal-700 inline-block" aria-hidden />
+            <span className="h-8 w-8 rounded-md bg-primary inline-block" aria-hidden />
             <span className="font-semibold">Australian Drone Solutions</span>
           </div>
-          <p className="text-sm text-neutral-600 dark:text-neutral-400">Targeted aerial spraying. Faster, safer, and precise.</p>
+          <p className="text-sm text-neutral-600">Targeted aerial spraying. Faster, safer, and precise.</p>
         </div>
         <div>
           <h3 className="font-semibold mb-2">Contact</h3>
@@ -40,8 +40,8 @@ export function SiteFooter() {
           </ul>
         </div>
       </div>
-      <div className="border-t border-neutral-200/70 dark:border-neutral-800/70">
-        <div className="mx-auto max-w-6xl px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-2 text-sm text-neutral-600 dark:text-neutral-400">
+      <div className="border-t border-neutral-200/70">
+        <div className="mx-auto max-w-6xl px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-2 text-sm text-neutral-600">
           <p>© {year} Australian Drone Solutions</p>
           <p>
             <Link href="/privacy" className="hover:underline">Privacy</Link>
@@ -53,4 +53,3 @@ export function SiteFooter() {
     </footer>
   );
 }
-

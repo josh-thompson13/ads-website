@@ -29,10 +29,10 @@ export default function HomePage() {
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
               Precision drone spraying across SE Queensland
             </h1>
-            <p className="mt-3 text-neutral-700 dark:text-neutral-300 text-lg">
+            <p className="mt-3 text-neutral-700 text-lg">
               Gold Coast–based, servicing SE QLD & Northern NSW.
             </p>
-            <p className="mt-4 text-neutral-700 dark:text-neutral-300">
+            <p className="mt-4 text-neutral-700">
               Targeted aerial spraying. Faster, safer, and precise.
             </p>
             <div className="mt-6 flex gap-3">
@@ -75,10 +75,10 @@ export default function HomePage() {
               href: "/services/fire-ant-eradication",
             },
           ].map((s) => (
-            <div key={s.title} className="rounded-2xl border p-5 bg-white dark:bg-neutral-950 shadow-sm">
+            <div key={s.title} className="rounded-2xl border p-5 bg-white shadow-sm">
               <h3 className="font-semibold text-lg">{s.title}</h3>
-              <p className="text-sm text-neutral-700 dark:text-neutral-300 mt-2">{s.desc}</p>
-              <Link href={s.href} className="inline-block mt-4 text-teal-700 hover:underline">Learn more →</Link>
+              <p className="text-sm text-neutral-700 mt-2">{s.desc}</p>
+              <Link href={s.href} className="inline-block mt-4 text-secondary-hover hover:underline">Learn more →</Link>
             </div>
           ))}
         </div>
@@ -110,8 +110,8 @@ export default function HomePage() {
         <h2 className="text-2xl font-semibold">What clients say</h2>
         <div className="mt-6 grid md:grid-cols-3 gap-6">
           {["Reliable and precise.", "Great coverage and fast.", "Professional and safety-first."].map((t, i) => (
-            <blockquote key={i} className="rounded-2xl border p-5 bg-white dark:bg-neutral-950 shadow-sm">
-              <p className="text-neutral-800 dark:text-neutral-200">“{t}”</p>
+            <blockquote key={i} className="rounded-2xl border p-5 bg-white shadow-sm">
+              <p className="text-neutral-800">“{t}”</p>
               <footer className="mt-3 text-sm text-neutral-600">— Local landholder</footer>
             </blockquote>
           ))}

@@ -22,11 +22,10 @@ export default function FaqPage() {
         {faqs.map(([q, a]) => (
           <div key={q}>
             <dt className="font-medium">{q}</dt>
-            <dd className="text-neutral-700 dark:text-neutral-300">{a}</dd>
+            <dd className="text-neutral-700">{a}</dd>
           </div>
         ))}
       </dl>
     </section>
   );
 }
-

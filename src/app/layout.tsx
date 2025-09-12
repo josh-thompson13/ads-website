@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Suspense } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -25,7 +25,6 @@ export const metadata: Metadata = {
   },
   description:
     "Gold Coast–based drone spraying specialists. Weed, crop and fire ant baiting across SE QLD & Northern NSW.",
-  themeColor: "#0b5b68",
   openGraph: {
     type: "website",
     url: siteUrl,
@@ -43,6 +42,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteUrl,
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#4CAF50",
 };
 
 export default function RootLayout({

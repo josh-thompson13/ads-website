@@ -16,7 +16,7 @@ export default function FireAntPage() {
       <div className="grid gap-10">
         <article>
           <h1 className="text-3xl font-bold">Fire Ant Eradication</h1>
-          <p className="mt-3 text-neutral-700 dark:text-neutral-300">Rapid bait application aligned with QLD guidance.</p>
+          <p className="mt-3 text-neutral-700">Rapid bait application aligned with QLD guidance.</p>
           <h2 className="mt-8 text-xl font-semibold">Flow</h2>
           <ol className="list-decimal pl-5 mt-2 space-y-1">
             <li>Survey the site and map infestations</li>
@@ -27,7 +27,7 @@ export default function FireAntPage() {
           <h2 className="mt-8 text-xl font-semibold">Compliance</h2>
           <p>
             We follow QLD guidance and manufacturer labels to ensure safe, compliant treatment. See official guidance: {" "}
-            <Link href="#" className="text-teal-700 hover:underline">QLD fire ant resources</Link>.
+            <Link href="#" className="text-secondary-hover hover:underline">QLD fire ant resources</Link>.
           </p>
           <h2 className="mt-8 text-xl font-semibold">FAQ</h2>
           <dl className="mt-3 space-y-4">
@@ -53,4 +53,3 @@ export default function FireAntPage() {
     </section>
   );
 }
-

@@ -15,7 +15,7 @@ export default function CropSprayingPage() {
       <div className="grid gap-10">
         <article>
           <h1 className="text-3xl font-bold">Crop Spraying</h1>
-          <p className="mt-3 text-neutral-700 dark:text-neutral-300">
+          <p className="mt-3 text-neutral-700">
             Variable-rate application to protect yield while reducing ground compaction and labour.
           </p>
           <h2 className="mt-8 text-xl font-semibold">Supported crops</h2>
@@ -50,4 +50,3 @@ export default function CropSprayingPage() {
     </section>
   );
 }
-

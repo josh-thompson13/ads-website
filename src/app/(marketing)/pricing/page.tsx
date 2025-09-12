@@ -11,7 +11,7 @@ export default function PricingPage() {
   return (
     <section className="mx-auto max-w-6xl px-4 py-10">
       <h1 className="text-3xl font-bold">Pricing</h1>
-      <div className="mt-6 rounded-2xl border p-5 bg-white dark:bg-neutral-950">
+      <div className="mt-6 rounded-2xl border p-5 bg-white">
         <ul className="list-disc pl-5 space-y-2">
           <li>From $X/hr or $Y/ha (job dependent)</li>
           <li>Minimum call-out applies</li>
@@ -19,9 +19,8 @@ export default function PricingPage() {
           <li>Factors: terrain, access, product, buffer zones, permits</li>
         </ul>
         <p className="mt-4 text-sm text-neutral-600">Download our rate card:</p>
-        <Link href="/rate-card.pdf" className="inline-block mt-2 text-teal-700 hover:underline">Rate card (PDF)</Link>
+        <Link href="/rate-card.pdf" className="inline-block mt-2 text-secondary-hover hover:underline">Rate card (PDF)</Link>
       </div>
     </section>
   );
 }
-

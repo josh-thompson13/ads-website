@@ -1,26 +1,39 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Base palette */
+  --background: #ffffff; /* Clean white */
+  --foreground: #212121; /* Dark charcoal */
+
+  /* Brand tokens */
+  --primary: #4caf50;   /* Fresh green */
+  --primary-hover: #43a047; /* Darker green for hover/focus */
+  --secondary: #2196f3; /* Sky blue */
+  --secondary-hover: #1976d2; /* Darker blue for hover/focus */
+  --accent: #ffc107;    /* Warm yellow */
+  --accent-hover: #ffb300; /* Richer yellow */
 }
 
 @theme inline {
+  /* Map CSS vars to Tailwind tokens */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-text: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-secondary: var(--secondary);
+  --color-secondary-hover: var(--secondary-hover);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* Force a clean white theme regardless of system dark mode */
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }

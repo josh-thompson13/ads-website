@@ -39,7 +39,7 @@ export default function ServiceAreaMap() {
 
   if (!mods) {
     return (
-      <div className="h-[420px] w-full rounded-2xl overflow-hidden border border-neutral-200 dark:border-neutral-800 grid place-items-center text-sm text-neutral-600">
+      <div className="h-[420px] w-full rounded-2xl overflow-hidden border border-neutral-200 grid place-items-center text-sm text-neutral-600">
         Map loading…
       </div>
     );
@@ -47,13 +47,13 @@ export default function ServiceAreaMap() {
 
   const { MapContainer, TileLayer, Circle, Marker, Popup } = mods;
   return (
-    <div className="h-[420px] w-full rounded-2xl overflow-hidden border border-neutral-200 dark:border-neutral-800">
+    <div className="h-[420px] w-full rounded-2xl overflow-hidden border border-neutral-200">
       <MapContainer center={center} zoom={8} style={{ height: "100%", width: "100%" }} scrollWheelZoom={false}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Circle center={center} radius={600000} pathOptions={{ color: "#0b5b68", fillColor: "#0b5b68", fillOpacity: 0.08 }} />
+        <Circle center={center} radius={600000} pathOptions={{ color: "#4CAF50", fillColor: "#4CAF50", fillOpacity: 0.08 }} />
         {towns.map((t) => (
           <Marker key={t.name} position={t.position}>
             <Popup>{t.name}</Popup>

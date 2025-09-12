@@ -10,7 +10,7 @@ export default function AboutPage() {
   return (
     <section className="mx-auto max-w-6xl px-4 py-10">
       <h1 className="text-3xl font-bold">About</h1>
-      <p className="mt-3 text-neutral-700 dark:text-neutral-300">
+      <p className="mt-3 text-neutral-700">
         Australian Drone Solutions (ADS) is a Gold Coast–based operator focused on safe, precise aerial spraying.
       </p>
       <h2 className="mt-8 text-xl font-semibold">Founder story</h2>
@@ -25,4 +25,3 @@ export default function AboutPage() {
     </section>
   );
 }
-

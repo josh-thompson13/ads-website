@@ -15,11 +15,10 @@ export default function ServiceAreaPage() {
         <ServiceAreaMap />
       </div>
       <h2 className="mt-8 text-xl font-semibold">Areas we service</h2>
-      <p className="mt-2 text-neutral-700 dark:text-neutral-300">
+      <p className="mt-2 text-neutral-700">
         Gold Coast, Brisbane, Ipswich, Toowoomba, Sunshine Coast, Tweed Heads, Byron Bay and surrounding regions.
       </p>
-      <p className="mt-4">Outside the area? <a className="text-teal-700 hover:underline" href="/contact">Ask us</a>.</p>
+      <p className="mt-4">Outside the area? <a className="text-secondary-hover hover:underline" href="/contact">Ask us</a>.</p>
     </section>
   );
 }
-

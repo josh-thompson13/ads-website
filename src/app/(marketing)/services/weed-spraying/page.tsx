@@ -15,7 +15,7 @@ export default function WeedSprayingPage() {
       <div className="grid lg:grid-cols-3 gap-10">
         <article className="lg:col-span-2">
           <h1 className="text-3xl font-bold">Weed Spraying</h1>
-          <p className="mt-3 text-neutral-700 dark:text-neutral-300">
+          <p className="mt-3 text-neutral-700">
             Spot and blanket applications for acreage, parks and roadside. Minimise drift, maximise efficacy.
           </p>
           <h2 className="mt-8 text-xl font-semibold">Applications</h2>
@@ -60,4 +60,3 @@ export default function WeedSprayingPage() {
     </section>
   );
 }
-

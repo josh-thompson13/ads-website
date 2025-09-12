@@ -26,9 +26,9 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
   if (!post) return notFound();
   const Content = post.body?.code ? (MDXContent as any) : null;
   return (
-    <article className="mx-auto max-w-3xl px-4 py-10 prose prose-neutral dark:prose-invert">
+    <article className="mx-auto max-w-3xl px-4 py-10 prose prose-neutral">
       <h1 className="!mb-2">{post.title}</h1>
-      <p className="!mt-0 text-neutral-600 dark:text-neutral-400">{new Date(post.date).toLocaleDateString()}</p>
+      <p className="!mt-0 text-neutral-600">{new Date(post.date).toLocaleDateString()}</p>
       {post.cover ? (
         <div className="relative w-full aspect-[16/9] my-6 overflow-hidden rounded-xl border">
           <Image src={post.cover} alt="Cover image" fill className="object-cover" />
