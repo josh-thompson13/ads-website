@@ -65,26 +65,12 @@ export function SiteHeader() {
     return () => mql.removeEventListener("change", handleChange);
   }, []);
 
-  const Chevron = ({ open }: { open: boolean }) => (
-    <svg
-      aria-hidden
-      viewBox="0 0 20 20"
-      className={`ml-1 h-4 w-4 transition-transform ${
-        open ? "rotate-180" : "rotate-0"
-      }`}
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-    >
-      <path strokeLinecap="round" strokeLinejoin="round" d="M6 8l4 4 4-4" />
-    </svg>
-  );
   return (
     <header className="sticky top-0 z-50 bg-background/80 backdrop-blur border-b border-neutral-200">
-      <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+      <div className="mx-auto w-full px-4 py-3 flex items-center justify-between">
         <Link
           href="/"
-          className="flex items-center gap-2 flex-nowrap"
+          className="flex items-center gap-2 flex-nowrap min-w-0"
           aria-label="Australian Drone Solutions home"
         >
           <Image
@@ -94,13 +80,13 @@ export function SiteHeader() {
             height={0}
             priority
           />
-          <span className="font-bold text-lg tracking-tight whitespace-nowrap">
+          <span className="font-bold text-lg tracking-tight break-words leading-tight">
             Australian Drone Solutions
           </span>
         </Link>
         <nav
           aria-label="Main navigation"
-          className="hidden xl:flex items-center gap-6 flex-nowrap whitespace-nowrap"
+          className="hidden lg:flex items-center gap-6 flex-nowrap whitespace-nowrap"
         >
           <Link href="/" className="hover:text-secondary-hover shrink-0">
             Home
@@ -118,7 +104,7 @@ export function SiteHeader() {
                 setSurveyingOpen(false);
               }}
             >
-              Spraying <Chevron open={sprayingOpen} />
+              Spraying
             </button>
             {sprayingOpen && (
               <div className="absolute left-0 mt-2 bg-white border border-neutral-200 rounded-xl shadow p-3 w-72">
@@ -185,7 +171,7 @@ export function SiteHeader() {
                 setSurveyingOpen(false);
               }}
             >
-              Seeding & Spreading <Chevron open={seedingOpen} />
+              Seeding & Spreading
             </button>
             {seedingOpen && (
               <div className="absolute left-0 mt-2 bg-white border border-neutral-200 rounded-xl shadow p-3 w-80">
@@ -252,7 +238,7 @@ export function SiteHeader() {
                 setSeedingOpen(false);
               }}
             >
-              Surveying & Mapping <Chevron open={surveyingOpen} />
+              Surveying & Mapping
             </button>
             {surveyingOpen && (
               <div className="absolute left-0 mt-2 bg-white border border-neutral-200 rounded-xl shadow p-3 w-80">
@@ -313,7 +299,7 @@ export function SiteHeader() {
             Service Area
           </Link>
         </nav>
-        <div className="hidden xl:block">
+        <div className="hidden lg:block">
           <Link href="/contact">
             <Button size="md" variant="primary" aria-label="Contact">
               Contact
@@ -321,7 +307,7 @@ export function SiteHeader() {
           </Link>
         </div>
         <button
-          className="xl:hidden inline-flex items-center justify-center h-10 w-10 rounded-lg border border-neutral-200 hover:bg-neutral-100/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+          className="lg:hidden inline-flex items-center justify-center h-10 w-10 rounded-lg border border-neutral-200 hover:bg-neutral-100/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-controls="mobile-menu"
@@ -364,7 +350,7 @@ export function SiteHeader() {
       {open && (
         <div
           id="mobile-menu"
-          className="xl:hidden border-t border-neutral-200 bg-white shadow-sm"
+          className="lg:hidden border-t border-neutral-200 bg-white shadow-sm"
         >
           <div className="mx-auto max-w-6xl px-4">
             <nav className="py-3">
@@ -392,7 +378,6 @@ export function SiteHeader() {
                     }}
                   >
                     <span>Spraying</span>
-                    <Chevron open={sprayingOpen} />
                   </button>
                   {sprayingOpen && (
                     <ul
@@ -461,7 +446,6 @@ export function SiteHeader() {
                     }}
                   >
                     <span>Seeding & Spreading</span>
-                    <Chevron open={seedingOpen} />
                   </button>
                   {seedingOpen && (
                     <ul
@@ -530,7 +514,6 @@ export function SiteHeader() {
                     }}
                   >
                     <span>Surveying & Mapping</span>
-                    <Chevron open={surveyingOpen} />
                   </button>
                   {surveyingOpen && (
                     <ul

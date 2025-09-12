@@ -5,14 +5,14 @@ export function SiteFooter() {
   const year = new Date().getFullYear();
   return (
     <footer className="border-t border-neutral-200 bg-neutral-50">
-      <div className="mx-auto px-4 py-10 grid grid-cols-2 gap-8 md:grid-cols-4">
+      <div className="mx-auto px-4 py-10 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">
         <div className="flex flex-col items-center">
           <Image
             src="/logo_text.png"
             alt="Australian Drone Solutions"
             width={100}
             height={50}
-            className="w-auto"
+            className="w-auto max-w-full"
             priority
           />
         </div>
