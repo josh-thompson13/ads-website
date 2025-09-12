@@ -8,7 +8,7 @@ export default function NotFound() {
       <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
         <Link href="/" className="text-secondary-hover hover:underline">Home</Link>
         <Link href="/services" className="text-secondary-hover hover:underline">Services</Link>
-        <Link href="/pricing" className="text-secondary-hover hover:underline">Pricing</Link>
+        <Link href="/service-area" className="text-secondary-hover hover:underline">Service Area</Link>
         <Link href="/contact" className="text-secondary-hover hover:underline">Contact</Link>
       </div>
     </section>

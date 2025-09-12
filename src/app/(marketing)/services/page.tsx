@@ -4,36 +4,39 @@ import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "Services",
-  description: "Professional drone spraying: weed spraying, crop spraying, and fire ant eradication across SE QLD & Northern NSW.",
+  description: "Professional drone services: Spraying, Seeding & Spreading, and Surveying & Mapping across SE QLD & Northern NSW.",
   alternates: { canonical: "/services" },
 };
 
 const services = [
   {
-    title: "Weed Spraying",
-    href: "/services/weed-spraying",
+    title: "Spraying",
+    href: "/services/spraying",
     bullets: [
-      "Acreage, parks & roadside",
-      "Spot and blanket applications",
-      "Minimise drift, maximise efficacy",
+      "Weed control (herbicide)",
+      "Disease management (fungicide)",
+      "Pest control (insecticide)",
+      "Special applications",
     ],
   },
   {
-    title: "Crop Spraying",
-    href: "/services/crop-spraying",
+    title: "Seeding & Spreading",
+    href: "/services/seeding-spreading",
     bullets: [
-      "Variable-rate application",
-      "Minimal crop damage",
-      "Reduced labour & compaction",
+      "Pasture reseeding",
+      "Revegetation projects",
+      "Cover crops",
+      "Granular application",
     ],
   },
   {
-    title: "Fire Ant Eradication",
-    href: "/services/fire-ant-eradication",
+    title: "Surveying & Mapping",
+    href: "/services/surveying-mapping",
     bullets: [
-      "Survey → plan → bait → follow-up",
-      "QLD compliance",
-      "Rapid response",
+      "Farm mapping (NDVI, multispectral)",
+      "Land surveys (orthos, elevation)",
+      "Infrastructure inspections",
+      "Environmental monitoring",
     ],
   },
 ];

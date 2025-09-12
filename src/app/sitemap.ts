@@ -5,10 +5,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     '',
     '/services',
+    // Legacy spraying pages
     '/services/weed-spraying',
     '/services/crop-spraying',
     '/services/fire-ant-eradication',
-    '/pricing',
+    // New spraying category
+    '/services/spraying',
+    '/services/spraying/weed-control',
+    '/services/spraying/disease-management',
+    '/services/spraying/pest-control',
+    '/services/spraying/special-applications',
+    // Seeding & Spreading category
+    '/services/seeding-spreading',
+    '/services/seeding-spreading/pasture-reseeding',
+    '/services/seeding-spreading/revegetation-projects',
+    '/services/seeding-spreading/cover-crops',
+    '/services/seeding-spreading/granular-application',
+    // Surveying & Mapping category
+    '/services/surveying-mapping',
+    '/services/surveying-mapping/farm-mapping',
+    '/services/surveying-mapping/land-surveys',
+    '/services/surveying-mapping/infrastructure-inspections',
+    '/services/surveying-mapping/environmental-monitoring',
     '/service-area',
     '/gallery',
     '/about',
@@ -18,4 +36,3 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ]
   return routes.map((r) => ({ url: `${baseUrl}${r}`, changeFrequency: 'weekly', priority: r === '' ? 1 : 0.7 }))
 }
-

@@ -1,31 +1,10 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function ServiceAreaMap() {
-  const [mods, setMods] = useState<any | null>(null);
-
-  useEffect(() => {
-    // Load Leaflet CSS on client
-    const id = "leaflet-css";
-    if (!document.getElementById(id)) {
-      const link = document.createElement("link");
-      link.id = id;
-      link.rel = "stylesheet";
-      link.href = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css";
-      document.head.appendChild(link);
-    }
-    // Dynamically load react-leaflet only on client; prevent bundler from static-resolving
-    try {
-      // eslint-disable-next-line no-new-func
-      const dyn: (m: string) => Promise<any> = new Function(
-        'm',
-        'return import(m)'
-      ) as any;
-      dyn('react-leaflet').then((m) => setMods(m)).catch(() => setMods(null));
-    } catch {
-      setMods(null);
-    }
-  }, []);
+  const [status, setStatus] = useState<"loading" | "ready" | "error">("loading");
+  const mapElRef = useRef<HTMLDivElement | null>(null);
+  const mapRef = useRef<any>(null);
 
   const center: [number, number] = [-28.0167, 153.4];
   const towns: Array<{ name: string; position: [number, number] }> = [
@@ -37,29 +16,89 @@ export default function ServiceAreaMap() {
     { name: "Byron Bay", position: [-28.6474, 153.602] },
   ];
 
-  if (!mods) {
+  useEffect(() => {
+    // Ensure Leaflet CSS exists
+    const cssId = "leaflet-css";
+    if (!document.getElementById(cssId)) {
+      const link = document.createElement("link");
+      link.id = cssId;
+      link.rel = "stylesheet";
+      link.href = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css";
+      document.head.appendChild(link);
+    }
+
+    // Load Leaflet JS from CDN once, then init map
+    const jsId = "leaflet-js";
+    const init = () => {
+      try {
+        const L = (window as any).L;
+        if (!L || !mapElRef.current || mapRef.current) return;
+        const map = L.map(mapElRef.current).setView(center, 8);
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          attribution:
+            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        }).addTo(map);
+
+        // Circle to indicate service radius (~600km)
+        L.circle(center, {
+          radius: 600000,
+          color: "#4CAF50",
+          fillColor: "#4CAF50",
+          fillOpacity: 0.08,
+        }).addTo(map);
+
+        // Town markers with popups
+        towns.forEach((t) => {
+          const marker = L.marker(t.position);
+          marker.bindPopup(t.name);
+          marker.addTo(map);
+        });
+
+        mapRef.current = map;
+        setStatus("ready");
+      } catch (e) {
+        setStatus("error");
+      }
+    };
+
+    if ((window as any).L) {
+      init();
+    } else {
+      let script = document.getElementById(jsId) as HTMLScriptElement | null;
+      if (!script) {
+        script = document.createElement("script");
+        script.id = jsId;
+        script.src = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js";
+        script.async = true;
+        script.onload = init;
+        script.onerror = () => setStatus("error");
+        document.body.appendChild(script);
+      } else if ((window as any).L) {
+        init();
+      } else {
+        script.addEventListener("load", init, { once: true });
+      }
+    }
+
+    return () => {
+      if (mapRef.current) {
+        try { mapRef.current.remove(); } catch {}
+        mapRef.current = null;
+      }
+    };
+  }, []);
+
+  if (status !== "ready") {
     return (
       <div className="h-[420px] w-full rounded-2xl overflow-hidden border border-neutral-200 grid place-items-center text-sm text-neutral-600">
-        Map loading…
+        {status === "error" ? "Map failed to load" : "Map loading…"}
       </div>
     );
   }
 
-  const { MapContainer, TileLayer, Circle, Marker, Popup } = mods;
   return (
     <div className="h-[420px] w-full rounded-2xl overflow-hidden border border-neutral-200">
-      <MapContainer center={center} zoom={8} style={{ height: "100%", width: "100%" }} scrollWheelZoom={false}>
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        <Circle center={center} radius={600000} pathOptions={{ color: "#4CAF50", fillColor: "#4CAF50", fillOpacity: 0.08 }} />
-        {towns.map((t) => (
-          <Marker key={t.name} position={t.position}>
-            <Popup>{t.name}</Popup>
-          </Marker>
-        ))}
-      </MapContainer>
+      <div ref={mapElRef} style={{ height: "100%", width: "100%" }} />
     </div>
   );
 }

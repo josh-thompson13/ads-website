@@ -25,7 +25,6 @@ export function SiteFooter() {
           <h3 className="font-semibold mb-2">Quick Links</h3>
           <ul className="text-sm space-y-1">
             <li><Link href="/services" className="hover:underline">Services</Link></li>
-            <li><Link href="/pricing" className="hover:underline">Pricing</Link></li>
             <li><Link href="/service-area" className="hover:underline">Service Area</Link></li>
             <li><Link href="/blog" className="hover:underline">Blog</Link></li>
             <li><Link href="/contact" className="hover:underline">Contact</Link></li>
