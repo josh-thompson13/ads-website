@@ -1,15 +1,15 @@
+import { CtaBanner } from "@/components/cta-banner";
+import ServiceAreaMap from "@/components/map/ServiceAreaMap";
+import { Button } from "@/components/ui/button";
+import { localBusinessJsonLd } from "@/lib/seo";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import ServiceAreaMap from "@/components/map/ServiceAreaMap";
-import { Button } from "@/components/ui/button";
-import { CtaBanner } from "@/components/cta-banner";
-import { localBusinessJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Drone Spraying Gold Coast & SE QLD",
   description:
-    "Precision drone spraying across SE Queensland and Northern NSW. Weed, crop, and fire ant baiting by licensed, CASA-compliant operators.",
+    "Precision drone solutions across South East QLD and Northern NSW. Weed, crop, and fire ant baiting by licensed, CASA-compliant operators.",
   alternates: { canonical: "/" },
   openGraph: {
     title: "Drone Spraying Gold Coast & SE QLD | ADS",
@@ -22,7 +22,11 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      <script type="application/ld+json" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: localBusinessJsonLd() }} />
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: localBusinessJsonLd() }}
+      />
       <section className="mx-auto max-w-6xl px-4 pt-10 pb-14">
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div>
@@ -36,18 +40,33 @@ export default function HomePage() {
               Targeted aerial spraying. Faster, safer, and precise.
             </p>
             <div className="mt-6 flex gap-3">
-              <Link href="/contact"><Button size="lg">Get a Quote</Button></Link>
-              <a href="tel:+6104xxxxxxxx"><Button size="lg" variant="outline">Call now</Button></a>
+              <Link href="/contact">
+                <Button size="lg">Get a Quote</Button>
+              </Link>
+              <a href="tel:+6104xxxxxxxx">
+                <Button size="lg" variant="outline">
+                  Call now
+                </Button>
+              </a>
             </div>
             <ul className="mt-8 grid sm:grid-cols-2 gap-3 text-sm">
               <li className="rounded-2xl border p-3">Licensed & insured</li>
-              <li className="rounded-2xl border p-3">CASA-compliant operations</li>
+              <li className="rounded-2xl border p-3">
+                CASA-compliant operations
+              </li>
               <li className="rounded-2xl border p-3">Reduced drift</li>
               <li className="rounded-2xl border p-3">Faster coverage</li>
             </ul>
           </div>
           <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden border">
-            <Image src="/hero-placeholder.svg" alt="Drone spraying over farmland near the Gold Coast" fill priority sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
+            <Image
+              src="/hero_spraying.jpg"
+              alt="Drone spraying over farmland near the Gold Coast"
+              fill
+              priority
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover"
+            />
           </div>
         </div>
       </section>
@@ -58,27 +77,32 @@ export default function HomePage() {
           {[
             {
               title: "Weed Spraying",
-              desc:
-                "Spot and blanket applications for acreage, parks and roadside. Minimise drift, maximise efficacy.",
+              desc: "Spot and blanket applications for acreage, parks and roadside. Minimise drift, maximise efficacy.",
               href: "/services/weed-spraying",
             },
             {
               title: "Crop Spraying",
-              desc:
-                "Variable-rate aerial application to protect yield while reducing ground compaction and labour.",
+              desc: "Variable-rate aerial application to protect yield while reducing ground compaction and labour.",
               href: "/services/crop-spraying",
             },
             {
               title: "Fire Ant Eradication",
-              desc:
-                "Rapid bait application aligned with QLD guidance for containment and eradication.",
+              desc: "Rapid bait application aligned with QLD guidance for containment and eradication.",
               href: "/services/fire-ant-eradication",
             },
           ].map((s) => (
-            <div key={s.title} className="rounded-2xl border p-5 bg-white shadow-sm">
+            <div
+              key={s.title}
+              className="rounded-2xl border p-5 bg-white shadow-sm"
+            >
               <h3 className="font-semibold text-lg">{s.title}</h3>
               <p className="text-sm text-neutral-700 mt-2">{s.desc}</p>
-              <Link href={s.href} className="inline-block mt-4 text-secondary-hover hover:underline">Learn more →</Link>
+              <Link
+                href={s.href}
+                className="inline-block mt-4 text-secondary-hover hover:underline"
+              >
+                Learn more →
+              </Link>
             </div>
           ))}
         </div>
@@ -91,8 +115,10 @@ export default function HomePage() {
 
       <section className="mx-auto max-w-6xl px-4 py-10">
         <h2 className="text-2xl font-semibold">Gallery</h2>
-        <div className="mt-6 columns-1 sm:columns-2 md:columns-3 gap-4 [column-fill:_balance]
-        *:mb-4">
+        <div
+          className="mt-6 columns-1 sm:columns-2 md:columns-3 gap-4 [column-fill:_balance]
+        *:mb-4"
+        >
           {Array.from({ length: 6 }).map((_, i) => (
             <Image
               key={i}
@@ -109,16 +135,28 @@ export default function HomePage() {
       <section className="mx-auto max-w-6xl px-4 py-10">
         <h2 className="text-2xl font-semibold">What clients say</h2>
         <div className="mt-6 grid md:grid-cols-3 gap-6">
-          {["Reliable and precise.", "Great coverage and fast.", "Professional and safety-first."].map((t, i) => (
-            <blockquote key={i} className="rounded-2xl border p-5 bg-white shadow-sm">
+          {[
+            "Reliable and precise.",
+            "Great coverage and fast.",
+            "Professional and safety-first.",
+          ].map((t, i) => (
+            <blockquote
+              key={i}
+              className="rounded-2xl border p-5 bg-white shadow-sm"
+            >
               <p className="text-neutral-800">“{t}”</p>
-              <footer className="mt-3 text-sm text-neutral-600">— Local landholder</footer>
+              <footer className="mt-3 text-sm text-neutral-600">
+                — Local landholder
+              </footer>
             </blockquote>
           ))}
         </div>
       </section>
 
-      <CtaBanner title="Need aerial spraying?" subtitle="We service SE QLD & Northern NSW." />
+      <CtaBanner
+        title="Need aerial spraying?"
+        subtitle="We service SE QLD & Northern NSW."
+      />
     </>
   );
 }

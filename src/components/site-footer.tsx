@@ -1,14 +1,21 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
   return (
     <footer className="border-t border-neutral-200 bg-neutral-50">
-      <div className="mx-auto max-w-6xl px-4 py-10 grid gap-8 md:grid-cols-4">
+      <div className="mx-auto max-w-6xl px-4 py-10 grid grid-cols-2 gap-8 md:grid-cols-4">
         <div>
           <div className="flex items-center gap-2 mb-3">
-            <span className="h-8 w-8 rounded-md bg-primary inline-block" aria-hidden />
-            <span className="font-semibold">Australian Drone Solutions</span>
+            <Image
+              src="/logo_text.png"
+              alt="Australian Drone Solutions"
+              width={160}
+              height={40}
+              className="h-8 w-auto"
+              priority
+            />
           </div>
           <p className="text-sm text-neutral-600">Targeted aerial spraying. Faster, safer, and precise.</p>
         </div>
