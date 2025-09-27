@@ -3,7 +3,6 @@ import ServiceAreaMap from "@/components/map/ServiceAreaMap";
 import { Button } from "@/components/ui/button";
 import { localBusinessJsonLd } from "@/lib/seo";
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -20,11 +19,7 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   // Manually list field clips to avoid any server FS issues in some runtimes
-  const fieldVideos = [
-    "/videos/IMG_2626.mp4",
-    "/videos/IMG_2627.mp4",
-    "/videos/IMG_2627 2.mp4",
-  ];
+  const fieldVideos = ["/videos/IMG_2626.mp4", "/videos/IMG_2627.mp4"];
 
   return (
     <>
@@ -59,7 +54,7 @@ export default function HomePage() {
           <div className="relative aspect-[16/9] md:aspect-[4/3] w-full rounded-2xl overflow-hidden border">
             <video
               className="absolute inset-0 h-full w-full object-cover object-center"
-              src="/videos/IMG_2591.mov"
+              src="/videos/loop_drone.mp4"
               poster="/videos/FC58FEC5-7D31-450C-AD76-FE9C4F578B74_1_102_o.jpeg"
               autoPlay
               muted
@@ -158,26 +153,17 @@ export default function HomePage() {
 
       <section className="mx-auto max-w-6xl px-4 py-10">
         <h2 className="text-2xl font-semibold">In the field</h2>
-        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {/* Filling photo first */}
-          <div className="rounded-xl overflow-hidden border">
-            <Image
-              src="/IMG_2629.jpeg"
-              alt="Filling the spray drone on-site"
-              width={1200}
-              height={800}
-              className="w-full h-auto object-cover"
-            />
-          </div>
+        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
           {/* Unique videos discovered in /public/videos */}
           {fieldVideos.map((srcPath) => (
             <div key={srcPath} className="rounded-xl overflow-hidden border">
               <video
-                className="w-full h-full object-cover"
+                className="w-full h-80 object-cover"
                 src={srcPath}
                 controls
                 playsInline
                 preload="metadata"
+                muted
               />
             </div>
           ))}
