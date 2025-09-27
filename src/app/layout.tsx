@@ -24,20 +24,20 @@ export const metadata: Metadata = {
     template: "%s | Australian Drone Solutions",
   },
   description:
-    "Gold Coast–based drone solutions across South East QLD & Northern NSW. Spraying, seeding & spreading, and surveying & mapping by licensed, CASA-compliant operators.",
+    "Drone spraying, seeding and mapping for farms, councils and worksites across South East QLD & Northern NSW.",
   openGraph: {
     type: "website",
     url: siteUrl,
     title: "Australian Drone Solutions",
     description:
-      "Precision drone solutions across South East QLD & Northern NSW.",
+      "Spraying, seeding and mapping across South East QLD & Northern NSW.",
     siteName: "Australian Drone Solutions",
   },
   twitter: {
     card: "summary_large_image",
     title: "Australian Drone Solutions",
     description:
-      "Precision drone solutions across South East QLD & Northern NSW.",
+      "Spraying, seeding and mapping across South East QLD & Northern NSW.",
   },
   alternates: {
     canonical: siteUrl,
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#4CAF50",
+  themeColor: "#2f6b2f",
 };
 
 export default function RootLayout({

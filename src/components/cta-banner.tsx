@@ -22,7 +22,7 @@ export function CtaBanner({
             <Button variant="secondary" size="lg">Get a Quote</Button>
           </Link>
           <a href="tel:+6104xxxxxxxx">
-            <Button variant="outline" size="lg" className="bg-transparent text-white border-white hover:bg-white/10">Call now</Button>
+            <Button variant="outline" size="lg" className="bg-transparent text-white border-white hover:bg-white/10">Call Us Today</Button>
           </a>
         </div>
       </div>

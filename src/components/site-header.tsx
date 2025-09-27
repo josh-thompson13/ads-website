@@ -19,7 +19,7 @@ export function SiteHeader() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 bg-background/80 backdrop-blur border-b border-neutral-200">
+    <header className="sticky top-0 z-50 bg-white border-b border-neutral-200">
       <div className="mx-auto max-w-6xl w-full px-4 py-3 flex items-center justify-between">
         <Link
           href="/"
@@ -51,16 +51,19 @@ export function SiteHeader() {
             Seeding & Spreading
           </Link>
           <Link href="/services/surveying-mapping" className="hover:text-secondary-hover">
-            Surveying & Mapping
+            Mapping
           </Link>
           <Link href="/service-area" className="hover:text-secondary-hover">
             Service Area
           </Link>
+          <Link href="/contact" className="hover:text-secondary-hover">
+            Contact
+          </Link>
         </nav>
         <div className="hidden lg:block">
           <Link href="/contact">
-            <Button size="md" variant="primary" aria-label="Contact">
-              Contact
+            <Button size="md" variant="primary" aria-label="Get a Quote">
+              Get a Quote
             </Button>
           </Link>
         </div>
@@ -146,7 +149,7 @@ export function SiteHeader() {
                     className="block py-3 hover:text-secondary-hover"
                     onClick={() => setOpen(false)}
                   >
-                    Surveying & Mapping
+                    Mapping
                   </Link>
                 </li>
                 <li>
@@ -158,9 +161,18 @@ export function SiteHeader() {
                     Service Area
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href="/contact"
+                    className="block py-3 hover:text-secondary-hover"
+                    onClick={() => setOpen(false)}
+                  >
+                    Contact
+                  </Link>
+                </li>
                 <li className="py-3">
                   <Link href="/contact" onClick={() => setOpen(false)}>
-                    <Button className="w-full">Contact</Button>
+                    <Button className="w-full">Get a Quote</Button>
                   </Link>
                 </li>
               </ul>

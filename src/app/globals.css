@@ -3,15 +3,15 @@
 :root {
   /* Base palette */
   --background: #ffffff; /* Clean white */
-  --foreground: #212121; /* Dark charcoal */
+  --foreground: #1f1f1f; /* Charcoal */
 
-  /* Brand tokens */
-  --primary: #4caf50;   /* Fresh green */
-  --primary-hover: #43a047; /* Darker green for hover/focus */
-  --secondary: #2196f3; /* Sky blue */
-  --secondary-hover: #1976d2; /* Darker blue for hover/focus */
-  --accent: #ffc107;    /* Warm yellow */
-  --accent-hover: #ffb300; /* Richer yellow */
+  /* Brand tokens — warmer, practical tones */
+  --primary: #2f6b2f;        /* Forest green */
+  --primary-hover: #285a28;  /* Deeper green */
+  --secondary: #1f3a4a;      /* Navy/charcoal */
+  --secondary-hover: #172b36;/* Darker navy */
+  --accent: #c49a3d;         /* Earthy gold */
+  --accent-hover: #a37f2e;   /* Darker gold */
 }
 
 @theme inline {
