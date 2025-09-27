@@ -49,14 +49,6 @@ export default function HomePage() {
                 </Button>
               </a>
             </div>
-            <ul className="mt-8 grid sm:grid-cols-2 gap-3 text-sm">
-              <li className="rounded-2xl border p-3">Licensed & insured</li>
-              <li className="rounded-2xl border p-3">
-                CASA-compliant operations
-              </li>
-              <li className="rounded-2xl border p-3">Reduced drift</li>
-              <li className="rounded-2xl border p-3">Faster coverage</li>
-            </ul>
           </div>
           <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden border">
             <Image
