@@ -9,8 +9,8 @@ export function ImageShowcase({
   thumbs?: string[];
 }) {
   return (
-    <div className="rounded-[1.25rem] overflow-hidden border shadow-card">
-      <div className="relative h-[360px] w-full">
+    <div className="w-full">
+      <div className="relative h-[380px] md:h-[460px] w-full">
         <Image src={heroSrc} alt="Drone technology" fill className="object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
         <div className="absolute left-6 bottom-6 text-white max-w-xl">
@@ -30,4 +30,3 @@ export function ImageShowcase({
     </div>
   );
 }
-

@@ -31,15 +31,13 @@ export default function HomePage() {
         suppressHydrationWarning
         dangerouslySetInnerHTML={{ __html: localBusinessJsonLd() }}
       />
-      <section className="w-full px-4 md:px-6 pt-6">
-        <Hero />
-      </section>
+      <Hero />
 
       {/* About panel with tabs + intro + stats to mirror the reference band */}
-      <section id="about" className="w-full px-4 md:px-6 pt-6">
-        <div className="panel shadow-card overflow-hidden">
+      <section id="about" className="bg-white py-10">
+        <div className="max-w-6xl mx-auto px-4 md:px-6">
           {/* Tabs row */}
-          <div className="px-4 md:px-6 pt-4 flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2">
             {["About Us", "Journey", "Vision", "Mission"].map((label) => (
               <span
                 key={label}
@@ -51,7 +49,7 @@ export default function HomePage() {
           </div>
 
           {/* Intro copy */}
-          <div className="px-6 md:px-8 py-6">
+          <div className="py-6">
             <div className="flex items-start gap-3">
               <span className="mt-2 inline-block h-1.5 w-1.5 rounded-full bg-ink/60" aria-hidden />
               <div className="flex-1">
@@ -66,7 +64,7 @@ export default function HomePage() {
           </div>
 
           {/* Stats row */}
-          <div className="px-4 md:px-6 pb-6 grid gap-4 md:grid-cols-3">
+          <div className="pb-2 grid gap-4 md:grid-cols-3">
             <StatCard
               value="10+"
               title="Years of Agricultural Innovation"
@@ -90,9 +88,9 @@ export default function HomePage() {
       </section>
 
       {/* Feature dark section */}
-      <section id="services" className="w-full px-4 md:px-6 py-10">
-        <div className="panel-dark p-6 md:p-10">
-          <h2 className="text-2xl font-display font-semibold text-white">Unlock the future of farming with powerful features</h2>
+      <section id="services" className="bg-[#0b1220] text-white py-16">
+        <div className="max-w-6xl mx-auto px-4 md:px-6">
+          <h2 className="text-2xl font-display font-semibold">Unlock the future of farming with powerful features</h2>
           <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <FeatureCard title="Precision Spraying" href="/services/spraying" icon={<svg viewBox='0 0 24 24' className='h-6 w-6' aria-hidden><path d='M5 12h6' stroke='currentColor' strokeWidth='1.5' fill='none' strokeLinecap='round'/><path d='M3 8h8M4 16h7' stroke='currentColor' strokeWidth='1.5' fill='none' strokeLinecap='round'/><rect x='12' y='6' width='8' height='12' rx='2' stroke='currentColor' strokeWidth='1.5' fill='none'/></svg>}>
               Fast, even coverage for weeds, pests and disease.
@@ -118,12 +116,14 @@ export default function HomePage() {
 
       {/* Technology image showcase */}
 
-      <section className="w-full px-4 md:px-6 py-10" id="tech">
-        <ImageShowcase heroSrc="/hero_spraying.jpg" thumbs={["/gallery/gallery-1.svg", "/gallery/gallery-2.svg"]} />
+      <section id="tech" className="bg-white py-12">
+        <div className="max-w-6xl mx-auto px-0 md:px-0">
+          <ImageShowcase heroSrc="/hero_spraying.jpg" thumbs={["/gallery/gallery-1.svg", "/gallery/gallery-2.svg"]} />
+        </div>
       </section>
 
       {/* Testimonial strip */}
-      <section id="testimonials" className="w-full px-4 md:px-6 py-12">
+      <section id="testimonials" className="bg-white py-12">
         <Testimonial />
       </section>
 

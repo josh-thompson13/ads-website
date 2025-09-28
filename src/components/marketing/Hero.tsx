@@ -5,7 +5,8 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative h-[88vh] min-h-[560px] overflow-hidden rounded-[1.25rem] shadow-card">
+    // Full‑bleed hero that extends under the sticky header
+    <section className="relative -mt-16 md:-mt-20 pt-16 md:pt-20 h-[88vh] min-h-[560px] overflow-hidden">
       {/* Background image for sm and up */}
       <div className="hidden sm:block absolute inset-0 w-full h-full">
         <Image
