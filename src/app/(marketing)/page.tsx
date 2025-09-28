@@ -35,14 +35,57 @@ export default function HomePage() {
         <Hero />
       </section>
 
-      {/* About/Tabs band */}
-      <section className="w-full px-4 md:px-6 pt-6">
-        <div className="flex flex-wrap gap-2">
-          {["About Us", "Journey", "Vision", "Mission"].map((label) => (
-            <span key={label} className="inline-flex items-center rounded-full border border-black/10 bg-white px-4 py-1.5 text-sm hover:bg-muted">
-              {label}
-            </span>
-          ))}
+      {/* About panel with tabs + intro + stats to mirror the reference band */}
+      <section id="about" className="w-full px-4 md:px-6 pt-6">
+        <div className="panel shadow-card overflow-hidden">
+          {/* Tabs row */}
+          <div className="px-4 md:px-6 pt-4 flex flex-wrap gap-2">
+            {["About Us", "Journey", "Vision", "Mission"].map((label) => (
+              <span
+                key={label}
+                className="inline-flex items-center rounded-full border border-black/10 bg-white px-4 py-1.5 text-sm hover:bg-muted"
+              >
+                {label}
+              </span>
+            ))}
+          </div>
+
+          {/* Intro copy */}
+          <div className="px-6 md:px-8 py-6">
+            <div className="flex items-start gap-3">
+              <span className="mt-2 inline-block h-1.5 w-1.5 rounded-full bg-ink/60" aria-hidden />
+              <div className="flex-1">
+                <p className="text-2xl md:text-3xl leading-snug">
+                  With years of hands‑on experience, we help farms, councils and worksites get reliable drone services that improve results and save time. Together, we’re shaping a smarter approach to land management across South East QLD & Northern NSW.
+                </p>
+                <Link href="/contact" className="mt-6 inline-block">
+                  <Button variant="secondary">Learn More</Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Stats row */}
+          <div className="px-4 md:px-6 pb-6 grid gap-4 md:grid-cols-3">
+            <StatCard
+              value="10+"
+              title="Years of Agricultural Innovation"
+              description="With a decade of experience, we deliver advancements in precision agriculture."
+              imageSrc="/hero_spraying.jpg"
+            />
+            <StatCard
+              value="30%"
+              title="Water Savings"
+              description="Precision application reduces waste and improves efficiency."
+              imageSrc="/hero_spraying.jpg"
+            />
+            <StatCard
+              value="85%"
+              title="Customer Satisfaction"
+              description="Our clients trust us to deliver reliable outcomes."
+              accent
+            />
+          </div>
         </div>
       </section>
 
@@ -73,37 +116,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* About + stats */}
-      <section id="about" className="w-full px-4 md:px-6 py-10">
-        <div className="panel p-8 shadow-card">
-          <p className="text-2xl md:text-3xl leading-snug">
-            With years of hands‑on experience, we help farms, councils and worksites get reliable drone services that improve results and save time. Together, we’re shaping a smarter approach to land management across South East QLD & Northern NSW.
-          </p>
-          <Link href="/contact" className="mt-6 inline-block">
-            <Button variant="secondary">Learn More</Button>
-          </Link>
-        </div>
-        <div className="mt-6 grid gap-4 md:grid-cols-3">
-          <StatCard
-            value="10+"
-            title="Years of Agricultural Innovation"
-            description="With a decade of experience, we deliver advancements in precision agriculture."
-            imageSrc="/hero_spraying.jpg"
-          />
-          <StatCard
-            value="30%"
-            title="Water Savings"
-            description="Precision application reduces waste and improves efficiency."
-            imageSrc="/hero_spraying.jpg"
-          />
-          <StatCard
-            value="85%"
-            title="Customer Satisfaction"
-            description="Our clients trust us to deliver reliable outcomes."
-            accent
-          />
-        </div>
-      </section>
+      {/* Technology image showcase */}
 
       <section className="w-full px-4 md:px-6 py-10" id="tech">
         <ImageShowcase heroSrc="/hero_spraying.jpg" thumbs={["/gallery/gallery-1.svg", "/gallery/gallery-2.svg"]} />
