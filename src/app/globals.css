@@ -1,58 +1,58 @@
 @import "tailwindcss";
 
+/* Design tokens based on the reference */
 :root {
-  /* Light theme surface */
-  --background: #ffffff;
-  --foreground: #121417; /* Deep slate */
-
-  /* Brand tokens — aligned to reference design */
-  --primary: #a3e635;        /* Lime 400 */
-  --primary-hover: #84cc16;  /* Lime 500 */
-  --secondary: #0b1220;      /* Almost-black for dark panels */
-  --secondary-hover: #111827; /* Slate-900 */
-  --accent: #22c55e;         /* Emerald accent for icons */
-  --accent-hover: #16a34a;   /* Darker emerald */
+  --bg: #F7F7F5;
+  --ink: #1A1D1A;
+  --primary: #3C7F4A;
+  --primary-600: #2F6239;
+  --accent: #B4EB73;
+  --surface: #FFFFFF;
+  --muted: #ECEDEA;
+  --grey-300: #D9DBD3;
+  --grey-500: #A3A6A0;
+  --stat: #EAF7DA;
 }
 
 @theme inline {
   /* Map CSS vars to Tailwind tokens */
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-text: var(--foreground);
+  --color-background: var(--bg);
+  --color-surface: var(--surface);
+  --color-foreground: var(--ink);
+  --color-text: var(--ink);
+  --color-ink: var(--ink);
   --color-primary: var(--primary);
-  --color-primary-hover: var(--primary-hover);
-  --color-secondary: var(--secondary);
-  --color-secondary-hover: var(--secondary-hover);
+  --color-primary-600: var(--primary-600);
   --color-accent: var(--accent);
-  --color-accent-hover: var(--accent-hover);
+  --color-muted: var(--muted);
 
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  /* Optional display font hook if needed later */
-  --font-display: var(--font-geist-sans);
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
 }
 
-/* Force a clean white theme regardless of system dark mode */
+html { color-scheme: light; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
 }
 
-/* Utility: rounded containers like the reference */
-.panel {
-  border-radius: 1.25rem;
-  border: 1px solid rgb(17 24 39 / 0.08); /* slate-900/8 */
-  background: #fff;
-}
+/* Typography utilities */
+.font-sans { font-family: var(--font-sans), ui-sans-serif, system-ui; }
+.font-display { font-family: var(--font-display), ui-sans-serif, system-ui; }
+.h1 { font-family: var(--font-display), ui-sans-serif, system-ui; font-weight: 800; letter-spacing: -0.02em; font-size: clamp(32px, 5vw, 56px); }
 
-/* Dark panel variant */
-.panel-dark {
-  border-radius: 1.25rem;
-  background: var(--secondary);
-  color: #e5e7eb; /* gray-200 */
-}
+/* Panels */
+.panel { border-radius: 1.25rem; border: 1px solid rgb(0 0 0 / 0.08); background: var(--surface); }
+.panel-dark { border-radius: 1.25rem; background: #0b1220; color: #e5e7eb; }
 
-/* Soft inset shadow similar to mock */
-.soft-shadow { box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06); }
+/* Shadows */
+.shadow-card { box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+.shadow-hover:hover { box-shadow: 0 12px 30px rgba(0,0,0,0.12); }
+
+/* Header translucency */
+.glass-header { background: rgba(255,255,255,0.7); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+
+/* Hero glass card */
+.glass-card { background: rgba(255,255,255,0.1); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.ring-glass { box-shadow: inset 0 0 0 1px rgba(255,255,255,0.2); }

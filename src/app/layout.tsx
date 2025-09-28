@@ -1,18 +1,19 @@
 import type { Metadata, Viewport } from "next";
 import { Suspense } from "react";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "./globals.css";
-import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
+  weight: ["600", "700", "800"],
+  variable: "--font-display",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
   subsets: ["latin"],
+  variable: "--font-sans",
 });
 
 const siteUrl = "https://www.australiandronesolutions.com.au";
@@ -44,9 +45,7 @@ export const metadata: Metadata = {
   },
 };
 
-export const viewport: Viewport = {
-  themeColor: "#a3e635",
-};
+export const viewport: Viewport = { themeColor: "#3C7F4A" };
 
 export default function RootLayout({
   children,
@@ -56,17 +55,17 @@ export default function RootLayout({
   const plausibleDomain = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN;
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${jakarta.variable} ${inter.variable} font-sans antialiased`}>
         {plausibleDomain ? (
           // eslint-disable-next-line @next/next/no-sync-scripts
           <script defer data-domain={plausibleDomain} src="https://plausible.io/js/script.js" />
         ) : null}
         <div className="min-h-dvh flex flex-col">
-          <SiteHeader />
+          <Header />
           <main className="flex-1">
             <Suspense fallback={<div className="p-6">Loading…</div>}>{children}</Suspense>
           </main>
-          <SiteFooter />
+          <Footer />
         </div>
       </body>
     </html>

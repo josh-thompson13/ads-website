@@ -22,9 +22,10 @@ Project Structure
 - `public/` assets (gallery, rate-card.pdf)
 
 Key Files
-- `src/app/layout.tsx` Root layout with header/footer and Plausible provider
-- `src/components/site-header.tsx` Sticky, responsive nav + CTA
-- `src/components/site-footer.tsx` Contact/links/ABN/©
+- `src/app/layout.tsx` Root layout with translucent header + footer and Plausible
+- `src/components/Header.tsx` Sticky translucent nav (desktop/mobile)
+- `src/components/TopBar.tsx` Thin top bar with phone/email/quote CTA
+- `src/components/Footer.tsx` New footer with columns + newsletter
 - `src/components/forms/QuoteForm.tsx` Hook Form + Zod + Web3Forms
 - `src/components/map/ServiceAreaMap.tsx` React-Leaflet map (client-only)
 - `contentlayer.config.ts` MDX config; posts under `src/content/posts`
@@ -63,3 +64,8 @@ Vercel Deploy
 - Set env vars in Vercel Project Settings
 - Optionally run `next-sitemap` after build to emit static sitemap/robots
 
+Design System (where to tweak)
+- Colors: edit CSS vars in `src/app/globals.css:1` under `:root` (`--bg`, `--ink`, `--primary`, `--primary-600`, `--accent`, etc.)
+- Fonts: loaded in `src/app/layout.tsx` via `next/font` (`Plus_Jakarta_Sans` for display and `Inter` for body). Utilities `.font-display`, `.font-sans`, and `.h1` are defined in `globals.css`.
+- Hero media: update source in `src/components/marketing/Hero.tsx` (`/videos/loop_drone.mp4` and `/hero_spraying.jpg`).
+- Shadows & radii: utilities `.shadow-card`, `.shadow-hover`, and rounded `[1.25rem]` are in `globals.css` and used throughout.
