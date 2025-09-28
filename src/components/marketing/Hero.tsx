@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function Hero() {
   return (
     // Full‑bleed hero that extends under the sticky header
-    <section className="relative -mt-16 md:-mt-20 pt-16 md:pt-20 h-[88vh] min-h-[560px] overflow-hidden">
+    <section className="relative hero-offset h-[88vh] min-h-[560px] overflow-hidden">
       {/* Background image for sm and up */}
       <div className="hidden sm:block absolute inset-0 w-full h-full">
         <Image
@@ -21,7 +21,7 @@ export default function Hero() {
       {/* Background image for xs (below sm) */}
       <div className="block sm:hidden absolute inset-0 w-full h-full">
         <Image
-          src="/Capture-2025-09-28-225210.png" // <-- Replace with your mobile image path
+          src="/Capture-2025-09-28-225210.png"
           alt="Australian Drone Solutions mobile"
           fill
           priority
