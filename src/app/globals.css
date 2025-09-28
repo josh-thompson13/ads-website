@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  /* Base palette */
-  --background: #ffffff; /* Clean white */
-  --foreground: #1f1f1f; /* Charcoal */
+  /* Light theme surface */
+  --background: #ffffff;
+  --foreground: #121417; /* Deep slate */
 
-  /* Brand tokens — warmer, practical tones */
-  --primary: #2f6b2f;        /* Forest green */
-  --primary-hover: #285a28;  /* Deeper green */
-  --secondary: #1f3a4a;      /* Navy/charcoal */
-  --secondary-hover: #172b36;/* Darker navy */
-  --accent: #c49a3d;         /* Earthy gold */
-  --accent-hover: #a37f2e;   /* Darker gold */
+  /* Brand tokens — aligned to reference design */
+  --primary: #a3e635;        /* Lime 400 */
+  --primary-hover: #84cc16;  /* Lime 500 */
+  --secondary: #0b1220;      /* Almost-black for dark panels */
+  --secondary-hover: #111827; /* Slate-900 */
+  --accent: #22c55e;         /* Emerald accent for icons */
+  --accent-hover: #16a34a;   /* Darker emerald */
 }
 
 @theme inline {
@@ -28,6 +28,8 @@
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  /* Optional display font hook if needed later */
+  --font-display: var(--font-geist-sans);
 }
 
 /* Force a clean white theme regardless of system dark mode */
@@ -37,3 +39,20 @@ body {
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
+
+/* Utility: rounded containers like the reference */
+.panel {
+  border-radius: 1.25rem;
+  border: 1px solid rgb(17 24 39 / 0.08); /* slate-900/8 */
+  background: #fff;
+}
+
+/* Dark panel variant */
+.panel-dark {
+  border-radius: 1.25rem;
+  background: var(--secondary);
+  color: #e5e7eb; /* gray-200 */
+}
+
+/* Soft inset shadow similar to mock */
+.soft-shadow { box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06); }
