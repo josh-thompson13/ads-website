@@ -62,7 +62,7 @@ export default function RootLayout({
         ) : null}
         <div className="min-h-dvh flex flex-col">
           <Header />
-          <main className="flex-1">
+          <main className="flex-1 content-offset">
             <Suspense fallback={<div className="p-6">Loading…</div>}>{children}</Suspense>
           </main>
           <Footer />

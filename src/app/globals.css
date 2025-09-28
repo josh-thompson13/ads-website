@@ -12,11 +12,14 @@
   --grey-300: #D9DBD3;
   --grey-500: #A3A6A0;
   --stat: #EAF7DA;
-  --header-h: 64px; /* mobile header height */
+  --header-h: 64px;
+  /* mobile header height */
 }
 
 @media (min-width: 768px) {
-  :root { --header-h: 80px; }
+  :root {
+    --header-h: 80px;
+  }
 }
 
 @theme inline {
@@ -35,38 +38,113 @@
   --font-display: var(--font-display);
 }
 
-html { color-scheme: light; }
+html {
+  color-scheme: light;
+}
 
 body {
   background: var(--bg);
   color: var(--ink);
 }
 
+/* Prevent accidental horizontal scrolling on small screens */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Hide vertical scrollbar (while preserving scroll) */
+html {
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none; /* Firefox */
+}
+html::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
 /* Typography utilities */
-.font-sans { font-family: var(--font-sans), ui-sans-serif, system-ui; }
-.font-display { font-family: var(--font-display), ui-sans-serif, system-ui; }
-.h1 { font-family: var(--font-display), ui-sans-serif, system-ui; font-weight: 800; letter-spacing: -0.02em; font-size: clamp(32px, 5vw, 56px); }
+.font-sans {
+  font-family: var(--font-sans), ui-sans-serif, system-ui;
+}
+
+.font-display {
+  font-family: var(--font-display), ui-sans-serif, system-ui;
+}
+
+.h1 {
+  font-family: var(--font-display), ui-sans-serif, system-ui;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-size: clamp(32px, 5vw, 56px);
+}
 
 /* Panels */
-.panel { border-radius: 1.25rem; border: 1px solid rgb(0 0 0 / 0.08); background: var(--surface); }
-.panel-dark { border-radius: 1.25rem; background: #0b1220; color: #e5e7eb; }
+.panel {
+  border-radius: 1.25rem;
+  border: 1px solid rgb(0 0 0 / 0.08);
+  background: var(--surface);
+}
+
+.panel-dark {
+  border-radius: 1.25rem;
+  background: #0b1220;
+  color: #e5e7eb;
+}
 
 /* Shadows */
-.shadow-card { box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
-.shadow-hover:hover { box-shadow: 0 12px 30px rgba(0,0,0,0.12); }
+.shadow-card {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.shadow-hover:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
 
 /* Header translucency */
-.glass-header { background: rgba(255,255,255,0.7); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+.glass-header {
+  background: rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
 
 /* Hero glass card */
-.glass-card { background: rgba(255,255,255,0.1); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
-.ring-glass { box-shadow: inset 0 0 0 1px rgba(255,255,255,0.2); }
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.ring-glass {
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
 
 /* Header + hero alignment helpers */
-.header-height { height: var(--header-h); }
-.header-safe { padding-top: env(safe-area-inset-top); }
+.header-height {
+  height: var(--header-h);
+}
+
+.header-safe {
+  padding-top: env(safe-area-inset-top);
+}
+
 /* Pull hero under the header including safe-area */
 .hero-offset {
   margin-top: calc(-1 * (var(--header-h) + env(safe-area-inset-top)));
+  padding-top: calc(var(--header-h) + env(safe-area-inset-top));
+}
+
+/* When header is fixed, push normal pages down */
+.content-offset {
   padding-top: calc(var(--header-h) + env(safe-area-inset-top));
 }
