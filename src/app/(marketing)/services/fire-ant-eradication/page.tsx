@@ -45,7 +45,7 @@ export default function FireAntPage() {
             </div>
           </dl>
           <div className="mt-8 rounded-2xl border p-5">
-            <h2 className="text-xl font-semibold mb-2">Request a Quote</h2>
+            <h2 className="text-xl font-semibold mb-2">Request a Callback</h2>
             <QuoteForm />
           </div>
         </article>

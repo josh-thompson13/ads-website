@@ -10,7 +10,7 @@ export function TopBar() {
         </div>
         <div className="hidden sm:block">
           <Link href="/contact" className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent text-ink shadow-card shadow-hover">
-            Get Quote
+            Request a Callback
             <svg viewBox="0 0 24 24" className="h-4 w-4" aria-hidden>
               <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
@@ -20,4 +20,3 @@ export function TopBar() {
     </div>
   );
 }
-

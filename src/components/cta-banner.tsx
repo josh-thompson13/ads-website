@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export function CtaBanner({
   title = "Ready to get started?",
-  subtitle = "Request a fast, obligation-free quote.",
+  subtitle = "Request a fast callback — we’ll get back promptly.",
   href = "/contact",
 }: {
   title?: string;
@@ -20,7 +20,7 @@ export function CtaBanner({
         <div className="flex gap-3">
           <Link href={href}>
             <Button variant="secondary" size="lg">
-              Get a Quote
+              Request a Callback
             </Button>
           </Link>
           <a href="tel:+6104xxxxxxxx">

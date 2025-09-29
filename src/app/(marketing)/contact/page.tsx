@@ -3,7 +3,7 @@ import { QuoteForm } from "@/components/forms/QuoteForm";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Get a fast quote for drone services. Call, email, or request a site assessment.",
+  description: "Request a fast callback for drone services. Call, email, or book a site assessment.",
   alternates: { canonical: "/contact" },
 };
 
@@ -15,7 +15,7 @@ export default function ContactPage() {
       <div className="mt-6 grid lg:grid-cols-3 gap-10">
         <div className="lg:col-span-2">
           <div className="rounded-2xl border p-5">
-            <h2 className="text-xl font-semibold mb-2">Request a Quote</h2>
+            <h2 className="text-xl font-semibold mb-2">Request a Callback</h2>
             <QuoteForm />
             <p className="text-xs text-neutral-500 mt-3">We respect your privacy and only use your details to respond to your enquiry.</p>
           </div>

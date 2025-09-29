@@ -83,7 +83,7 @@ export function Header() {
         </nav>
         <div className="hidden lg:flex items-center">
           <Link href="/contact">
-            <Button className="px-5 py-2 rounded-[1.25rem]">Get a Quote</Button>
+            <Button className="px-5 py-2 rounded-[1.25rem]">Request a Callback</Button>
           </Link>
         </div>
         <button
@@ -138,7 +138,7 @@ export function Header() {
               className="inline-flex rounded-xl bg-primary text-white hover:bg-primary-600 px-4 py-2"
               onClick={() => setOpen(false)}
             >
-              Get a Quote
+              Request a Callback
             </Link>
           </div>
         </div>

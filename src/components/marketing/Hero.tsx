@@ -50,7 +50,7 @@ export default function Hero() {
               <div className="mt-6 flex gap-3">
                 <Link href="/contact">
                   <Button className="px-5 py-3 rounded-[1.25rem] shadow-card">
-                    Get a Quote
+                    Request a Callback
                   </Button>
                 </Link>
                 <Link href="#services">

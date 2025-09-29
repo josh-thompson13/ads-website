@@ -67,7 +67,7 @@ export function QuoteForm({ inline = false }: { inline?: boolean }) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           access_key: accessKey,
-          subject: "New Quote Request – ADS",
+          subject: "New Callback Request – ADS",
           from_name: "Website",
           ...data,
         }),
@@ -165,7 +165,7 @@ export function QuoteForm({ inline = false }: { inline?: boolean }) {
       {errors.accept && <p className="text-sm text-red-600">{errors.accept.message as string}</p>}
       <div className="flex gap-3">
         <Button type="submit" disabled={isSubmitting || !accessKey} aria-disabled={isSubmitting || !accessKey}>
-          {isSubmitting ? "Sending…" : "Request a Quote"}
+          {isSubmitting ? "Sending…" : "Request a Callback"}
         </Button>
         {!accessKey && (
           <span className="text-sm text-neutral-500">Set NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY to enable form</span>

@@ -62,8 +62,8 @@ export function SiteHeader() {
         </nav>
         <div className="hidden lg:block">
           <Link href="/contact">
-            <Button size="md" variant="primary" aria-label="Get a Quote">
-              Get a Quote
+            <Button size="md" variant="primary" aria-label="Request a Callback">
+              Request a Callback
             </Button>
           </Link>
         </div>
@@ -172,7 +172,7 @@ export function SiteHeader() {
                 </li>
                 <li className="py-3">
                   <Link href="/contact" onClick={() => setOpen(false)}>
-                    <Button className="w-full">Get a Quote</Button>
+                    <Button className="w-full">Request a Callback</Button>
                   </Link>
                 </li>
               </ul>

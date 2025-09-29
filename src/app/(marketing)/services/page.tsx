@@ -56,7 +56,7 @@ export default function ServicesPage() {
             </ul>
             <div className="mt-4 flex gap-2">
               <Link href={s.href} className="text-secondary-hover hover:underline">Learn more</Link>
-              <Link href="/contact"><Button size="sm">Request a Quote</Button></Link>
+              <Link href="/contact"><Button size="sm">Request a Callback</Button></Link>
             </div>
           </div>
         ))}

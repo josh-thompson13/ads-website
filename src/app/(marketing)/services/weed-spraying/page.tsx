@@ -52,7 +52,7 @@ export default function WeedSprayingPage() {
         </article>
         <aside className="lg:col-span-1">
           <div className="rounded-2xl border p-5 sticky top-24">
-            <h2 className="text-xl font-semibold mb-2">Request a Quote</h2>
+            <h2 className="text-xl font-semibold mb-2">Request a Callback</h2>
             <QuoteForm />
           </div>
         </aside>
