@@ -1,12 +1,10 @@
 import { CTA } from "@/components/marketing/CTA";
 import { FeatureCard } from "@/components/marketing/FeatureCard";
 import Hero from "@/components/marketing/Hero";
-import { ImageShowcase } from "@/components/marketing/ImageShowcase";
-import { Testimonial } from "@/components/marketing/Testimonial";
+import StatCard from "@/components/StatCard";
+import CaseStudyCard from "@/components/CaseStudyCard";
 import { localBusinessJsonLd } from "@/lib/seo";
 import type { Metadata } from "next";
-import Link from "next/link";
-import Image from "next/image";
 
 export const metadata: Metadata = {
   title:
@@ -35,89 +33,36 @@ export default function HomePage() {
       />
       <Hero />
 
-      {/* Full‑width highlight cards band (matches provided design) */}
-      <section id="highlights" className="bg-white py-10">
-        <div className="w-full px-3 sm:px-6">
-          <div className="grid gap-4 md:grid-cols-3">
-            {/* Card 1: split image + info */}
-            <div
-              className="grid gap-0 rounded-[1.25rem] overflow-hidden border border-black/10 bg-white shadow-card h-[240px] md:h-[260px]"
-              style={{ gridTemplateColumns: "42% 58%" }}
-            >
-              <div className="relative h-full">
-                <Image
-                  src="/Drone_Spraying_Paddock.png"
-                  alt="Drone spraying over a paddock"
-                  fill
-                  sizes="(min-width: 768px) 33vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
-              <div className="relative bg-muted p-5 h-full">
-                <Link
-                  href="/services"
-                  aria-label="Open services"
-                  className="absolute top-3 right-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-ink text-white"
-                >
-                  <svg viewBox="0 0 24 24" className="h-4 w-4" aria-hidden>
-                    <path d="M7 17L17 7M9 7h8v8" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </Link>
-                <div className="text-3xl font-display font-bold text-ink">On‑Time</div>
-                <div className="mt-1 font-semibold text-ink">Scheduling Built Around Your Season</div>
-                <p className="text-sm text-ink/70 mt-1">
-                  Reliable, CASA‑compliant operations planned around weather windows and site conditions.
-                </p>
-              </div>
-            </div>
-
-            {/* Card 2: image only */}
-            <div className="relative rounded-[1.25rem] overflow-hidden border border-black/10 shadow-card h-[240px] md:h-[260px]">
-              <Image
-                src="/Drone_Golf_Course.png"
-                alt="Drone operations on a golf course"
-                fill
-                sizes="(min-width: 768px) 33vw, 100vw"
-                className="object-cover"
-              />
-              <Link
-                href="/gallery"
-                aria-label="Open gallery"
-                className="absolute top-3 right-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-ink text-white"
-              >
-                <svg viewBox="0 0 24 24" className="h-4 w-4" aria-hidden>
-                  <path d="M7 17L17 7M9 7h8v8" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </Link>
-            </div>
-
-            {/* Card 3: accent info */}
-            <div className="relative rounded-[1.25rem] overflow-hidden border border-black/10 bg-[var(--stat)] p-5 shadow-card h-[240px] md:h-[260px]">
-              <Link
-                href="/contact"
-                aria-label="Contact"
-                className="absolute top-3 right-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-ink text-white"
-              >
-                <svg viewBox="0 0 24 24" className="h-4 w-4" aria-hidden>
-                  <path d="M7 17L17 7M9 7h8v8" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </Link>
-              <div className="text-4xl font-display font-extrabold text-ink">Lower Cost</div>
-              <div className="mt-1 font-semibold text-ink">Typical Savings vs Traditional Methods</div>
-              <p className="text-sm text-ink/80 mt-1">
-                Cut labour and setup time while improving consistency—often more cost‑effective than manual or helicopter application.
-              </p>
-            </div>
-          </div>
+      {/* Trust Snapshot (Stats row) */}
+      <section className="container mx-auto px-6 py-12">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <StatCard
+            icon={<svg width="20" height="20" aria-hidden><circle cx="10" cy="10" r="8" /></svg>}
+            title="CASA Licensed & Insured"
+            subtitle="RPAS compliant operations"
+          />
+          <StatCard
+            icon={<svg width="20" height="20" aria-hidden><rect x="4" y="4" width="12" height="12" /></svg>}
+            title="30% Less Chemical Use"
+            subtitle="Typical with targeted spraying"
+          />
+          <StatCard
+            icon={<svg width="20" height="20" aria-hidden><path d="M2 10h16" /></svg>}
+            title="SE QLD & Northern NSW"
+            subtitle="Local, on-time service"
+          />
+          <StatCard
+            icon={<svg width="20" height="20" aria-hidden><path d="M4 10l4 4 8-8" /></svg>}
+            title="Trusted by Farmers & Councils"
+            subtitle="Golf courses & public land"
+          />
         </div>
       </section>
 
       {/* Feature dark section */}
       <section id="services" className="bg-[#0b1220] text-white py-16">
         <div className="max-w-6xl mx-auto px-4 md:px-6">
-          <h2 className="text-2xl font-display font-semibold">
-            Unlock smarter land management with powerful features
-          </h2>
+          <h2 className="h2">Services That Deliver Outcomes</h2>
           <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <FeatureCard
               title="Precision Spraying"
@@ -151,7 +96,7 @@ export default function HomePage() {
                 </svg>
               }
             >
-              Fast, even coverage for weeds, pests and disease.
+              Precise weed & pest control with less waste.
             </FeatureCard>
             <FeatureCard
               title="Seeding & Spreading"
@@ -173,7 +118,7 @@ export default function HomePage() {
                 </svg>
               }
             >
-              Accurate application for seed, bait and granular products.
+              Accurate seed, bait and granular application.
             </FeatureCard>
             <FeatureCard
               title="Surveying & Mapping"
@@ -195,7 +140,56 @@ export default function HomePage() {
                 </svg>
               }
             >
-              High‑resolution mapping without the hassle.
+              High‑resolution maps without costly surveys.
+            </FeatureCard>
+            <FeatureCard
+              title="Field Analytics"
+              href="/services/surveying-mapping"
+              icon={
+                <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden>
+                  <path
+                    d="M3 3v18h18"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    fill="none"
+                  />
+                  <path
+                    d="M7 14l3-3 3 2 4-5"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    fill="none"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              }
+            >
+              Actionable insights to plan and track work.
+            </FeatureCard>
+            <FeatureCard
+              title="Reliable Scheduling"
+              href="/service-area"
+              icon={
+                <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden>
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="9"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    fill="none"
+                  />
+                  <path
+                    d="M12 7v6l4 2"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    fill="none"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              }
+            >
+              On‑time service built around your season.
             </FeatureCard>
             <FeatureCard
               title="Compliance & Safety"
@@ -219,76 +213,25 @@ export default function HomePage() {
                 </svg>
               }
             >
-              CASA‑compliant procedures and insured operations.
-            </FeatureCard>
-            <FeatureCard
-              title="Field Analytics"
-              icon={
-                <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden>
-                  <path
-                    d="M3 3v18h18"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    fill="none"
-                  />
-                  <path
-                    d="M7 14l3-3 3 2 4-5"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    fill="none"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              }
-            >
-              Insights from aerial data to help plan and track work.
-            </FeatureCard>
-            <FeatureCard
-              title="Reliable Scheduling"
-              icon={
-                <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden>
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="9"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    fill="none"
-                  />
-                  <path
-                    d="M12 7v6l4 2"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    fill="none"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              }
-            >
-              On‑time operations built around your season and weather windows.
+              CASA‑compliant, insured operations you can rely on.
             </FeatureCard>
           </div>
         </div>
       </section>
 
-      {/* Technology image showcase */}
-
-      <section id="tech" className="bg-white py-12">
-        <div className="max-w-6xl mx-auto px-0 md:px-0">
-          <ImageShowcase
-            heroSrc="/Drone_Spraying_Paddock.png"
-            thumbs={["/Drone_Golf_Course.png", "/Drone_Spraying.png"]}
-          />
+      {/* Case Studies */}
+      <section className="container mx-auto px-6 py-16">
+        <h2 className="h2">Proven Results in the Field</h2>
+        <p className="lead mt-3 max-w-2xl">Real outcomes from real jobs. Faster coverage, reduced waste, better consistency.</p>
+        <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <CaseStudyCard image="/Drone_Golf_Course.png" sector="Golf Course" headline="40% faster coverage" blurb="Uniform application across fairways and greens with minimal disruption." />
+          <CaseStudyCard image="/Drone_Spraying.png" sector="Cropping Farm" headline="30% less chemical use" blurb="Targeted weed control reduced overspray and saved input costs." />
+          <CaseStudyCard image="/Drone_Spraying_Paddock.png" sector="Council" headline="50ha treated efficiently" blurb="Coordinated operations across reserves with verifiable coverage." />
         </div>
       </section>
 
-      {/* Testimonial strip */}
-      <section id="testimonials" className="bg-white py-12">
-        <Testimonial />
-      </section>
-
-      {/* Field videos are part of the technology showcase */}
+      {/* Testimonial omitted until real quotes are available */}
+      {/** TODO: Add a real client testimonial with name, role, and location. */}
 
       <CTA />
     </>

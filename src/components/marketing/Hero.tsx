@@ -1,4 +1,3 @@
-import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
@@ -29,31 +28,23 @@ export default function Hero() {
           aria-label="Drone spraying over a field mobile"
         />
       </div>
-      {/* Gradient wash similar to reference */}
-      <div className="absolute inset-0 bg-gradient-to-tr from-black/50 via-black/20 to-transparent" />
+      {/* Gradient wash for contrast */}
+      <div className="absolute inset-0 bg-gradient-to-tr from-black/40 via-black/10 to-transparent" />
 
       {/* Content layout: left hero copy + right mission card */}
       <div className="relative z-10 h-full w-full px-4 md:px-6 flex items-center">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 w-full items-center">
           {/* Left: main message */}
           <div className="lg:col-span-7">
-            <div className="max-w-xl text-white">
-              <Badge className="bg-accent/30 text-ink/80">
-                Aerial Spraying • Mapping • Surveying
-              </Badge>
-              <h1 className="h1 mt-4 text-white">
-                Drone Spraying, Seeding, Mapping & Surveying
-              </h1>
-              <p className="mt-3 text-white/90">
-                Spraying (weeds, pests & mosquitoes), seeding, mapping and
-                surveying for farms, golf courses, parks and worksites. Licensed
-                and insured. Straightforward and reliable.
+            <div className="max-w-xl text-white glass-card ring-glass rounded-2xl p-5 md:p-6">
+              <span className="kicker">Aerial Spraying • Mapping • Surveying</span>
+              <h1 className="h1 mt-4 text-white">Smarter Spraying, Seeding & Mapping for QLD.</h1>
+              <p className="lead mt-3 text-white/90">
+                CASA-compliant drone operations that save time, reduce waste, and deliver consistent results.
               </p>
               <div className="mt-6 flex gap-3">
                 <Link href="/contact">
-                  <Button className="px-5 py-3 rounded-[1.25rem] shadow-card shadow-hover">
-                    Get Started
-                  </Button>
+                  <Button className="px-5 py-3 rounded-[1.25rem] shadow-card">Get a Quote</Button>
                 </Link>
                 <Link href="#services">
                   <Button

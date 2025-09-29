@@ -2,18 +2,20 @@
 
 /* Design tokens based on the reference */
 :root {
+  /* Palette */
   --bg: #F7F7F5;
   --ink: #1A1D1A;
-  --primary: #cbef55;
+  --primary: #3C7F4A;
   --primary-600: #2F6239;
-  --accent: #B4EB73;
+  --accent: #AEEA6D;
   --surface: #FFFFFF;
   --muted: #ECEDEA;
   --grey-300: #D9DBD3;
   --grey-500: #A3A6A0;
   --stat: #EAF7DA;
-  --header-h: 64px;
-  /* mobile header height */
+
+  /* Layout */
+  --header-h: 64px; /* mobile header height */
 }
 
 @media (min-width: 768px) {
@@ -38,14 +40,9 @@
   --font-display: var(--font-display);
 }
 
-html {
-  color-scheme: light;
-}
+html { color-scheme: light; }
 
-body {
-  background: var(--bg);
-  color: var(--ink);
-}
+body { @apply bg-[var(--bg)] text-[var(--ink)]; }
 
 /* Prevent accidental horizontal scrolling on small screens */
 html,
@@ -93,6 +90,10 @@ body::-webkit-scrollbar {
   letter-spacing: -0.02em;
   font-size: clamp(32px, 5vw, 56px);
 }
+
+.h2 { @apply font-bold tracking-[-0.01em] text-3xl md:text-4xl; }
+.lead { @apply text-[17px] md:text-lg leading-7 text-ink/80; }
+.kicker { @apply inline-flex items-center px-3 py-1 rounded-full text-sm bg-accent/30 text-ink/80; }
 
 /* Panels */
 .panel {
