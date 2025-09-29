@@ -10,13 +10,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Drone spraying, mapping and surveying across SE QLD & Northern NSW",
+  title:
+    "Drone spraying, mapping and surveying for farms, golf courses & councils across SE QLD & Northern NSW",
   description:
-    "Drone spraying, seeding and mapping for farms, councils and worksites. Licensed, insured and on time across South East QLD & Northern NSW.",
+    "Drone spraying, mosquito control, seeding, mapping and surveying for farms, golf courses, councils and worksites across South East QLD & Northern NSW. Licensed, insured and on time.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Drone spraying and farm mapping | ADS",
-    description: "Spraying, seeding and mapping across SE QLD & Northern NSW.",
+    title: "Drone spraying, mapping & surveying | ADS",
+    description:
+      "Spraying, mosquito control, seeding, mapping and surveying across SE QLD & Northern NSW.",
     url: "/",
   },
 };
@@ -97,7 +99,7 @@ export default function HomePage() {
       <section id="services" className="bg-[#0b1220] text-white py-16">
         <div className="max-w-6xl mx-auto px-4 md:px-6">
           <h2 className="text-2xl font-display font-semibold">
-            Unlock the future of farming with powerful features
+            Unlock smarter land management with powerful features
           </h2>
           <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <FeatureCard
@@ -157,7 +159,7 @@ export default function HomePage() {
               Accurate application for seed, bait and granular products.
             </FeatureCard>
             <FeatureCard
-              title="Farm & Land Mapping"
+              title="Surveying & Mapping"
               href="/services/surveying-mapping"
               icon={
                 <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden>

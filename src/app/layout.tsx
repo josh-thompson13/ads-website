@@ -25,20 +25,37 @@ export const metadata: Metadata = {
     template: "%s | Australian Drone Solutions",
   },
   description:
-    "Drone spraying, seeding and mapping for farms, councils and worksites across South East QLD & Northern NSW.",
+    "Drone spraying, mosquito control, seeding, mapping and surveying for farms, golf courses, councils and worksites across South East QLD & Northern NSW.",
+  keywords: [
+    "drone spraying",
+    "mosquito control",
+    "vector control",
+    "turf management",
+    "golf course spraying",
+    "council spraying",
+    "drone mapping",
+    "drone surveying",
+    "NDVI mapping",
+    "orthomosaic",
+    "seeding",
+    "granular spreading",
+    "fire ant baiting",
+    "South East QLD",
+    "Northern NSW",
+  ],
   openGraph: {
     type: "website",
     url: siteUrl,
     title: "Australian Drone Solutions",
     description:
-      "Spraying, seeding and mapping across South East QLD & Northern NSW.",
+      "Spraying, mosquito control, seeding, mapping and surveying across South East QLD & Northern NSW.",
     siteName: "Australian Drone Solutions",
   },
   twitter: {
     card: "summary_large_image",
     title: "Australian Drone Solutions",
     description:
-      "Spraying, seeding and mapping across South East QLD & Northern NSW.",
+      "Spraying, mosquito control, seeding, mapping and surveying across South East QLD & Northern NSW.",
   },
   alternates: {
     canonical: siteUrl,

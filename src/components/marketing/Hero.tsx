@@ -39,15 +39,13 @@ export default function Hero() {
           <div className="lg:col-span-7">
             <div className="max-w-xl text-white">
               <Badge className="bg-accent/30 text-ink/80">
-                Sustainable Agriculture Tech
+                Aerial Spraying • Mapping • Surveying
               </Badge>
-              <h1 className="h1 mt-4 text-white">
-                Drone spraying, mapping and surveying across SE QLD & Northern
-                NSW
-              </h1>
+              <h1 className="h1 mt-4 text-white">Drone Spraying, Seeding, Mapping & Surveying</h1>
               <p className="mt-3 text-white/90">
-                We handle spraying, seeding and mapping for farms, councils and
-                worksites. Licensed and insured. Straightforward and reliable.
+                Spraying (weeds, pests & mosquitoes), seeding, mapping and
+                surveying for farms, golf courses, parks and worksites.
+                Licensed and insured. Straightforward and reliable.
               </p>
               <div className="mt-6 flex gap-3">
                 <Link href="/contact">
