@@ -21,7 +21,6 @@ export default function FaqPage() {
       "Do you handle flight permissions?",
       "We operate within CASA rules and coordinate permissions where required.",
     ],
-
     [
       "What about data privacy?",
       "We only collect what we need to deliver the service and do not share data.",
