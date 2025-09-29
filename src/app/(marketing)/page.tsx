@@ -261,7 +261,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-0 md:px-0">
           <ImageShowcase
             heroSrc="/hero_spraying.jpg"
-            thumbs={["/gallery/gallery-1.svg", "/gallery/gallery-2.svg"]}
+            thumbs={["/Drone_Golf_Course.png", "/Drone_Spraying.png"]}
           />
         </div>
       </section>
