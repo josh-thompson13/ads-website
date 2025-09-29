@@ -36,15 +36,22 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 w-full items-center">
           {/* Left: main message */}
           <div className="lg:col-span-7">
-            <div className="max-w-xl text-white glass-card ring-glass rounded-2xl p-5 md:p-6">
-              <span className="kicker">Aerial Spraying • Mapping • Surveying</span>
-              <h1 className="h1 mt-4 text-white">Smarter Spraying, Seeding & Mapping for QLD.</h1>
-              <p className="lead mt-3 text-white/90">
-                CASA-compliant drone operations that save time, reduce waste, and deliver consistent results.
+            <div className="max-w-xl text-white  rounded-2xl p-5 md:p-6">
+              <span className="kicker">
+                Aerial Spraying • Mapping • Surveying
+              </span>
+              <h1 className="h1 mt-4 text-white">
+                Smarter Spraying, Seeding & Mapping for QLD.
+              </h1>
+              <p className="mt-3 text-white/90">
+                CASA-compliant drone operations that save time, reduce waste,
+                and deliver consistent results.
               </p>
               <div className="mt-6 flex gap-3">
                 <Link href="/contact">
-                  <Button className="px-5 py-3 rounded-[1.25rem] shadow-card">Get a Quote</Button>
+                  <Button className="px-5 py-3 rounded-[1.25rem] shadow-card">
+                    Get a Quote
+                  </Button>
                 </Link>
                 <Link href="#services">
                   <Button

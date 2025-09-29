@@ -37,22 +37,41 @@ export default function HomePage() {
       <section className="container mx-auto px-6 py-12">
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           <StatCard
-            icon={<svg width="20" height="20" aria-hidden><circle cx="10" cy="10" r="8" /></svg>}
+            icon={
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden>
+                <path d="M12 22s8-4 8-10V6L12 3 4 6v6c0 6 8 10 8 10z" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+                <path d="m9 12 2 2 4-4" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            }
             title="CASA Licensed & Insured"
             subtitle="RPAS compliant operations"
           />
           <StatCard
-            icon={<svg width="20" height="20" aria-hidden><rect x="4" y="4" width="12" height="12" /></svg>}
+            icon={
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden>
+                <path d="M12 2.5S6 9 6 13a6 6 0 0 0 12 0c0-4-6-10.5-6-10.5z" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+              </svg>
+            }
             title="30% Less Chemical Use"
             subtitle="Typical with targeted spraying"
           />
           <StatCard
-            icon={<svg width="20" height="20" aria-hidden><path d="M2 10h16" /></svg>}
+            icon={
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden>
+                <path d="M12 21s7-4.35 7-10a7 7 0 1 0-14 0c0 5.65 7 10 7 10z" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+                <circle cx="12" cy="11" r="2.5" fill="none" stroke="currentColor" strokeWidth="1.5" />
+              </svg>
+            }
             title="SE QLD & Northern NSW"
             subtitle="Local, on-time service"
           />
           <StatCard
-            icon={<svg width="20" height="20" aria-hidden><path d="M4 10l4 4 8-8" /></svg>}
+            icon={
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden>
+                <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" strokeWidth="1.5" />
+                <path d="m8 12 3 3 5-5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            }
             title="Trusted by Farmers & Councils"
             subtitle="Golf courses & public land"
           />

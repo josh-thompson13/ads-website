@@ -135,7 +135,7 @@ export function Header() {
             ))}
             <Link
               href="/contact"
-              className="inline-flex rounded-xl bg-primary text-ink hover:brightness-95 px-4 py-2"
+              className="inline-flex rounded-xl bg-primary text-white hover:bg-primary-600 px-4 py-2"
               onClick={() => setOpen(false)}
             >
               Get a Quote

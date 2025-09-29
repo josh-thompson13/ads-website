@@ -96,7 +96,7 @@ export function Footer() {
               className="flex-1 rounded-xl border border-black/10 px-3 py-2"
               aria-label="Email"
             />
-            <button className="rounded-xl bg-primary text-ink px-4 hover:brightness-95">
+            <button className="rounded-xl bg-primary text-white px-4 hover:bg-primary-600">
               Subscribe
             </button>
           </form>
