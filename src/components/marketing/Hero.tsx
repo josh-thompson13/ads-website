@@ -41,7 +41,7 @@ export default function Hero() {
                 Aerial Spraying • Mapping • Surveying
               </span>
               <h1 className="h1 mt-4 text-white">
-                Smarter Spraying, Seeding & Mapping for QLD.
+                Smarter Spraying, Seeding & Mapping for QLD & NSW
               </h1>
               <p className="mt-3 text-white/90 drop-shadow-[0_1px_1px_rgba(0,0,0,0.35)]">
                 CASA-compliant drone operations that save time, reduce waste,

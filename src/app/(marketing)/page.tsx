@@ -1,8 +1,8 @@
+import CaseStudyCard from "@/components/CaseStudyCard";
 import { CTA } from "@/components/marketing/CTA";
 import { FeatureCard } from "@/components/marketing/FeatureCard";
 import Hero from "@/components/marketing/Hero";
 import StatCard from "@/components/StatCard";
-import CaseStudyCard from "@/components/CaseStudyCard";
 import { localBusinessJsonLd } from "@/lib/seo";
 import type { Metadata } from "next";
 
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title:
     "Drone spraying, mapping and surveying for farms, golf courses & councils across SE QLD & Northern NSW",
   description:
-    "Drone spraying, mosquito control, seeding, mapping and surveying for farms, golf courses, councils and worksites across South East QLD & Northern NSW. Licensed, insured and on time.",
+    "Drone spraying, mosquito control, seeding, mapping and surveying for farms, golf courses, councils and worksites across South East QLD & Northern NSW. Licensed and on time.",
   alternates: { canonical: "/" },
   openGraph: {
     title: "Drone spraying, mapping & surveying | ADS",
@@ -32,24 +32,42 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: localBusinessJsonLd() }}
       />
       <Hero />
-
       {/* Trust Snapshot (Stats row) */}
       <section className="container mx-auto px-6 py-12">
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           <StatCard
             icon={
               <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden>
-                <path d="M12 22s8-4 8-10V6L12 3 4 6v6c0 6 8 10 8 10z" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
-                <path d="m9 12 2 2 4-4" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                <path
+                  d="M12 22s8-4 8-10V6L12 3 4 6v6c0 6 8 10 8 10z"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="m9 12 2 2 4-4"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
             }
-            title="CASA Licensed & Insured"
+            title="CASA Licensed"
             subtitle="RPAS compliant operations"
           />
           <StatCard
             icon={
               <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden>
-                <path d="M12 2.5S6 9 6 13a6 6 0 0 0 12 0c0-4-6-10.5-6-10.5z" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+                <path
+                  d="M12 2.5S6 9 6 13a6 6 0 0 0 12 0c0-4-6-10.5-6-10.5z"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinejoin="round"
+                />
               </svg>
             }
             title="30% Less Chemical Use"
@@ -58,8 +76,21 @@ export default function HomePage() {
           <StatCard
             icon={
               <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden>
-                <path d="M12 21s7-4.35 7-10a7 7 0 1 0-14 0c0 5.65 7 10 7 10z" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
-                <circle cx="12" cy="11" r="2.5" fill="none" stroke="currentColor" strokeWidth="1.5" />
+                <path
+                  d="M12 21s7-4.35 7-10a7 7 0 1 0-14 0c0 5.65 7 10 7 10z"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinejoin="round"
+                />
+                <circle
+                  cx="12"
+                  cy="11"
+                  r="2.5"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                />
               </svg>
             }
             title="SE QLD & Northern NSW"
@@ -68,8 +99,22 @@ export default function HomePage() {
           <StatCard
             icon={
               <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden>
-                <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" strokeWidth="1.5" />
-                <path d="m8 12 3 3 5-5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="9"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                />
+                <path
+                  d="m8 12 3 3 5-5"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
             }
             title="Trusted by Farmers & Councils"
@@ -77,7 +122,6 @@ export default function HomePage() {
           />
         </div>
       </section>
-
       {/* Feature dark section */}
       <section id="services" className="bg-[#0b1220] text-white py-16">
         <div className="max-w-6xl mx-auto px-4 md:px-6">
@@ -232,26 +276,42 @@ export default function HomePage() {
                 </svg>
               }
             >
-              CASA‑compliant, insured operations you can rely on.
+              CASA‑compliant operations you can rely on.
             </FeatureCard>
           </div>
         </div>
       </section>
-
       {/* Case Studies */}
       <section className="container mx-auto px-6 py-16">
         <h2 className="h2">Proven Results in the Field</h2>
-        <p className="lead mt-3 max-w-2xl">Real outcomes from real jobs. Faster coverage, reduced waste, better consistency.</p>
+        <p className="lead mt-3 max-w-2xl">
+          Real outcomes from real jobs. Faster coverage, reduced waste, better
+          consistency.
+        </p>
         <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <CaseStudyCard image="/Drone_Golf_Course.png" sector="Golf Course" headline="40% faster coverage" blurb="Uniform application across fairways and greens with minimal disruption." />
-          <CaseStudyCard image="/Drone_Spraying.png" sector="Cropping Farm" headline="30% less chemical use" blurb="Targeted weed control reduced overspray and saved input costs." />
-          <CaseStudyCard image="/Drone_Spraying_Paddock.png" sector="Council" headline="50ha treated efficiently" blurb="Coordinated operations across reserves with verifiable coverage." />
+          <CaseStudyCard
+            image="/Drone_Golf_Course.png"
+            sector="Golf Course"
+            headline="40% faster coverage"
+            blurb="Uniform application across fairways and greens with minimal disruption."
+          />
+          <CaseStudyCard
+            image="/Drone_Spraying_Paddock.png"
+            sector="Cropping Farm"
+            headline="30% less chemical use"
+            blurb="Targeted weed control reduced overspray and saved input costs."
+          />
+          <CaseStudyCard
+            image="/Drone_Spraying.png"
+            sector="Council"
+            headline="50ha treated efficiently"
+            blurb="Coordinated operations across reserves with verifiable coverage."
+          />
         </div>
       </section>
 
       {/* Testimonial omitted until real quotes are available */}
       {/** TODO: Add a real client testimonial with name, role, and location. */}
-
       <CTA />
     </>
   );

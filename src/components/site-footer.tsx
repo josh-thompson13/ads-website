@@ -66,7 +66,7 @@ export function SiteFooter() {
         <div>
           <h3 className="font-semibold mb-2">Trust</h3>
           <ul className="text-sm space-y-1">
-            <li>Licensed & insured</li>
+            <li>Licensed operator</li>
             <li>CASA-compliant operations</li>
             <li>ABN: 00 000 000 000</li>
           </ul>

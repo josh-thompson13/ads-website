@@ -25,7 +25,7 @@ export default function WeedSprayingPage() {
             <li>Roadside and hard-to-access areas</li>
           </ul>
           <h2 className="mt-8 text-xl font-semibold">Safety & compliance</h2>
-          <p>Licensed and insured, CASA-compliant operations with herbicide stewardship front of mind.</p>
+          <p>Licensed and CASA-compliant operations with herbicide stewardship front of mind.</p>
           <h2 className="mt-8 text-xl font-semibold">FAQ</h2>
           <dl className="mt-3 space-y-4">
             <div>
