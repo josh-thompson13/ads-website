@@ -40,8 +40,11 @@ export default function HomePage() {
         <div className="w-full px-3 sm:px-6">
           <div className="grid gap-4 md:grid-cols-3">
             {/* Card 1: split image + info */}
-            <div className="grid grid-cols-2 rounded-[1.25rem] overflow-hidden border border-black/10 bg-white shadow-card min-h-[220px]">
-              <div className="relative col-span-1">
+            <div
+              className="grid gap-0 rounded-[1.25rem] overflow-hidden border border-black/10 bg-white shadow-card h-[240px] md:h-[260px]"
+              style={{ gridTemplateColumns: "42% 58%" }}
+            >
+              <div className="relative h-full">
                 <Image
                   src="/Drone_Spraying_Paddock.png"
                   alt="Drone spraying over a paddock"
@@ -50,7 +53,7 @@ export default function HomePage() {
                   className="object-cover"
                 />
               </div>
-              <div className="relative col-span-1 bg-muted p-5">
+              <div className="relative bg-muted p-5 h-full">
                 <Link
                   href="/services"
                   aria-label="Open services"
@@ -69,7 +72,7 @@ export default function HomePage() {
             </div>
 
             {/* Card 2: image only */}
-            <div className="relative rounded-[1.25rem] overflow-hidden border border-black/10 shadow-card min-h-[220px]">
+            <div className="relative rounded-[1.25rem] overflow-hidden border border-black/10 shadow-card h-[240px] md:h-[260px]">
               <Image
                 src="/Drone_Golf_Course.png"
                 alt="Drone operations on a golf course"
@@ -77,10 +80,19 @@ export default function HomePage() {
                 sizes="(min-width: 768px) 33vw, 100vw"
                 className="object-cover"
               />
+              <Link
+                href="/gallery"
+                aria-label="Open gallery"
+                className="absolute top-3 right-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-ink text-white"
+              >
+                <svg viewBox="0 0 24 24" className="h-4 w-4" aria-hidden>
+                  <path d="M7 17L17 7M9 7h8v8" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </Link>
             </div>
 
             {/* Card 3: accent info */}
-            <div className="relative rounded-[1.25rem] overflow-hidden border border-black/10 bg-[var(--stat)] p-5 shadow-card min-h-[220px]">
+            <div className="relative rounded-[1.25rem] overflow-hidden border border-black/10 bg-[var(--stat)] p-5 shadow-card h-[240px] md:h-[260px]">
               <Link
                 href="/contact"
                 aria-label="Contact"

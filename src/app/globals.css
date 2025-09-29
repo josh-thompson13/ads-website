@@ -4,7 +4,7 @@
 :root {
   --bg: #F7F7F5;
   --ink: #1A1D1A;
-  --primary: #3C7F4A;
+  --primary: #cbef55;
   --primary-600: #2F6239;
   --accent: #B4EB73;
   --surface: #FFFFFF;
@@ -57,17 +57,22 @@ body {
 
 /* Hide vertical scrollbar (while preserving scroll) */
 html {
-  -ms-overflow-style: none; /* IE/Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  /* IE/Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
+
 html::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
+
 body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
 body::-webkit-scrollbar {
   width: 0;
   height: 0;
