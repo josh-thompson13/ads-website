@@ -41,11 +41,13 @@ export default function Hero() {
               <Badge className="bg-accent/30 text-ink/80">
                 Aerial Spraying • Mapping • Surveying
               </Badge>
-              <h1 className="h1 mt-4 text-white">Drone Spraying, Seeding, Mapping & Surveying</h1>
+              <h1 className="h1 mt-4 text-white">
+                Drone Spraying, Seeding, Mapping & Surveying
+              </h1>
               <p className="mt-3 text-white/90">
                 Spraying (weeds, pests & mosquitoes), seeding, mapping and
-                surveying for farms, golf courses, parks and worksites.
-                Licensed and insured. Straightforward and reliable.
+                surveying for farms, golf courses, parks and worksites. Licensed
+                and insured. Straightforward and reliable.
               </p>
               <div className="mt-6 flex gap-3">
                 <Link href="/contact">
@@ -59,6 +61,48 @@ export default function Hero() {
                     className="px-5 py-3 rounded-[1.25rem] border-white/40 bg-white/20 text-white"
                   >
                     Learn More
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+          {/* Right: mission card (glass) */}
+          <div className="hidden lg:block lg:col-span-5">
+            <div className="ml-auto max-w-md rounded-2xl glass-card ring-glass text-white p-5">
+              <div className="text-sm opacity-90 mb-2">Our Mission</div>
+              <h3 className="font-display text-2xl font-semibold leading-snug">
+                Practical drone services that save time and reduce costs—
+                delivered safely and on schedule.
+              </h3>
+              <ul className="mt-4 space-y-2 text-sm text-white/90">
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-accent inline-block" />
+                  Precise application for consistent results
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-accent inline-block" />
+                  Safer, compliant operations (CASA‑aligned)
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-accent inline-block" />
+                  Flexible scheduling across SE QLD & Northern NSW
+                </li>
+              </ul>
+              <div className="mt-4 flex gap-3">
+                <Link href="#about">
+                  <Button
+                    variant="accent"
+                    className="px-4 py-2 rounded-xl text-ink"
+                  >
+                    Our Approach
+                  </Button>
+                </Link>
+                <Link href="/contact">
+                  <Button
+                    variant="outline"
+                    className="px-4 py-2 rounded-xl border-white/40 bg-white/10 text-white"
+                  >
+                    Contact
                   </Button>
                 </Link>
               </div>

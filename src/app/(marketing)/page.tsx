@@ -2,12 +2,11 @@ import { CTA } from "@/components/marketing/CTA";
 import { FeatureCard } from "@/components/marketing/FeatureCard";
 import Hero from "@/components/marketing/Hero";
 import { ImageShowcase } from "@/components/marketing/ImageShowcase";
-import { StatCard } from "@/components/marketing/StatCard";
 import { Testimonial } from "@/components/marketing/Testimonial";
-import { Button } from "@/components/ui/button";
 import { localBusinessJsonLd } from "@/lib/seo";
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title:
@@ -24,7 +23,8 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  const fieldVideos = ["/videos/IMG_2626.mp4", "/videos/IMG_2627.mp4"];
+  // Media used throughout the page
+  // const fieldVideos = ["/videos/IMG_2626.mp4", "/videos/IMG_2627.mp4"];
 
   return (
     <>
@@ -35,62 +35,67 @@ export default function HomePage() {
       />
       <Hero />
 
-      {/* About panel with tabs + intro + stats to mirror the reference band */}
-      <section id="about" className="bg-white py-10">
-        <div className="max-w-6xl mx-auto px-4 md:px-6">
-          {/* Tabs row */}
-          <div className="flex flex-wrap gap-2">
-            {["About Us", "Journey", "Vision", "Mission"].map((label) => (
-              <span
-                key={label}
-                className="inline-flex items-center rounded-full border border-black/10 bg-white px-4 py-1.5 text-sm hover:bg-muted"
-              >
-                {label}
-              </span>
-            ))}
-          </div>
-
-          {/* Intro copy */}
-          <div className="py-6">
-            <div className="flex items-start gap-3">
-              <span
-                className="mt-2 inline-block h-1.5 w-1.5 rounded-full bg-ink/60"
-                aria-hidden
-              />
-              <div className="flex-1">
-                <p className="text-2xl md:text-3xl leading-snug">
-                  With years of hands‑on experience, we help farms, councils and
-                  worksites get reliable drone services that improve results and
-                  save time. Together, we’re shaping a smarter approach to land
-                  management across South East QLD & Northern NSW.
-                </p>
-                <Link href="/contact" className="mt-6 inline-block">
-                  <Button variant="secondary">Learn More</Button>
+      {/* Full‑width highlight cards band (matches provided design) */}
+      <section id="highlights" className="bg-white py-10">
+        <div className="w-full px-3 sm:px-6">
+          <div className="grid gap-4 md:grid-cols-3">
+            {/* Card 1: split image + info */}
+            <div className="grid grid-cols-2 rounded-[1.25rem] overflow-hidden border border-black/10 bg-white shadow-card min-h-[220px]">
+              <div className="relative col-span-1">
+                <Image
+                  src="/Drone_Spraying_Paddock.png"
+                  alt="Drone spraying over a paddock"
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative col-span-1 bg-muted p-5">
+                <Link
+                  href="/services"
+                  aria-label="Open services"
+                  className="absolute top-3 right-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-ink text-white"
+                >
+                  <svg viewBox="0 0 24 24" className="h-4 w-4" aria-hidden>
+                    <path d="M7 17L17 7M9 7h8v8" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
                 </Link>
+                <div className="text-3xl font-display font-bold text-ink">On‑Time</div>
+                <div className="mt-1 font-semibold text-ink">Scheduling Built Around Your Season</div>
+                <p className="text-sm text-ink/70 mt-1">
+                  Reliable, CASA‑compliant operations planned around weather windows and site conditions.
+                </p>
               </div>
             </div>
-          </div>
 
-          {/* Stats row */}
-          <div className="pb-2 grid gap-4 md:grid-cols-3">
-            <StatCard
-              value="10+"
-              title="Years of Agricultural Innovation"
-              description="With a decade of experience, we deliver advancements in precision agriculture."
-              imageSrc="/hero_spraying.jpg"
-            />
-            <StatCard
-              value="30%"
-              title="Water Savings"
-              description="Precision application reduces waste and improves efficiency."
-              imageSrc="/hero_spraying.jpg"
-            />
-            <StatCard
-              value="85%"
-              title="Customer Satisfaction"
-              description="Our clients trust us to deliver reliable outcomes."
-              accent
-            />
+            {/* Card 2: image only */}
+            <div className="relative rounded-[1.25rem] overflow-hidden border border-black/10 shadow-card min-h-[220px]">
+              <Image
+                src="/Drone_Golf_Course.png"
+                alt="Drone operations on a golf course"
+                fill
+                sizes="(min-width: 768px) 33vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+
+            {/* Card 3: accent info */}
+            <div className="relative rounded-[1.25rem] overflow-hidden border border-black/10 bg-[var(--stat)] p-5 shadow-card min-h-[220px]">
+              <Link
+                href="/contact"
+                aria-label="Contact"
+                className="absolute top-3 right-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-ink text-white"
+              >
+                <svg viewBox="0 0 24 24" className="h-4 w-4" aria-hidden>
+                  <path d="M7 17L17 7M9 7h8v8" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </Link>
+              <div className="text-4xl font-display font-extrabold text-ink">Lower Cost</div>
+              <div className="mt-1 font-semibold text-ink">Typical Savings vs Traditional Methods</div>
+              <p className="text-sm text-ink/80 mt-1">
+                Cut labour and setup time while improving consistency—often more cost‑effective than manual or helicopter application.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -260,7 +265,7 @@ export default function HomePage() {
       <section id="tech" className="bg-white py-12">
         <div className="max-w-6xl mx-auto px-0 md:px-0">
           <ImageShowcase
-            heroSrc="/hero_spraying.jpg"
+            heroSrc="/Drone_Spraying_Paddock.png"
             thumbs={["/Drone_Golf_Course.png", "/Drone_Spraying.png"]}
           />
         </div>
