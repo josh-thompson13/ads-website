@@ -183,52 +183,7 @@ export default function HomePage() {
             >
               Accurate seed, bait and granular application.
             </FeatureCard>
-            <FeatureCard
-              title="Surveying & Mapping"
-              href="/services/surveying-mapping"
-              icon={
-                <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden>
-                  <path
-                    d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    fill="none"
-                  />
-                  <path
-                    d="M9 4v14M15 6v14"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    fill="none"
-                  />
-                </svg>
-              }
-            >
-              High‑resolution maps without costly surveys.
-            </FeatureCard>
-            <FeatureCard
-              title="Field Analytics"
-              href="/services/surveying-mapping"
-              icon={
-                <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden>
-                  <path
-                    d="M3 3v18h18"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    fill="none"
-                  />
-                  <path
-                    d="M7 14l3-3 3 2 4-5"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    fill="none"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              }
-            >
-              Actionable insights to plan and track work.
-            </FeatureCard>
+            {/** Surveying & Mapping features removed */}
             <FeatureCard
               title="Reliable Scheduling"
               href="/service-area"

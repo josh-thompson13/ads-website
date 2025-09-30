@@ -74,14 +74,7 @@ export function Footer() {
                 Seeding & Spreading
               </Link>
             </li>
-            <li>
-              <Link
-                href="/services/surveying-mapping"
-                className="hover:underline"
-              >
-                Mapping
-              </Link>
-            </li>
+            {/** Mapping removed */}
           </ul>
         </div>
         <div>

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "Services",
-  description: "Professional drone services: Spraying, Seeding & Spreading, and Surveying & Mapping across South East QLD & Northern NSW.",
+  description: "Professional drone services: Spraying and Seeding & Spreading across South East QLD & Northern NSW.",
   alternates: { canonical: "/services" },
 };
 
@@ -29,16 +29,7 @@ const services = [
       "Granular application",
     ],
   },
-  {
-    title: "Surveying & Mapping",
-    href: "/services/surveying-mapping",
-    bullets: [
-      "Farm mapping (NDVI, multispectral)",
-      "Land surveys (orthos, elevation)",
-      "Infrastructure inspections",
-      "Environmental monitoring",
-    ],
-  },
+  
 ];
 
 export default function ServicesPage() {

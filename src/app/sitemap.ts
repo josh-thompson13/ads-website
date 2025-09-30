@@ -21,12 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/services/seeding-spreading/revegetation-projects',
     '/services/seeding-spreading/cover-crops',
     '/services/seeding-spreading/granular-application',
-    // Surveying & Mapping category
-    '/services/surveying-mapping',
-    '/services/surveying-mapping/farm-mapping',
-    '/services/surveying-mapping/land-surveys',
-    '/services/surveying-mapping/infrastructure-inspections',
-    '/services/surveying-mapping/environmental-monitoring',
+    // Surveying & Mapping removed
     '/service-area',
     '/gallery',
     '/about',

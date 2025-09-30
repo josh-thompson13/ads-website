@@ -9,7 +9,6 @@ const nav = [
   { label: "Home", href: "/" },
   { label: "Spraying", href: "/services/spraying" },
   { label: "Seeding & Spreading", href: "/services/seeding-spreading" },
-  { label: "Mapping", href: "/services/surveying-mapping" },
   { label: "Service Area", href: "/service-area" },
   { label: "Contact", href: "/contact" },
 ];

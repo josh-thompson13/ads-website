@@ -50,9 +50,7 @@ export function SiteHeader() {
           <Link href="/services/seeding-spreading" className="hover:text-secondary-hover">
             Seeding & Spreading
           </Link>
-          <Link href="/services/surveying-mapping" className="hover:text-secondary-hover">
-            Mapping
-          </Link>
+          {/** Mapping removed */}
           <Link href="/service-area" className="hover:text-secondary-hover">
             Service Area
           </Link>
@@ -143,15 +141,7 @@ export function SiteHeader() {
                     Seeding & Spreading
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    href="/services/surveying-mapping"
-                    className="block py-3 hover:text-secondary-hover"
-                    onClick={() => setOpen(false)}
-                  >
-                    Mapping
-                  </Link>
-                </li>
+                {/** Mapping removed */}
                 <li>
                   <Link
                     href="/service-area"
