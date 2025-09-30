@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { QuoteForm } from "@/components/forms/QuoteForm";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 import { serviceJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -28,7 +29,10 @@ export default function WeedControlPage() {
         <aside className="lg:col-span-1">
           <div className="rounded-2xl border p-5 sticky top-24">
             <h2 className="text-xl font-semibold mb-2">Request a Callback</h2>
-            <QuoteForm />
+            <p className="text-neutral-700 text-sm">Tell us about your job and we’ll call you back fast.</p>
+            <div className="mt-3">
+              <Link href="/contact"><Button size="sm">Go to Contact Form</Button></Link>
+            </div>
           </div>
         </aside>
       </div>

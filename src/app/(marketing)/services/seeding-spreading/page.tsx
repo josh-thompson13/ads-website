@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "Seeding & Spreading",
@@ -8,10 +10,30 @@ export const metadata: Metadata = {
 };
 
 const items = [
-  { title: "Pasture Reseeding", href: "/services/seeding-spreading/pasture-reseeding", desc: "Improve grazing land with even seed distribution." },
-  { title: "Revegetation Projects", href: "/services/seeding-spreading/revegetation-projects", desc: "Seed spreading for rehabilitation and erosion control." },
-  { title: "Cover Crops", href: "/services/seeding-spreading/cover-crops", desc: "Establish cover crops quickly and efficiently." },
-  { title: "Granular Application", href: "/services/seeding-spreading/granular-application", desc: "Fertiliser, fire ant bait, or other granular products spread with accuracy." },
+  {
+    title: "Pasture Reseeding",
+    href: "/services/seeding-spreading/pasture-reseeding",
+    desc: "Improve grazing land with even seed distribution.",
+    image: "/Seeding/Pasture_Reseeding.jpg",
+  },
+  {
+    title: "Revegetation Projects",
+    href: "/services/seeding-spreading/revegetation-projects",
+    desc: "Seed spreading for rehabilitation and erosion control.",
+    image: "/Seeding/Revegation.png",
+  },
+  {
+    title: "Cover Crops",
+    href: "/services/seeding-spreading/cover-crops",
+    desc: "Establish cover crops quickly and efficiently.",
+    image: "/Seeding/Cover_crop.jpg",
+  },
+  {
+    title: "Granular Application",
+    href: "/services/seeding-spreading/granular-application",
+    desc: "Fertiliser, fire ant bait, or other granular products spread with accuracy.",
+    image: "/Seeding/Fire_ant.jpg",
+  },
 ];
 
 export default function SeedingSpreadingIndexPage() {
@@ -21,14 +43,22 @@ export default function SeedingSpreadingIndexPage() {
       <p className="mt-3 text-neutral-700">Efficient, even distribution of seed and granular products across varied terrain.</p>
       <div className="mt-8 grid md:grid-cols-2 gap-6">
         {items.map((i) => (
-          <Link key={i.href} href={i.href} className="block rounded-2xl border p-5 bg-white shadow-sm hover:border-secondary-hover">
-            <h2 className="font-semibold text-lg">{i.title}</h2>
-            <p className="text-sm text-neutral-700 mt-2">{i.desc}</p>
-            <span className="inline-block mt-3 text-secondary-hover">Learn more →</span>
-          </Link>
+          <div key={i.href} className="rounded-2xl border bg-white shadow-sm overflow-hidden">
+            <div className="relative w-full aspect-[16/9]">
+              <Image src={i.image} alt="" fill className="object-cover" sizes="(min-width: 768px) 50vw, 100vw" />
+            </div>
+            <div className="p-5">
+              <h2 className="font-semibold text-lg">
+                <Link href={i.href} className="hover:underline">{i.title}</Link>
+              </h2>
+              <p className="text-sm text-neutral-700 mt-2">{i.desc}</p>
+              <div className="mt-4">
+                <Link href="/contact"><Button size="sm">Request a Callback</Button></Link>
+              </div>
+            </div>
+          </div>
         ))}
       </div>
     </section>
   );
 }
-

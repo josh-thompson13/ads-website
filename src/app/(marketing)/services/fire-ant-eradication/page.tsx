@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { QuoteForm } from "@/components/forms/QuoteForm";
+import { Button } from "@/components/ui/button";
 import { serviceJsonLd } from "@/lib/seo";
 import Link from "next/link";
 
@@ -46,7 +46,10 @@ export default function FireAntPage() {
           </dl>
           <div className="mt-8 rounded-2xl border p-5">
             <h2 className="text-xl font-semibold mb-2">Request a Callback</h2>
-            <QuoteForm />
+            <p className="text-neutral-700 text-sm">Tell us about your job and we’ll call you back fast.</p>
+            <div className="mt-3">
+              <Link href="/contact"><Button size="sm">Go to Contact Form</Button></Link>
+            </div>
           </div>
         </article>
       </div>
