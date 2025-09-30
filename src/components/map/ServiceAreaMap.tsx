@@ -88,17 +88,14 @@ export default function ServiceAreaMap() {
     };
   }, []);
 
-  if (status !== "ready") {
-    return (
-      <div className="h-[420px] w-full rounded-2xl overflow-hidden border border-neutral-200 grid place-items-center text-sm text-neutral-600">
-        {status === "error" ? "Map failed to load" : "Map loading…"}
-      </div>
-    );
-  }
-
   return (
-    <div className="h-[420px] w-full rounded-2xl overflow-hidden border border-neutral-200">
+    <div className="relative h-[420px] w-full rounded-2xl overflow-hidden border border-neutral-200">
       <div ref={mapElRef} style={{ height: "100%", width: "100%" }} />
+      {status !== "ready" && (
+        <div className="absolute inset-0 grid place-items-center text-sm text-neutral-600 bg-white/60 backdrop-blur-[1px]">
+          {status === "error" ? "Map failed to load" : "Map loading…"}
+        </div>
+      )}
     </div>
   );
 }

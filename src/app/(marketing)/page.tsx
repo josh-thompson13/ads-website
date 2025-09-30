@@ -186,7 +186,8 @@ export default function HomePage() {
             {/** Surveying & Mapping features removed */}
             <FeatureCard
               title="Reliable Scheduling"
-              href="/service-area"
+              href="/contact"
+              ctaLabel="Ask us about it"
               icon={
                 <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden>
                   <circle
@@ -212,6 +213,7 @@ export default function HomePage() {
             <FeatureCard
               title="Compliance & Safety"
               href="/contact"
+              ctaLabel="Ask us about it"
               icon={
                 <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden>
                   <path
@@ -232,6 +234,64 @@ export default function HomePage() {
               }
             >
               CASA‑compliant operations you can rely on.
+            </FeatureCard>
+            <FeatureCard
+              title="Weed Control"
+              href="/contact"
+              ctaLabel="Ask us about it"
+              icon={
+                <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden>
+                  <path
+                    d="M12 2v20"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    fill="none"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M8 10c2 0 3-2 4-3 1 1 2 3 4 3"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    fill="none"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M7 15c2 0 3-1 5-1s3 1 5 1"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    fill="none"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              }
+            >
+              Targeted herbicide application that reduces waste and overspray.
+            </FeatureCard>
+            <FeatureCard
+              title="Mosquito Control"
+              href="/contact"
+              ctaLabel="Ask us about it"
+              icon={
+                <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden>
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="3"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    fill="none"
+                  />
+                  <path
+                    d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    fill="none"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              }
+            >
+              Precise treatments for public spaces and properties.
             </FeatureCard>
           </div>
         </div>

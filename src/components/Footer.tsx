@@ -5,7 +5,9 @@ export function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="mt-16 border-t border-black/10 bg-white">
-      <div className="w-full px-4 py-12 grid gap-8 md:grid-cols-4">
+      {/* Top: brand, contact, links, trust */}
+      <div className="mx-auto max-w-6xl px-4 py-10 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">
+        {/* Brand + CTA */}
         <div>
           <Image
             src="/logo_text.png"
@@ -15,14 +17,13 @@ export function Footer() {
             className="w-auto max-w-full"
             priority
           />
-          {/* <p className="mt-3 text-sm text-ink/70">
-            Growing the future of farming with practical innovation across South
-            East QLD & Northern NSW.
-          </p> */}
+          <p className="mt-3 text-sm text-ink/70">
+            Practical drone services across South East QLD & Northern NSW.
+          </p>
           <div className="mt-4">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-full border border-ink/15 px-4 py-2"
+              className="inline-flex items-center gap-2 rounded-full border border-ink/15 px-4 py-2 hover:bg-muted/40"
             >
               Contact Us
               <svg viewBox="0 0 24 24" className="h-4 w-4" aria-hidden>
@@ -38,6 +39,48 @@ export function Footer() {
             </Link>
           </div>
         </div>
+
+        {/* Contact */}
+        <div>
+          <h4 className="font-semibold">Contact</h4>
+          <ul className="mt-3 space-y-2 text-sm text-ink/80">
+            <li>
+              Phone: <a href="tel:+61" className="hover:underline">+61 (0)4xx xxx xxx</a>
+            </li>
+            <li>
+              Email: {" "}
+              <a href="mailto:hello@australiandronesolutions.com.au" className="hover:underline">
+                hello@australiandronesolutions.com.au
+              </a>
+            </li>
+            <li>Hours: Mon–Fri 7:00–17:00 AEST</li>
+            <li>Region: South East QLD & Northern NSW</li>
+          </ul>
+        </div>
+
+        {/* Services */}
+        <div>
+          <h4 className="font-semibold">Services</h4>
+          <ul className="mt-3 space-y-2 text-sm">
+            <li>
+              <Link href="/services/spraying" className="hover:underline">
+                Spraying
+              </Link>
+            </li>
+            <li>
+              <Link href="/services/seeding-spreading" className="hover:underline">
+                Seeding & Spreading
+              </Link>
+            </li>
+            <li>
+              <Link href="/service-area" className="hover:underline">
+                Service Area
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Company / Trust */}
         <div>
           <h4 className="font-semibold">Company</h4>
           <ul className="mt-3 space-y-2 text-sm">
@@ -53,58 +96,28 @@ export function Footer() {
             </li>
             <li>
               <Link href="/contact" className="hover:underline">
-                Careers
+                Contact
               </Link>
             </li>
           </ul>
-        </div>
-        <div>
-          <h4 className="font-semibold">Solutions</h4>
-          <ul className="mt-3 space-y-2 text-sm">
-            <li>
-              <Link href="/services/spraying" className="hover:underline">
-                Spraying
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/services/seeding-spreading"
-                className="hover:underline"
-              >
-                Seeding & Spreading
-              </Link>
-            </li>
-            {/** Mapping removed */}
-          </ul>
-        </div>
-        <div>
-          <h4 className="font-semibold">Newsletter</h4>
-          <p className="mt-2 text-sm text-ink/70">
-            Updates and case studies. No spam.
-          </p>
-          <form className="mt-3 flex gap-2">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 rounded-xl border border-black/10 px-3 py-2"
-              aria-label="Email"
-            />
-            <button className="rounded-xl bg-primary text-white px-4 hover:bg-primary-600">
-              Subscribe
-            </button>
-          </form>
+          <div className="mt-4 text-sm text-ink/70">
+            <p>Licensed operator · CASA-compliant</p>
+            <p>ABN: 00 000 000 000</p>
+          </div>
         </div>
       </div>
+
+      {/* Bottom bar */}
       <div className="border-t border-black/10 text-sm">
-        <div className="w-full px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-2 text-ink/70">
+        <div className="mx-auto max-w-6xl px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-2 text-ink/70">
           <p>© {year} Australian Drone Solutions</p>
           <div className="flex items-center gap-4">
             <Link href="/privacy" className="hover:underline">
-              Privacy & Policy
+              Privacy
             </Link>
             <span>•</span>
-            <Link href="#" className="hover:underline">
-              Terms & Conditions
+            <Link href="/contact" className="hover:underline">
+              Book a site assessment
             </Link>
           </div>
         </div>
