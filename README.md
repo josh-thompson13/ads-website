@@ -3,7 +3,7 @@ ADS Marketing Website (Next.js App Router)
 Overview
 - Production-ready marketing site for Australian Drone Solutions (ADS)
 - Next.js 14+/15 App Router, TypeScript, Tailwind, Contentlayer MDX, Plausible
-- Deploy target: Vercel
+- Deploy targets: Vercel or GitHub Pages
 
 Quick Start
 - Copy `.env.example` to `.env.local` and fill values
@@ -63,6 +63,12 @@ Dependencies (expected installed)
 Vercel Deploy
 - Set env vars in Vercel Project Settings
 - Optionally run `next-sitemap` after build to emit static sitemap/robots
+
+GitHub Pages Deploy
+- A workflow at `.github/workflows/deploy.yml` builds and exports a static site, then deploys it to GitHub Pages.
+- In repository Settings → Pages, set Source to "GitHub Actions".
+- The workflow sets `GITHUB_PAGES=true` so `next.config.ts` applies a `basePath` (`/ads-website`) and disables image optimization for static hosting. It also creates `out/.nojekyll` so `/_next/*` assets are served correctly.
+- Your site will be available at `https://<username>.github.io/ads-website/`.
 
 Design System (where to tweak)
 - Colors: edit CSS vars in `src/app/globals.css:1` under `:root` (`--bg`, `--ink`, `--primary`, `--primary-600`, `--accent`, etc.)
