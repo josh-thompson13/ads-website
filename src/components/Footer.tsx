@@ -45,11 +45,17 @@ export function Footer() {
           <h4 className="font-semibold">Contact</h4>
           <ul className="mt-3 space-y-2 text-sm text-ink/80">
             <li>
-              Phone: <a href="tel:+61" className="hover:underline">+61 (0)4xx xxx xxx</a>
+              Phone:{" "}
+              <a href="tel:+61" className="hover:underline">
+                +61 (0)4xx xxx xxx
+              </a>
             </li>
             <li>
-              Email: {" "}
-              <a href="mailto:hello@australiandronesolutions.com.au" className="hover:underline">
+              Email:{" "}
+              <a
+                href="mailto:hello@australiandronesolutions.com.au"
+                className="hover:underline"
+              >
                 hello@australiandronesolutions.com.au
               </a>
             </li>
@@ -68,7 +74,10 @@ export function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/services/seeding-spreading" className="hover:underline">
+              <Link
+                href="/services/seeding-spreading"
+                className="hover:underline"
+              >
                 Seeding & Spreading
               </Link>
             </li>
@@ -86,12 +95,7 @@ export function Footer() {
           <ul className="mt-3 space-y-2 text-sm">
             <li>
               <Link href="/about" className="hover:underline">
-                About Us
-              </Link>
-            </li>
-            <li>
-              <Link href="/blog" className="hover:underline">
-                Blog & News
+                About
               </Link>
             </li>
             <li>

@@ -10,7 +10,7 @@ const nav = [
   { label: "Spraying", href: "/services/spraying" },
   { label: "Seeding & Spreading", href: "/services/seeding-spreading" },
   { label: "Service Area", href: "/service-area" },
-  { label: "Contact", href: "/contact" },
+  { label: "About Us", href: "/about" },
 ];
 
 export function Header() {
@@ -82,7 +82,7 @@ export function Header() {
         </nav>
         <div className="hidden lg:flex items-center">
           <Link href="/contact">
-            <Button className="px-5 py-2 rounded-[1.25rem]">Request a Callback</Button>
+            <Button className="px-5 py-2 rounded-[1.25rem]">Contact Us</Button>
           </Link>
         </div>
         <button
