@@ -6,7 +6,7 @@ export function Footer() {
   return (
     <footer className="mt-16 border-t border-black/10 bg-white">
       {/* Top: brand, contact, links, trust */}
-      <div className="mx-auto max-w-6xl px-4 py-10 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">
+      <div className="w-full px-6 py-10 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">
         {/* Brand + CTA */}
         <div>
           <Image
@@ -43,7 +43,7 @@ export function Footer() {
         {/* Contact */}
         <div>
           <h4 className="font-semibold">Contact</h4>
-          <ul className="mt-3 space-y-2 text-sm text-ink/80">
+          <ul className="mt-3 space-y-2 text-sm text-ink/80 break-words">
             <li>
               Phone:{" "}
               <a href="tel:+61" className="hover:underline">
@@ -54,7 +54,7 @@ export function Footer() {
               Email:{" "}
               <a
                 href="mailto:hello@australiandronesolutions.com.au"
-                className="hover:underline"
+                className="hover:underline break-words"
               >
                 hello@australiandronesolutions.com.au
               </a>
@@ -106,14 +106,14 @@ export function Footer() {
           </ul>
           <div className="mt-4 text-sm text-ink/70">
             <p>Licensed operator · CASA-compliant</p>
-            <p>ABN: 00 000 000 000</p>
+            <p>ABN: 71 690 832 912</p>
           </div>
         </div>
       </div>
 
       {/* Bottom bar */}
       <div className="border-t border-black/10 text-sm">
-        <div className="mx-auto max-w-6xl px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-2 text-ink/70">
+        <div className="w-full px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-2 text-ink/70">
           <p>© {year} Australian Drone Solutions</p>
           <div className="flex items-center gap-4">
             <Link href="/privacy" className="hover:underline">

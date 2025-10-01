@@ -63,7 +63,7 @@ export function SiteFooter() {
           <ul className="text-sm space-y-1">
             <li>Licensed operator</li>
             <li>CASA-compliant operations</li>
-            <li>ABN: 00 000 000 000</li>
+            <li>ABN: 71 690 832 912</li>
           </ul>
         </div>
       </div>
