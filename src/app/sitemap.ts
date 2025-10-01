@@ -1,5 +1,8 @@
 import type { MetadataRoute } from 'next'
 
+// Ensure static export compatibility
+export const dynamic = 'force-static'
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.australiandronesolutions.com.au'
   const routes = [
