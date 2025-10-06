@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { withBasePath } from "@/lib/with-base-path";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -10,7 +11,7 @@ export function Footer() {
         {/* Brand + CTA */}
         <div>
           <Image
-            src="/logo_text.png"
+            src={withBasePath("/logo_text.png")}
             alt="Australian Drone Solutions"
             width={120}
             height={16}

@@ -1,15 +1,18 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
+import { withBasePath } from "@/lib/with-base-path";
 
 export default function Hero() {
+  const desktopHero = withBasePath("/Capture-2025-09-28-222601.png");
+  const mobileHero = withBasePath("/Capture-2025-09-28-225210.png");
   return (
     // Full‑bleed hero that extends under the sticky header
     <section className="relative hero-offset h-[88vh] min-h-[560px] overflow-hidden">
       {/* Background image for sm and up */}
       <div className="hidden sm:block absolute inset-0 w-full h-full">
         <Image
-          src="/Capture-2025-09-28-222601.png"
+          src={desktopHero}
           alt="Australian Drone Solutions"
           fill
           priority
@@ -20,7 +23,7 @@ export default function Hero() {
       {/* Background image for xs (below sm) */}
       <div className="block sm:hidden absolute inset-0 w-full h-full">
         <Image
-          src="/Capture-2025-09-28-225210.png"
+          src={mobileHero}
           alt="Australian Drone Solutions mobile"
           fill
           priority

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { withBasePath } from "@/lib/with-base-path";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -27,7 +28,7 @@ export function SiteHeader() {
           aria-label="Australian Drone Solutions home"
         >
           <Image
-            src="/logo_no_text.png"
+            src={withBasePath("/logo_no_text.png")}
             alt="Australian Drone Solutions logo"
             width={75}
             height={0}

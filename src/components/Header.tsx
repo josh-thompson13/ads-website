@@ -3,7 +3,8 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { withBasePath } from "@/lib/with-base-path";
 
 const nav = [
   { label: "Home", href: "/" },
@@ -17,6 +18,7 @@ export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const logoSrc = useMemo(() => withBasePath("/logo_no_text.png"), []);
 
   useEffect(() => {
     const mql = window.matchMedia("(min-width: 1024px)");
@@ -54,7 +56,7 @@ export function Header() {
           aria-label="Australian Drone Solutions home"
         >
           <Image
-            src="/logo_no_text.png"
+            src={logoSrc}
             alt="Australian Drone Solutions logo"
             width={75}
             height={32}

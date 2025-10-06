@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { withBasePath } from "@/lib/with-base-path";
 
 export const metadata: Metadata = {
   title: "Seeding & Spreading",
@@ -42,10 +43,12 @@ export default function SeedingSpreadingIndexPage() {
       <h1 className="text-3xl font-bold">Seeding & Spreading</h1>
       <p className="mt-3 text-neutral-700">Efficient, even distribution of seed and granular products across varied terrain.</p>
       <div className="mt-8 grid md:grid-cols-2 gap-6">
-        {items.map((i) => (
+        {items.map((i) => {
+          const imageSrc = withBasePath(i.image);
+          return (
           <div key={i.href} className="rounded-2xl border bg-white shadow-sm overflow-hidden">
             <div className="relative w-full aspect-[16/9]">
-              <Image src={i.image} alt="" fill className="object-cover" sizes="(min-width: 768px) 50vw, 100vw" />
+              <Image src={imageSrc} alt="" fill className="object-cover" sizes="(min-width: 768px) 50vw, 100vw" />
             </div>
             <div className="p-5">
               <h2 className="font-semibold text-lg">
@@ -57,7 +60,8 @@ export default function SeedingSpreadingIndexPage() {
               </div>
             </div>
           </div>
-        ))}
+        );
+        })}
       </div>
     </section>
   );

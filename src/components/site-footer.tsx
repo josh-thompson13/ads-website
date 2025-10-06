@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { withBasePath } from "@/lib/with-base-path";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -8,7 +9,7 @@ export function SiteFooter() {
       <div className="mx-auto px-4 py-10 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">
         <div className="flex flex-col items-center">
           <Image
-            src="/logo_text.png"
+            src={withBasePath("/logo_text.png")}
             alt="Australian Drone Solutions"
             width={100}
             height={50}

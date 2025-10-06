@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { withBasePath } from "@/lib/with-base-path";
 
 export function StatCard({
   title,
@@ -18,7 +19,7 @@ export function StatCard({
       <div className="flex gap-4 p-5 items-center">
         {imageSrc ? (
           <div className="relative h-14 w-20 flex-shrink-0 overflow-hidden rounded-xl">
-            <Image src={imageSrc} alt="stat image" fill className="object-cover" />
+            <Image src={withBasePath(imageSrc)} alt="stat image" fill className="object-cover" />
           </div>
         ) : null}
         <div>
@@ -30,4 +31,3 @@ export function StatCard({
     </div>
   );
 }
-

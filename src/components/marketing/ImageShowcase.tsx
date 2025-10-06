@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { withBasePath } from "@/lib/with-base-path";
 
 export function ImageShowcase({
   heroSrc = "/hero_spraying.jpg",
@@ -8,11 +9,13 @@ export function ImageShowcase({
   heroSrc?: string;
   thumbs?: string[];
 }) {
+  const hero = withBasePath(heroSrc);
+  const thumbImages = thumbs.map((src) => withBasePath(src));
   return (
     <div className="w-full">
       <div className="relative h-[380px] md:h-[460px] w-full">
         <Image
-          src={heroSrc}
+          src={hero}
           alt="Drone technology"
           fill
           className="object-cover"
@@ -38,7 +41,7 @@ export function ImageShowcase({
         </div>
       </div>
       <div className="bg-white p-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {thumbs.slice(0, 2).map((src) => (
+        {thumbImages.slice(0, 2).map((src) => (
           <div
             key={src}
             className="relative h-80 w-full overflow-hidden rounded-xl border"
