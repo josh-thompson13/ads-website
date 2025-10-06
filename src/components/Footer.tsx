@@ -10,14 +10,16 @@ export function Footer() {
       <div className="w-full px-6 py-10 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">
         {/* Brand + CTA */}
         <div>
-          <Image
-            src={withBasePath("/logo_text.png")}
-            alt="Australian Drone Solutions"
-            width={120}
-            height={16}
-            className="w-auto max-w-full"
-            priority
-          />
+          <div className="max-w-[140px]">
+            <Image
+              src={withBasePath("/logo_text.png")}
+              alt="Australian Drone Solutions"
+              width={120}
+              height={16}
+              className="h-auto w-full"
+              priority
+            />
+          </div>
           <p className="mt-3 text-sm text-ink/70">
             Practical drone services across South East QLD & Northern NSW.
           </p>

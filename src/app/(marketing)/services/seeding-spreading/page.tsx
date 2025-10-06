@@ -21,7 +21,7 @@ const items = [
     title: "Revegetation Projects",
     href: "/services/seeding-spreading/revegetation-projects",
     desc: "Seed spreading for rehabilitation and erosion control.",
-    image: "/Seeding/Revegation.png",
+    image: "/Seeding/Revegetation.png",
   },
   {
     title: "Cover Crops",
