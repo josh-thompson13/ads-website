@@ -268,7 +268,7 @@ export default function HomePage() {
               Targeted herbicide application that reduces waste and overspray.
             </FeatureCard>
             <FeatureCard
-              title="Mosquito Control"
+              title="Pest Control"
               href="/contact"
               ctaLabel="Ask us about it"
               icon={
