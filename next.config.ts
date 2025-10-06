@@ -20,6 +20,9 @@ const nextConfig: NextConfig = {
         output: "export",
       }
     : {}),
+  env: {
+    NEXT_PUBLIC_BASE_PATH: isGitHubPages ? `/${repoName}` : "",
+  },
   images: {
     // Disable the image optimizer when exporting for static hosting
     unoptimized: isGitHubPages,
