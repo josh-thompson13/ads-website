@@ -128,8 +128,9 @@ export default function HomePage() {
           <h2 className="h2">Our Services</h2>
           <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <FeatureCard
-              title="Precision Spraying"
+              title="Aerial Spraying"
               href="/services/spraying"
+              ctaLabel="Learn more →"
               icon={
                 <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden>
                   <path
@@ -159,11 +160,12 @@ export default function HomePage() {
                 </svg>
               }
             >
-              Precise weed & pest control with less waste.
+              Targeted weed and pest control that reduces chemical use and saves valuable time.
             </FeatureCard>
             <FeatureCard
               title="Seeding & Spreading"
               href="/services/seeding-spreading"
+              ctaLabel="Learn more →"
               icon={
                 <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden>
                   <path
@@ -181,39 +183,12 @@ export default function HomePage() {
                 </svg>
               }
             >
-              Accurate seed, bait and granular application.
-            </FeatureCard>
-            {/** Surveying & Mapping features removed */}
-            <FeatureCard
-              title="Reliable Scheduling"
-              href="/contact"
-              ctaLabel="Ask us about it"
-              icon={
-                <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden>
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="9"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    fill="none"
-                  />
-                  <path
-                    d="M12 7v6l4 2"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    fill="none"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              }
-            >
-              On‑time service built around your season.
+              Precision aerial application for seed, bait, and granules — consistent coverage with less waste.
             </FeatureCard>
             <FeatureCard
-              title="Compliance & Safety"
+              title="Compliance & Reliability"
               href="/contact"
-              ctaLabel="Ask us about it"
+              ctaLabel="Ask us about it →"
               icon={
                 <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden>
                   <path
@@ -233,94 +208,7 @@ export default function HomePage() {
                 </svg>
               }
             >
-              CASA‑compliant operations you can rely on.
-            </FeatureCard>
-            <FeatureCard
-              title="Weed Control"
-              href="/contact"
-              ctaLabel="Ask us about it"
-              icon={
-                <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden>
-                  <path
-                    d="M12 2v20"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    fill="none"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M8 10c2 0 3-2 4-3 1 1 2 3 4 3"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    fill="none"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M7 15c2 0 3-1 5-1s3 1 5 1"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    fill="none"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              }
-            >
-              Targeted herbicide application that reduces waste and overspray.
-            </FeatureCard>
-            <FeatureCard
-              title="Pest Control"
-              href="/contact"
-              ctaLabel="Ask us about it"
-              icon={
-                <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden>
-                  <path
-                    d="M8 9a4 4 0 0 1 8 0v6a4 4 0 0 1-8 0V9Z"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    fill="none"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M12 5v14"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    fill="none"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M5 11h4M5 15h4"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    fill="none"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M19 11h-4M19 15h-4"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    fill="none"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M9 5 7.5 3.5"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    fill="none"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M15 5 16.5 3.5"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    fill="none"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              }
-            >
-              Precise treatments for public spaces and properties.
+              CASA-certified operations and on-time service you can count on, every season.
             </FeatureCard>
           </div>
         </div>
