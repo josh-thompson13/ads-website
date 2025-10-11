@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Service Area",
@@ -28,9 +27,9 @@ export default function ServiceAreaPage() {
       </p>
       <p className="mt-4">
         Outside the area?{" "}
-        <Link className="text-secondary-hover hover:underline" href="/contact">
+        <a className="text-secondary-hover hover:underline" href="/contact">
           Ask us
-        </Link>
+        </a>
         .
       </p>
     </section>
