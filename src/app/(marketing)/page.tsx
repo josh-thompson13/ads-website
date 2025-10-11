@@ -8,14 +8,14 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title:
-    "Drone spraying, mapping and surveying for farms, golf courses & councils across SE QLD & Northern NSW",
+    "Drone spraying and surveying for farms, golf courses & councils across SE QLD & Northern NSW",
   description:
-    "Drone spraying, mosquito control, seeding, mapping and surveying for farms, golf courses, councils and worksites across South East QLD & Northern NSW. Licensed and on time.",
+    "Drone spraying, mosquito control, seeding, and surveying for farms, golf courses, councils and worksites across South East QLD & Northern NSW. Licensed and on time.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Drone spraying, mapping & surveying | ADS",
+    title: "Drone spraying & surveying | ADS",
     description:
-      "Spraying, mosquito control, seeding, mapping and surveying across SE QLD & Northern NSW.",
+      "Spraying, mosquito control, seeding, and surveying across SE QLD & Northern NSW.",
     url: "/",
   },
 };
@@ -125,7 +125,7 @@ export default function HomePage() {
       {/* Feature dark section */}
       <section id="services" className="bg-[#0b1220] text-white py-16">
         <div className="max-w-6xl mx-auto px-4 md:px-6">
-          <h2 className="h2">Services That Deliver Outcomes</h2>
+          <h2 className="h2">Our Services</h2>
           <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <FeatureCard
               title="Precision Spraying"

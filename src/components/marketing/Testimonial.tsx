@@ -2,7 +2,7 @@ export function Testimonial() {
   return (
     <section className="mx-auto max-w-3xl text-center">
       <p className="text-xl md:text-2xl leading-relaxed">
-        Before working with ADS, scheduling and costs were unpredictable. Now, with drone application and mapping, jobs are completed faster, more consistently, and at a lower overall cost than traditional methods.
+        Before working with ADS, scheduling and costs were unpredictable. Now, with targeted drone application, jobs are completed faster, more consistently, and at a lower overall cost than traditional methods.
       </p>
       <div className="mt-6 flex items-center justify-center gap-6">
         {[1, 2, 3, 4].map((i) => (

@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
+import { withBasePath } from "@/lib/with-base-path";
 import Image from "next/image";
 import Link from "next/link";
-import { withBasePath } from "@/lib/with-base-path";
 
 export default function Hero() {
   const desktopHero = withBasePath("/Capture-2025-09-28-222601.png");
@@ -47,8 +47,8 @@ export default function Hero() {
                 Smarter Spraying, Seeding & Mapping for QLD & NSW
               </h1>
               <p className="mt-3 text-white/90 drop-shadow-[0_1px_1px_rgba(0,0,0,0.35)]">
-                CASA-compliant drone operations that save time, reduce waste,
-                and deliver consistent results.
+                Precision from above — time saved, waste reduced, results
+                delivered.
               </p>
               <div className="mt-6 flex gap-3">
                 <Link href="/contact">
