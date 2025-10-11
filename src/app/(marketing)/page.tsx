@@ -217,27 +217,26 @@ export default function HomePage() {
       <section className="container mx-auto px-6 py-16">
         <h2 className="h2">Proven Results in the Field</h2>
         <p className="lead mt-3 max-w-2xl">
-          Real outcomes from real jobs. Faster coverage, reduced waste, better
-          consistency.
+          Real outcomes from real jobs across QLD & NSW—consistent coverage with less disruption.
         </p>
         <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           <CaseStudyCard
             image="/Drone_Golf_Course.png"
             sector="Golf Course"
-            headline="40% faster coverage"
-            blurb="Uniform application across fairways and greens with minimal disruption."
+            headline="Every green, perfectly even"
+            blurb="Smooth aerial coverage leaves no tyre marks, no patchiness—just clean, consistent results."
           />
           <CaseStudyCard
             image="/Drone_Spraying_Paddock.png"
             sector="Cropping Farm"
-            headline="30% less chemical use"
-            blurb="Targeted weed control reduced overspray and saved input costs."
+            headline="Spraying smarter, not heavier"
+            blurb="Precision targeting protects the crop, saves product, and improves every harvest."
           />
           <CaseStudyCard
             image="/Drone_Spraying.png"
             sector="Council"
-            headline="50ha treated efficiently"
-            blurb="Coordinated operations across reserves with verifiable coverage."
+            headline="Efficiency that scales"
+            blurb="Large-area treatments done safely, accurately, and fully documented for compliance."
           />
         </div>
       </section>
