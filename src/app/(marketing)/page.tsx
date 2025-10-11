@@ -55,8 +55,8 @@ export default function HomePage() {
                 />
               </svg>
             }
-            title="CASA Licensed"
-            subtitle="RPAS compliant operations"
+            title="CASA Qualified Crews"
+            subtitle="Licensed pilots fly every mission to CASA requirements."
           />
           <StatCard
             icon={
@@ -70,8 +70,8 @@ export default function HomePage() {
                 />
               </svg>
             }
-            title="30% Less Chemical Use"
-            subtitle="Typical with targeted spraying"
+            title="Sharper Chemical Use"
+            subtitle="Precision spraying hits the target while trimming inputs."
           />
           <StatCard
             icon={
@@ -93,8 +93,8 @@ export default function HomePage() {
                 />
               </svg>
             }
-            title="SE QLD & Northern NSW"
-            subtitle="Local, on-time service"
+            title="Qld NSW Coverage"
+            subtitle="We mobilise fast across Southeast Queensland and northern NSW."
           />
           <StatCard
             icon={
@@ -117,8 +117,8 @@ export default function HomePage() {
                 />
               </svg>
             }
-            title="Trusted by Farmers & Councils"
-            subtitle="Golf courses & public land"
+            title="Trusted Field Partner"
+            subtitle="Growers, councils, and greenkeepers rely on proven results."
           />
         </div>
       </section>
