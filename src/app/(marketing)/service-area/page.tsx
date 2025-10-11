@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoogleMapEmbed } from "@/components/GoogleMapEmbed";
 
 export const metadata: Metadata = {
   title: "Service Area",
@@ -12,12 +13,11 @@ export default function ServiceAreaPage() {
     <section className="mx-auto max-w-6xl px-4 py-10">
       <h1 className="text-3xl font-bold">Service Area</h1>
       <div className="mt-6 rounded-2xl overflow-hidden border border-neutral-200">
-        <iframe
+        <GoogleMapEmbed
           src="https://www.google.com/maps/d/embed?mid=11NgVseLwN61QnAtteZmd9wM1bZf_5R8&ehbc=2E312F&noprof=1"
-          width="640"
-          height="480"
+          height={480}
           className="w-full"
-          style={{ border: 0 }}
+          title="Service area coverage map"
         />
       </div>
       <h2 className="mt-8 text-xl font-semibold">Areas we service</h2>
