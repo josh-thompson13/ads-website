@@ -56,7 +56,7 @@ export default function HomePage() {
               </svg>
             }
             title="CASA Qualified Crews"
-            subtitle="Licensed pilots fly every mission to CASA requirements."
+            subtitle="CASA-approved operations, every flight verified and logged."
           />
           <StatCard
             icon={
@@ -118,7 +118,7 @@ export default function HomePage() {
               </svg>
             }
             title="Trusted Field Partner"
-            subtitle="Growers, councils, and greenkeepers rely on proven results."
+            subtitle="Preferred by councils, golf courses, and property managers."
           />
         </div>
       </section>
