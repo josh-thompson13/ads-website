@@ -34,6 +34,8 @@ jobs:
         env:
           # Enable GitHub Pages mode in next.config.ts
           GITHUB_PAGES: "true"
+          # Custom domain served from repository root, so no base path prefix
+          NEXT_BASE_PATH: ""
           # Optional analytics/domain envs can be added here if needed
         run: |
           npx next build
