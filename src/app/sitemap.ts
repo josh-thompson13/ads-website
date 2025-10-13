@@ -24,7 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/services/seeding-spreading/revegetation-projects',
     '/services/seeding-spreading/cover-crops',
     '/services/seeding-spreading/granular-application',
-    // Surveying & Mapping removed
+    // Service area and general pages
     '/service-area',
     '/gallery',
     '/about',

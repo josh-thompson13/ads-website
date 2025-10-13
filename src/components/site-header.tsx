@@ -51,7 +51,6 @@ export function SiteHeader() {
           <Link href="/services/seeding-spreading" className="hover:text-secondary-hover">
             Seeding & Spreading
           </Link>
-          {/** Mapping removed */}
           <Link href="/service-area" className="hover:text-secondary-hover">
             Service Area
           </Link>
@@ -142,7 +141,6 @@ export function SiteHeader() {
                     Seeding & Spreading
                   </Link>
                 </li>
-                {/** Mapping removed */}
                 <li>
                   <Link
                     href="/service-area"

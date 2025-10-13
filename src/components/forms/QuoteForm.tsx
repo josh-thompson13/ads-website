@@ -14,7 +14,7 @@ const services = [
   "Crop Spraying",
   "Fire Ant Eradication",
   "Seeding & Spreading",
-  "Surveying & Mapping",
+  "Surveying",
   "General Enquiry",
 ];
 
@@ -27,7 +27,7 @@ const quoteSchema = z.object({
     "Crop Spraying",
     "Fire Ant Eradication",
     "Seeding & Spreading",
-    "Surveying & Mapping",
+    "Surveying",
     "General Enquiry",
   ], {
     required_error: "Please choose a service",

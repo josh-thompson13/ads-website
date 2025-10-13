@@ -41,10 +41,10 @@ export default function Hero() {
           <div className="lg:col-span-7">
             <div className="max-w-xl text-white  rounded-2xl p-5 md:p-6">
               <span className="kicker">
-                Aerial Spraying • Mapping • Surveying
+                Aerial Spraying • Seeding • Surveying
               </span>
               <h1 className="h1 mt-4 text-white">
-                Smarter Spraying, Seeding & Mapping for QLD & NSW
+                Smarter Spraying & Seeding for QLD & NSW
               </h1>
               <p className="mt-3 text-white/90 drop-shadow-[0_1px_1px_rgba(0,0,0,0.35)]">
                 Precision from above — time saved, waste reduced, results
