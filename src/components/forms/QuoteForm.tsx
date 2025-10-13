@@ -36,10 +36,15 @@ const quoteSchema = z.object({
   location: z.string().min(2, "Enter suburb or postcode"),
   preferredDate: z.string().optional(),
   message: z.string().optional(),
-  botField: z.string().optional(),
-  accept: z.literal(true, {
-    errorMap: () => ({ message: "You must accept the terms" }),
-  }),
+  botcheck: z.string().optional(),
+  accept: z
+    .boolean({
+      required_error: "Please accept the terms and privacy notice.",
+      invalid_type_error: "Please accept the terms and privacy notice.",
+    })
+    .refine((value) => value === true, {
+      message: "Please accept the terms and privacy notice.",
+    }),
 });
 
 type QuoteFormData = z.infer<typeof quoteSchema>;
@@ -60,17 +65,27 @@ export function QuoteForm({ inline = false }: { inline?: boolean }) {
       setStatus("error");
       return;
     }
-    if (data.botField) return; // honeypot
+    if (data.botcheck) return; // honeypot
     try {
+      const payload: Record<string, string> = {
+        access_key: accessKey,
+        subject: "New Callback Request – ADS",
+        name: data.name,
+        from_name: data.name,
+        from_email: data.email,
+        reply_to: data.email,
+        email: data.email,
+        phone: data.phone,
+        service: data.service,
+        property_size: data.propertySize,
+        location: data.location,
+        preferred_date: data.preferredDate?.trim() || "Not specified",
+        message: data.message?.trim() || "No additional message provided.",
+      };
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          access_key: accessKey,
-          subject: "New Callback Request – ADS",
-          from_name: "Website",
-          ...data,
-        }),
+        body: JSON.stringify(payload),
       });
       if (!res.ok) throw new Error("Failed");
       const json = await res.json();
@@ -148,8 +163,8 @@ export function QuoteForm({ inline = false }: { inline?: boolean }) {
           <Input id="preferredDate" {...register("preferredDate")} placeholder="e.g. next 2–3 weeks" />
         </div>
         <div className="hidden">
-          <Label htmlFor="botField">Leave this empty</Label>
-          <Input id="botField" tabIndex={-1} aria-hidden {...register("botField")} />
+          <Label htmlFor="botcheck">Leave this empty</Label>
+          <Input id="botcheck" tabIndex={-1} aria-hidden {...register("botcheck")} />
         </div>
       </div>
       <div>
@@ -157,7 +172,7 @@ export function QuoteForm({ inline = false }: { inline?: boolean }) {
         <Textarea id="message" {...register("message")} placeholder="Tell us about your site and goals" />
       </div>
       <div className="flex items-start gap-2">
-        <input id="accept" type="checkbox" {...register("accept", { required: true })} className="mt-1" />
+        <input id="accept" type="checkbox" {...register("accept")} className="mt-1" />
         <Label htmlFor="accept" className="m-0">
           I agree to the terms and acknowledge the privacy notice.
         </Label>

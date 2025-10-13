@@ -1,6 +1,6 @@
+import { withBasePath } from "@/lib/with-base-path";
 import Image from "next/image";
 import Link from "next/link";
-import { withBasePath } from "@/lib/with-base-path";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -29,10 +29,10 @@ export function SiteFooter() {
             <li>
               Email:{" "}
               <a
-                href="mailto:hello@australiandronesolutions.com.au"
+                href="mailto:josh@australiandronesolutions.com.au"
                 className="hover:underline"
               >
-                hello@australiandronesolutions.com.au
+                josh@australiandronesolutions.com.au
               </a>
             </li>
             <li>Hours: Mon–Fri 7:00–17:00 AEST</li>

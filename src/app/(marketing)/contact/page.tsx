@@ -1,9 +1,10 @@
-import type { Metadata } from "next";
 import { QuoteForm } from "@/components/forms/QuoteForm";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Request a fast callback for drone services. Call, email, or book a site assessment.",
+  description:
+    "Request a fast callback for drone services. Call, email, or book a site assessment.",
   alternates: { canonical: "/contact" },
 };
 
@@ -17,14 +18,40 @@ export default function ContactPage() {
           <div className="rounded-2xl border p-5">
             <h2 className="text-xl font-semibold mb-2">Request a Callback</h2>
             <QuoteForm />
-            <p className="text-xs text-neutral-500 mt-3">We respect your privacy and only use your details to respond to your enquiry.</p>
+            <p className="text-xs text-neutral-500 mt-3">
+              We respect your privacy and only use your details to respond to
+              your enquiry.
+            </p>
           </div>
         </div>
         <aside className="space-y-2">
-          <p><strong>Phone:</strong> <a href="tel:+6104xxxxxxxx" className="text-secondary-hover hover:underline">+61 (0)4xx xxx xxx</a></p>
-          <p><strong>Email:</strong> <a href="mailto:hello@australiandronesolutions.com.au" className="text-secondary-hover hover:underline">hello@australiandronesolutions.com.au</a></p>
-          <p><strong>Region:</strong> South East QLD & Northern NSW</p>
-          <a className="inline-block mt-2 text-secondary-hover hover:underline" href="#">Book a site assessment</a>
+          <p>
+            <strong>Phone:</strong>{" "}
+            <a
+              href="tel:+6104xxxxxxxx"
+              className="text-secondary-hover hover:underline"
+            >
+              +61 (0)4xx xxx xxx
+            </a>
+          </p>
+          <p>
+            <strong>Email:</strong>{" "}
+            <a
+              href="mailto:josh@australiandronesolutions.com.au"
+              className="text-secondary-hover hover:underline"
+            >
+              josh@australiandronesolutions.com.au
+            </a>
+          </p>
+          <p>
+            <strong>Region:</strong> South East QLD & Northern NSW
+          </p>
+          <a
+            className="inline-block mt-2 text-secondary-hover hover:underline"
+            href="#"
+          >
+            Book a site assessment
+          </a>
         </aside>
       </div>
     </section>
