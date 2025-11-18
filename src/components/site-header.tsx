@@ -1,9 +1,9 @@
 "use client";
 import { Button } from "@/components/ui/button";
+import { withBasePath } from "@/lib/with-base-path";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { withBasePath } from "@/lib/with-base-path";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -45,13 +45,22 @@ export function SiteHeader() {
           <Link href="/" className="hover:text-secondary-hover">
             Home
           </Link>
-          <Link href="/services/spraying" className="hover:text-secondary-hover">
+          <Link
+            href="/services/spraying"
+            className="hover:text-secondary-hover"
+          >
             Spraying
           </Link>
-          <Link href="/services/spraying#pricing" className="hover:text-secondary-hover">
+          <Link
+            href="/pricing"
+            className="hover:text-secondary-hover"
+          >
             Pricing
           </Link>
-          <Link href="/services/seeding-spreading" className="hover:text-secondary-hover">
+          <Link
+            href="/services/seeding-spreading"
+            className="hover:text-secondary-hover"
+          >
             Seeding & Spreading
           </Link>
           <Link href="/service-area" className="hover:text-secondary-hover">
@@ -137,7 +146,7 @@ export function SiteHeader() {
                 </li>
                 <li>
                   <Link
-                    href="/services/spraying#pricing"
+                    href="/pricing"
                     className="block py-3 hover:text-secondary-hover"
                     onClick={() => setOpen(false)}
                   >

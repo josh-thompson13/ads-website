@@ -1,15 +1,17 @@
 "use client";
 import { Button } from "@/components/ui/button";
+import { withBasePath } from "@/lib/with-base-path";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
-import { withBasePath } from "@/lib/with-base-path";
 
 const nav = [
   { label: "Home", href: "/" },
   { label: "Spraying", href: "/services/spraying" },
+
   { label: "Seeding & Spreading", href: "/services/seeding-spreading" },
+  { label: "Pricing", href: "/pricing" },
   { label: "Service Area", href: "/service-area" },
   { label: "About Us", href: "/about" },
 ];
