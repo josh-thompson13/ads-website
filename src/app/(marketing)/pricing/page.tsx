@@ -31,18 +31,18 @@ const pricingTiers = [
 const highlights = [
   {
     title: "Hourly Rate",
-    value: "$250/hr + GST",
+    value: "$250/hr",
     body: "Labour-only rate covering the drone, CASA licensed pilot, equipment, flight planning and on-site operations. Clients supply the chemicals they prefer.",
   },
   {
     title: "Minimum Charge",
-    value: "$750 + GST",
-    body: "Equal to the first three hours on site, including setup and flight time. Ensures travel and mobilisation are properly covered, even for smaller sites.",
+    value: "$750 minimum",
+    body: "Covers the first three on-site hours (setup, travel and flying) so smaller jobs remain viable.",
   },
   {
     title: "Travel",
     value: "Included within 1 hour",
-    body: "No travel fee for properties within one hour of the Gold Coast. For locations beyond this (if agreed), travel can be quoted separately.",
+    body: "No travel fee for properties within one hour of Mermaid Beach. For locations beyond this (if agreed), travel can be quoted separately.",
   },
 ];
 
@@ -55,7 +55,7 @@ const scopeChecklist = [
 
 const inclusions = [
   "CASA licensed remote pilot in command.",
-  "DJI Agras T40 drone, batteries and smart charging.",
+  "DJI Agras T50 drone, batteries and smart charging.",
   "Flight planning, log keeping and compliance paperwork.",
   "Liability cover and safety procedures for aerial spraying.",
 ];
@@ -73,8 +73,8 @@ export default function PricingPage() {
       <h1 className="mt-2 text-3xl font-bold sm:text-4xl">Pricing Guide</h1>
       <p className="mt-4 text-lg text-neutral-700">
         Fast, accurate aerial spraying for farms and acreage within one hour of
-        the Gold Coast. We operate on a simple hourly rate with a transparent
-        minimum and a clear process for estimating your total time on site.
+        Mermaid Beach. Pricing is time-based, so you only pay for the hours we
+        need on site.
       </p>
 
       <div className="mt-10 grid gap-6 md:grid-cols-3">
@@ -94,13 +94,10 @@ export default function PricingPage() {
 
       <div className="mt-12 grid gap-8 lg:grid-cols-[1.3fr_0.7fr]">
         <div className="rounded-3xl border bg-white p-6 shadow-sm">
-          <h2 className="text-2xl font-semibold">
-            Typical Job Ranges (Guide Only)
-          </h2>
+          <h2 className="text-2xl font-semibold">Typical Job Ranges</h2>
           <p className="mt-3 text-neutral-700">
-            Every property has different access, terrain and spray volumes, but
-            most agricultural spraying projects fall within these ranges (all
-            prices exclude GST):
+            Access, terrain and spray volume change how long we’re on site, but
+            most projects land within these guide brackets:
           </p>
           <div className="mt-6 space-y-5">
             {pricingTiers.map((tier) => (
@@ -117,9 +114,8 @@ export default function PricingPage() {
             ))}
           </div>
           <p className="mt-6 text-sm text-neutral-600">
-            These figures are indicative only. Final pricing is calculated on
-            the actual time required on site at $250/hr + GST, subject to the
-            $750 + GST minimum charge.
+            These figures are indicative only. Final pricing depends on the
+            actual hours on site at $250/hr with a $750 minimum.
           </p>
         </div>
         <div className="rounded-3xl border bg-secondary/5 p-6">
@@ -146,15 +142,12 @@ export default function PricingPage() {
 
       <div className="mt-12 grid gap-8 lg:grid-cols-2">
         <div className="rounded-3xl border bg-white p-6 shadow-sm">
-          <h2 className="text-2xl font-semibold">Need A Detailed Estimate?</h2>
+          <h2 className="text-2xl font-semibold">Need a Quick Estimate?</h2>
           <p className="mt-3 text-neutral-700">
-            Share the essentials about your property and what needs spraying.
-            We’ll respond quickly with an obligation-free assessment outlining
-            the expected hours on site, travel (if required) and next steps.
+            Send the essentials about your property and target areas and we’ll
+            confirm the expected hours on site plus any travel component.
           </p>
-          <p className="mt-4 font-semibold text-neutral-900">
-            Information to include:
-          </p>
+          <p className="mt-4 font-semibold text-neutral-900">Include:</p>
           <ul className="mt-2 list-disc space-y-2 pl-5 text-neutral-700">
             {requestFields.map((item) => (
               <li key={item}>{item}</li>
@@ -165,10 +158,9 @@ export default function PricingPage() {
           <div>
             <h2 className="text-2xl font-semibold">Ready To Schedule?</h2>
             <p className="mt-3 text-neutral-700">
-              We prioritise farms and acreage within one hour of the Gold Coast,
-              but can consider projects further afield on request. Let us know
-              your timing and any constraints so we can align the flight plan
-              with your agronomy schedule.
+              We prioritise farms within one hour of Mermaid Beach, but can look
+              at projects further afield on request. Let us know your timing so
+              we can lock the flight plan around your agronomy schedule.
             </p>
           </div>
           <Link href="/contact" className="mt-6 inline-flex">
