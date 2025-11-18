@@ -48,6 +48,9 @@ export function SiteHeader() {
           <Link href="/services/spraying" className="hover:text-secondary-hover">
             Spraying
           </Link>
+          <Link href="/services/spraying#pricing" className="hover:text-secondary-hover">
+            Pricing
+          </Link>
           <Link href="/services/seeding-spreading" className="hover:text-secondary-hover">
             Seeding & Spreading
           </Link>
@@ -130,6 +133,15 @@ export function SiteHeader() {
                     onClick={() => setOpen(false)}
                   >
                     Spraying
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/services/spraying#pricing"
+                    className="block py-3 hover:text-secondary-hover"
+                    onClick={() => setOpen(false)}
+                  >
+                    Pricing
                   </Link>
                 </li>
                 <li>
