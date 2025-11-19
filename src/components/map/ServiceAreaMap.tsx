@@ -1,4 +1,5 @@
 "use client";
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useRef, useState } from "react";
 
 export default function ServiceAreaMap() {
@@ -82,7 +83,7 @@ export default function ServiceAreaMap() {
 
     return () => {
       if (mapRef.current) {
-        try { mapRef.current.remove(); } catch {}
+        try { mapRef.current.remove(); } catch { }
         mapRef.current = null;
       }
     };

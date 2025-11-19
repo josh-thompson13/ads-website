@@ -29,11 +29,7 @@ const quoteSchema = z.object({
       "Fire Ant Eradication",
       "Seeding & Spreading",
       "Surveying",
-      "General Enquiry",
-    ],
-    {
-      required_error: "Please choose a service",
-    }
+    ]
   ),
   propertySize: z.string().min(1, "Please specify property size (e.g. ha)"),
   location: z.string().min(2, "Enter suburb or postcode"),
@@ -41,10 +37,7 @@ const quoteSchema = z.object({
   message: z.string().optional(),
   botcheck: z.string().optional(),
   accept: z
-    .boolean({
-      required_error: "Please accept the terms and privacy notice.",
-      invalid_type_error: "Please accept the terms and privacy notice.",
-    })
+    .boolean()
     .refine((value) => value === true, {
       message: "Please accept the terms and privacy notice.",
     }),

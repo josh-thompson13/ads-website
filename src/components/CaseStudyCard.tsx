@@ -1,12 +1,20 @@
 import { withBasePath } from "@/lib/with-base-path";
+import Image from "next/image";
 
 type Props = { image: string; sector: string; headline: string; blurb: string; href?: string };
 export default function CaseStudyCard({ image, sector, headline, blurb, href }: Props) {
   const imageSrc = withBasePath(image);
   return (
     <article className="rounded-2xl overflow-hidden bg-surface shadow-card hover:shadow-hover transition">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={imageSrc} alt={headline} className="w-full h-56 object-cover" />
+      <div className="relative w-full h-56">
+        <Image
+          src={imageSrc}
+          alt={headline}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
+      </div>
       <div className="p-5 md:p-6">
         <span className="kicker">{sector}</span>
         <h3 className="mt-3 font-semibold text-xl">{headline}</h3>

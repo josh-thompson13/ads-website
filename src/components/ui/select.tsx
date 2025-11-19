@@ -4,9 +4,7 @@ function cn(...classes: Array<string | false | null | undefined>) {
   return classes.filter(Boolean).join(" ");
 }
 
-export interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {}
-
-export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(function Select(
+export const Select = React.forwardRef<HTMLSelectElement, React.SelectHTMLAttributes<HTMLSelectElement>>(function Select(
   { className, children, ...props },
   ref
 ) {

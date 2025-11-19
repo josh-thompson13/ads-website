@@ -4,8 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Hero() {
-  const desktopHero = withBasePath("/Capture-2025-09-28-222601.png");
-  const mobileHero = withBasePath("/Capture-2025-09-28-225210.png");
+  const desktopHero = withBasePath("/hero-desktop.webp");
+  const mobileHero = withBasePath("/hero-mobile.webp");
   return (
     // Full‑bleed hero that extends under the sticky header
     <section className="relative hero-offset h-[88vh] min-h-[560px] overflow-hidden">

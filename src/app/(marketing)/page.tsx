@@ -221,19 +221,19 @@ export default function HomePage() {
         </p>
         <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           <CaseStudyCard
-            image="/Drone_Golf_Course.png"
+            image="/case-study-golf.webp"
             sector="Golf Course"
             headline="Every green, perfectly even"
             blurb="Smooth aerial coverage leaves no tyre marks, no patchiness—just clean, consistent results."
           />
           <CaseStudyCard
-            image="/Drone_Spraying_Paddock.png"
+            image="/case-study-cropping.webp"
             sector="Cropping Farm"
             headline="Spraying smarter, not heavier"
             blurb="Precision targeting protects the crop, saves product, and improves every harvest."
           />
           <CaseStudyCard
-            image="/Drone_Spraying.png"
+            image="/case-study-council.webp"
             sector="Council"
             headline="Efficiency that scales"
             blurb="Large-area treatments done safely, accurately, and fully documented for compliance."

@@ -3,8 +3,9 @@ import type { NextConfig } from "next";
 let withContentlayer: (config: NextConfig) => NextConfig = (c) => c;
 try {
   // eslint-disable-next-line @typescript-eslint/no-var-requires
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   withContentlayer = require("next-contentlayer").withContentlayer;
-} catch {}
+} catch { }
 
 // GitHub Pages configuration
 const isStaticExport = process.env.GITHUB_PAGES === "true" || process.env.STATIC_EXPORT === "true";
@@ -14,9 +15,9 @@ const nextConfig: NextConfig = {
   // For static hosting targets (GitHub Pages, S3, etc.) emit an exported bundle
   ...(isStaticExport
     ? {
-        trailingSlash: true,
-        output: "export",
-      }
+      trailingSlash: true,
+      output: "export",
+    }
     : {}),
   // Allow overriding the base path / asset prefix via env so custom domains work
   ...(() => {
