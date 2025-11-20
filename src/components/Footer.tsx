@@ -49,8 +49,8 @@ export function Footer() {
           <ul className="mt-3 space-y-2 text-sm text-ink/80 break-words">
             <li>
               Phone:{" "}
-              <a href="tel:+61" className="hover:underline">
-                +61 (0)4xx xxx xxx
+              <a href="tel:+61 406 371 630" className="hover:underline">
+                +61 406 371 630
               </a>
             </li>
             <li>

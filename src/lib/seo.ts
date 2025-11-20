@@ -4,7 +4,7 @@ export function localBusinessJsonLd() {
     "@type": "LocalBusiness",
     name: "Australian Drone Solutions",
     url: "https://www.australiandronesolutions.com.au",
-    telephone: "+61 4xx xxx xxx",
+    telephone: "+61 406 371 630",
     areaServed: [
       "Gold Coast",
       "Brisbane",

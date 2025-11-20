@@ -28,10 +28,10 @@ export default function ContactPage() {
           <p>
             <strong>Phone:</strong>{" "}
             <a
-              href="tel:+6104xxxxxxxx"
+              href="tel:+61 406 371 630"
               className="text-secondary-hover hover:underline"
             >
-              +61 (0)4xx xxx xxx
+              +61 406 371 630
             </a>
           </p>
           <p>

@@ -149,7 +149,7 @@ export function QuoteForm({ inline = false }: { inline?: boolean }) {
             id="phone"
             aria-invalid={!!errors.phone}
             {...register("phone")}
-            placeholder="04xx xxx xxx"
+            placeholder="0406 371 630"
           />
           {errors.phone && (
             <p className="text-sm text-red-600 mt-1">{errors.phone.message}</p>

@@ -22,8 +22,8 @@ export function SiteFooter() {
           <ul className="text-sm space-y-1">
             <li>
               Phone:{" "}
-              <a href="tel:+6104xxxxxxxx" className="hover:underline">
-                +61 (0)4xx xxx xxx
+              <a href="tel:+61 406 371 630" className="hover:underline">
+                +61 406 371 630
               </a>
             </li>
             <li>

@@ -5,8 +5,8 @@ export function TopBar() {
     <div className="w-full text-sm">
       <div className="mx-auto max-w-6xl px-4 flex items-center justify-between py-2 text-ink/80">
         <div className="flex items-center gap-4">
-          <a href="tel:+6104xxxxxxxx" className="hover:underline">
-            +61 (0)4xx xxx xxx
+          <a href="tel:+61 406 371 630" className="hover:underline">
+            +61 406 371 630
           </a>
           <a
             href="mailto:josh@australiandronesolutions.com.au"

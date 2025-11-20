@@ -10,7 +10,7 @@ export function CTA() {
         </div>
         <div className="flex gap-3">
           <Link href="/contact" className="px-5 py-3 rounded-2xl bg-primary text-white hover:bg-primary-600">Request a Callback</Link>
-          <a href="tel:+6104xxxxxxxx" className="px-5 py-3 rounded-2xl border border-ink/15">Call Us</a>
+          <a href="tel:+61 406 371 630" className="px-5 py-3 rounded-2xl border border-ink/15">Call Us</a>
         </div>
       </div>
     </section>

@@ -27,7 +27,7 @@ const items = [
   {
     title: "Pest Control (Insecticide)",
     href: "/services/spraying/pest-control",
-    desc: "Effective treatment for pests including mosquitoes, fire ants, and crop insects.",
+    desc: "Effective treatment for pests including mosquitoes, and crop insects.",
     image: "/Spraying/Mosquito.jpg",
   },
   {
@@ -47,30 +47,30 @@ export default function SprayingIndexPage() {
         {items.map((i, index) => {
           const imageSrc = withBasePath(i.image);
           return (
-          <div key={i.href} className="rounded-2xl border bg-white shadow-sm overflow-hidden">
-            <div className="relative w-full aspect-[16/9]">
-              <Image
-                src={imageSrc}
-                alt=""
-                fill
-                className="object-cover"
-                sizes="(min-width: 768px) 50vw, 100vw"
-                placeholder="blur"
-                blurDataURL={genericBlurDataURL}
-                priority={index < 2}
-              />
-            </div>
-            <div className="p-5">
-              <h2 className="font-semibold text-lg">
-                <Link href={i.href} className="hover:underline">{i.title}</Link>
-              </h2>
-              <p className="text-sm text-neutral-700 mt-2">{i.desc}</p>
-              <div className="mt-4">
-                <Link href="/contact"><Button size="sm">Request a Callback</Button></Link>
+            <div key={i.href} className="rounded-2xl border bg-white shadow-sm overflow-hidden">
+              <div className="relative w-full aspect-[16/9]">
+                <Image
+                  src={imageSrc}
+                  alt=""
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  placeholder="blur"
+                  blurDataURL={genericBlurDataURL}
+                  priority={index < 2}
+                />
+              </div>
+              <div className="p-5">
+                <h2 className="font-semibold text-lg">
+                  <Link href={i.href} className="hover:underline">{i.title}</Link>
+                </h2>
+                <p className="text-sm text-neutral-700 mt-2">{i.desc}</p>
+                <div className="mt-4">
+                  <Link href="/contact"><Button size="sm">Request a Callback</Button></Link>
+                </div>
               </div>
             </div>
-          </div>
-        );
+          );
         })}
       </div>
       <div className="mt-16 rounded-3xl border bg-white p-8 shadow-sm">

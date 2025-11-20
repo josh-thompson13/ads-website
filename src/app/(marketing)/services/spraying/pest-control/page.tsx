@@ -5,7 +5,7 @@ import { serviceJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Pest Control (Insecticide Spraying)",
-  description: "Effective treatment for pests including mosquitoes, fire ants, and crop insects.",
+  description: "Effective treatment for pests including mosquitoes, and crop insects.",
   alternates: { canonical: "/services/spraying/pest-control" },
 };
 
@@ -16,7 +16,7 @@ export default function PestControlPage() {
       <div className="grid lg:grid-cols-3 gap-10">
         <article className="lg:col-span-2">
           <h1 className="text-3xl font-bold">Pest Control (Insecticide)</h1>
-          <p className="mt-3 text-neutral-700">Effective treatment for pests including mosquitoes, fire ants, and crop insects.</p>
+          <p className="mt-3 text-neutral-700">Effective treatment for pests including mosquitoes, and crop insects.</p>
           <h2 className="mt-8 text-xl font-semibold">Typical targets</h2>
           <ul className="list-disc pl-5 mt-2">
             <li>Mosquito control</li>

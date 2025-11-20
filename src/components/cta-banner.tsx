@@ -21,7 +21,7 @@ export function CtaBanner({
           <Link href={href}>
             <Button variant="primary" size="lg">Request a Callback</Button>
           </Link>
-          <a href="tel:+6104xxxxxxxx">
+          <a href="tel:+61 406 371 630">
             <Button variant="outline" size="lg" className="bg-transparent text-ink border-ink/15 hover:bg-black/5">
               Call Us Today
             </Button>
