@@ -28,18 +28,13 @@ const quoteSchema = z.object({
     .string()
     .trim()
     .min(1, "Please add the approximate area in hectares or acres"),
-  location: z
-    .string()
-    .trim()
-    .min(2, "Enter suburb or area name"),
+  location: z.string().trim().min(2, "Enter suburb or area name"),
   sprayRate: z.string().trim().optional(),
   message: z.string().optional(),
   botcheck: z.string().optional(),
-  accept: z
-    .boolean()
-    .refine((value) => value === true, {
-      message: "Please accept the terms and privacy notice.",
-    }),
+  accept: z.boolean().refine((value) => value === true, {
+    message: "Please accept the terms and privacy notice.",
+  }),
 });
 
 type QuoteFormData = z.infer<typeof quoteSchema>;
@@ -54,6 +49,8 @@ export function QuoteForm({ inline = false }: { inline?: boolean }) {
 
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+
+  //
 
   async function onSubmit(data: QuoteFormData) {
     if (!accessKey) {
@@ -185,7 +182,9 @@ export function QuoteForm({ inline = false }: { inline?: boolean }) {
           )}
         </div>
         <div>
-          <Label htmlFor="sprayRate">Spray rate you'd like applied (L/ha)</Label>
+          <Label htmlFor="sprayRate">
+            Spray rate you'd like applied (L/ha)
+          </Label>
           <Input
             id="sprayRate"
             aria-invalid={!!errors.sprayRate}
@@ -212,9 +211,7 @@ export function QuoteForm({ inline = false }: { inline?: boolean }) {
           ))}
         </Select>
         {errors.service && (
-          <p className="text-sm text-red-600 mt-1">
-            {errors.service.message}
-          </p>
+          <p className="text-sm text-red-600 mt-1">{errors.service.message}</p>
         )}
       </div>
       <div>
