@@ -3,82 +3,113 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Pricing Guide",
+  title: "Drone Spraying Pricing",
   description:
-    "Transparent hourly pricing for agricultural drone spraying with minimum charge, travel policy and job ranges across South East QLD & Northern NSW.",
+    "Simple, transparent pricing for agricultural drone spraying – per-hectare broadacre rates, hourly spot spraying and small-acreage packages across South East QLD & Northern NSW.",
   alternates: { canonical: "/pricing" },
 };
+
+const serviceHighlights = [
+  {
+    title: "Broadacre spraying",
+    value: "From $50/ha",
+    body: "Per-hectare pricing for paddocks, pasture and cropping blocks. Discounts available for 10+ hectares and repeat work.",
+  },
+  {
+    title: "Spot & problem weed spraying",
+    value: "From $280/hr",
+    body: "Hourly rate for targeted work like lantana, blackberry, fireweed and wet or steep areas. Two-hour minimum applies.",
+  },
+  {
+    title: "Small acreage & hobby farms",
+    value: "From $560",
+    body: "Simple minimum call-out for lifestyle blocks and smaller orchards, covering around 1–10 acres depending on access and terrain.",
+  },
+];
 
 const pricingTiers = [
   {
     title: "Small acreage / spot spraying / hobby farms",
-    context: "Fence lines, small paddocks, steep or wet areas, small orchards",
-    price: "$750 – $1,000 total",
+    context:
+      "Fence lines, small paddocks, steep or wet areas, small orchards and lifestyle properties.",
+    price:
+      "Most small jobs fall between $560 and $850 once access, terrain and spray volume are factored in.",
   },
   {
     title: "Medium farms / multiple paddocks",
     context:
-      "Pasture spraying, fungicide/insecticide runs, several paddocks or blocks",
-    price: "$1,000 – $1,500 total",
+      "Pasture spraying, fungicide/insecticide runs, several paddocks or blocks in one visit.",
+    price:
+      "Broadacre spraying is usually $50–$70 per hectare depending on water rate, paddock layout and access.",
   },
   {
     title: "Larger jobs / high volume spraying",
-    context: "Broadacre-style work, large orchards, multiple chemical runs",
-    price: "From $1,500+ total",
+    context:
+      "Broadacre-style work, large orchards or multiple chemical runs over bigger areas.",
+    price:
+      "For 50+ hectares, rates usually sit between $48 and $60 per hectare with volume discounts for larger programs.",
   },
 ];
 
 const highlights = [
   {
-    title: "Hourly Rate",
-    value: "$250/hr",
-    body: "Labour-only rate covering the drone, CASA licensed pilot, equipment, flight planning and on-site operations. Clients supply the chemicals they prefer.",
+    title: "How pricing works",
+    value: "Per-hectare & hourly",
+    body: "Broadacre work is priced per hectare, while spot spraying and tricky areas are hourly. Once we've reviewed your property and spray rates, you'll receive a clear written estimate.",
   },
   {
-    title: "Minimum Charge",
-    value: "$750 minimum",
-    body: "Covers the first three on-site hours (setup, travel and flying) so smaller jobs remain viable.",
+    title: "Minimum job size",
+    value: "$560 minimum",
+    body: "A two-hour minimum applies to make small and spot jobs viable. We'll confirm how this applies to your property when we scope the work.",
   },
   {
     title: "Travel",
-    value: "Included within 1 hour",
-    body: "No travel fee for properties within one hour of Mermaid Beach. For locations beyond this (if agreed), travel can be quoted separately.",
+    value: "Local first, then by quote",
+    body: "We prioritise properties within roughly an hour of Mermaid Beach. Any travel component for jobs further afield is discussed and priced upfront.",
   },
 ];
 
 const scopeChecklist = [
-  "Assess access, terrain, buffer zones and surrounding sensitivity.",
-  "Plan the litres/hectare or litres/minute required per run.",
+  "Review your map, target areas and any sensitive zones.",
+  "Confirm the spray rate (litres per hectare) you want applied.",
+  "Confirm the exact chemical(s) you choose to supply.",
   "Estimate drone flight hours, refill cycles and battery swaps.",
-  "Provide a written hourly estimate before confirming the booking.",
+  "Provide a written per-hectare and/or hourly estimate before confirming the booking.",
 ];
 
 const inclusions = [
   "CASA licensed remote pilot in command.",
   "DJI Agras T50 drone, batteries and smart charging.",
   "Flight planning, log keeping and compliance paperwork.",
-  "Liability cover and safety procedures for aerial spraying.",
+  "Chemical mixing and refilling based on your requested rates.",
+  "Optional chemical supply for cost +20% (payment required upfront).",
 ];
 
 const requestFields = [
   "Name and phone number",
   "Email address",
   "Property location (suburb/area)",
-  "Brief description of what needs spraying",
+  "Approximate area to spray (hectares or acres)",
+  "Chemical you want used (or options you're considering)",
+  "Spray rate you'd like applied (L/ha)",
 ];
 
 export default function PricingPage() {
   return (
     <section className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
-      <h1 className="mt-2 text-3xl font-bold sm:text-4xl">Pricing Guide</h1>
+      <h1 className="mt-2 text-3xl font-bold sm:text-4xl">
+        Drone Spraying Pricing
+      </h1>
       <p className="mt-4 text-lg text-neutral-700">
-        Fast, accurate aerial spraying for farms and acreage within one hour of
-        Mermaid Beach. Pricing is time-based, so you only pay for the hours we
-        need on site.
+        Professional aerial spraying for farms and acreage within roughly one
+        hour of Mermaid Beach, with work also available further afield on
+        request. Broadacre work is priced per hectare, while spot spraying and
+        tricky areas are hourly. You’ll always know the numbers before we fly.
       </p>
 
+      {/* Top service-highlight cards */}
       <div className="mt-10 grid gap-6 md:grid-cols-3">
-        {highlights.map((item) => (
+        {serviceHighlights.map((item) => (
           <div
             key={item.title}
             className="rounded-3xl border bg-white/90 p-6 shadow-sm"
@@ -92,12 +123,14 @@ export default function PricingPage() {
         ))}
       </div>
 
+      {/* Job ranges + what to expect */}
       <div className="mt-12 grid gap-8 lg:grid-cols-[1.3fr_0.7fr]">
         <div className="rounded-3xl border bg-white p-6 shadow-sm">
           <h2 className="text-2xl font-semibold">Typical Job Ranges</h2>
           <p className="mt-3 text-neutral-700">
-            Access, terrain and spray volume change how long we’re on site, but
-            most projects land within these guide brackets:
+            Every property is different, but most projects fall into the guide
+            brackets below. Once we’ve reviewed your spray rate, chemical choice
+            and paddock layout, we’ll confirm a tailored quote.
           </p>
           <div className="mt-6 space-y-5">
             {pricingTiers.map((tier) => (
@@ -107,28 +140,31 @@ export default function PricingPage() {
               >
                 <p className="font-semibold text-neutral-900">{tier.title}</p>
                 <p className="mt-1 text-sm text-neutral-600">{tier.context}</p>
-                <p className="mt-3 text-lg font-bold text-secondary">
+                <p className="mt-3 text-lg font-semibold text-secondary">
                   {tier.price}
                 </p>
               </div>
             ))}
           </div>
           <p className="mt-6 text-sm text-neutral-600">
-            These figures are indicative only. Final pricing depends on the
-            actual hours on site at $250/hr with a $750 minimum.
+            Final pricing is confirmed once we’ve reviewed your property,
+            checked access and buffers, and planned the spraying runs. You’ll
+            always receive a clear written estimate before we lock in a booking.
           </p>
         </div>
+
         <div className="rounded-3xl border bg-secondary/5 p-6">
           <h2 className="text-2xl font-semibold">What to Expect</h2>
           <p className="mt-3 text-neutral-700">
-            We scope every property before confirming a booking so there are no
-            surprises on the day.
+            Before we confirm a booking, we review your property details so the
+            plan and price are accurate.
           </p>
           <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-neutral-700">
             {scopeChecklist.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
+
           <p className="mt-6 font-semibold text-neutral-900">
             Included with every job:
           </p>
@@ -140,27 +176,30 @@ export default function PricingPage() {
         </div>
       </div>
 
+      {/* Estimate + CTA */}
       <div className="mt-12 grid gap-8 lg:grid-cols-2">
         <div className="rounded-3xl border bg-white p-6 shadow-sm">
           <h2 className="text-2xl font-semibold">Need a Quick Estimate?</h2>
           <p className="mt-3 text-neutral-700">
-            Send the essentials about your property and target areas and we’ll
-            confirm the expected hours on site plus any travel component.
+            Send through the basics and we’ll reply with a ballpark figure. If
+            it looks like a good fit, we’ll tighten it into a firm quote before
+            scheduling.
           </p>
           <p className="mt-4 font-semibold text-neutral-900">Include:</p>
-          <ul className="mt-2 list-disc space-y-2 pl-5 text-neutral-700">
+          <ul className="mt-2 list-disc space-y-2 pl-5 text-neutral-700 text-sm">
             {requestFields.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
         </div>
-        <div className="rounded-3xl border bg-secondary/10 p-6 flex flex-col justify-between">
+
+        <div className="flex flex-col justify-between rounded-3xl border bg-secondary/10 p-6">
           <div>
             <h2 className="text-2xl font-semibold">Ready To Schedule?</h2>
             <p className="mt-3 text-neutral-700">
-              We prioritise farms within one hour of Mermaid Beach, but can look
-              at projects further afield on request. Let us know your timing so
-              we can lock the flight plan around your agronomy schedule.
+              We prioritise farms within roughly one hour of Mermaid Beach. Let
+              us know your timing so we can lock the flight plan around your
+              agronomy schedule.
             </p>
           </div>
           <Link href="/contact" className="mt-6 inline-flex">
