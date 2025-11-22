@@ -65,7 +65,7 @@ const highlights = [
   {
     title: "Travel",
     value: "Local first, then by quote",
-    body: "We prioritise properties within roughly an hour of Mermaid Beach. Any travel component for jobs further afield is discussed and priced upfront.",
+    body: "We prioritise properties across SEQ and Northern NSW. Any travel component for jobs further afield is discussed and priced upfront.",
   },
 ];
 
@@ -85,15 +85,6 @@ const inclusions = [
   "Optional chemical supply for cost +20% (payment required upfront).",
 ];
 
-const requestFields = [
-  "Name and phone number",
-  "Email address",
-  "Property location (suburb/area)",
-  "Approximate area to spray (hectares or acres)",
-  "Chemical you want used (or options you're considering)",
-  "Spray rate you'd like applied (L/ha)",
-];
-
 export default function PricingPage() {
   return (
     <section className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
@@ -101,10 +92,10 @@ export default function PricingPage() {
         Drone Spraying Pricing
       </h1>
       <p className="mt-4 text-lg text-neutral-700">
-        Professional aerial spraying for farms and acreage within roughly one
-        hour of Mermaid Beach, with work also available further afield on
-        request. Broadacre work is priced per hectare, while spot spraying and
-        tricky areas are hourly. You’ll always know the numbers before we fly.
+        Professional aerial spraying for farms and acreage across SEQ and
+        Northern NSW, with work also available further afield on request.
+        Broadacre work is priced per hectare, while spot spraying and tricky
+        areas are hourly. You’ll always know the numbers before we fly.
       </p>
 
       {/* Top service-highlight cards */}
@@ -177,33 +168,18 @@ export default function PricingPage() {
       </div>
 
       {/* Estimate + CTA */}
-      <div className="mt-12 grid gap-8 lg:grid-cols-2">
-        <div className="rounded-3xl border bg-white p-6 shadow-sm">
-          <h2 className="text-2xl font-semibold">Need a Quick Estimate?</h2>
-          <p className="mt-3 text-neutral-700">
-            Send through the basics and we’ll reply with a ballpark figure. If
-            it looks like a good fit, we’ll tighten it into a firm quote before
-            scheduling.
-          </p>
-          <p className="mt-4 font-semibold text-neutral-900">Include:</p>
-          <ul className="mt-2 list-disc space-y-2 pl-5 text-neutral-700 text-sm">
-            {requestFields.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </div>
-
+      <div className="mt-12">
         <div className="flex flex-col justify-between rounded-3xl border bg-secondary/10 p-6">
           <div>
             <h2 className="text-2xl font-semibold">Ready To Schedule?</h2>
             <p className="mt-3 text-neutral-700">
-              We prioritise farms within roughly one hour of Mermaid Beach. Let
-              us know your timing so we can lock the flight plan around your
-              agronomy schedule.
+              Share your property details on the contact form and we’ll confirm
+              pricing before we book flights. We prioritise farms across SEQ and
+              Northern NSW.
             </p>
           </div>
           <Link href="/contact" className="mt-6 inline-flex">
-            <Button size="lg">Request Free Assessment</Button>
+            <Button size="lg">Get in contact</Button>
           </Link>
         </div>
       </div>

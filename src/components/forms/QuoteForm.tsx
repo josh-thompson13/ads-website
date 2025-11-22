@@ -10,30 +10,29 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 const services = [
-  "Weed Spraying",
-  "Crop Spraying",
-  "Fire Ant Eradication",
-  "Seeding & Spreading",
-  "Surveying",
-  "General Enquiry",
-];
+  "Broadacre spraying (pasture/crops)",
+  "Spot/target weed spraying",
+  "Granular spreading / seeding",
+  "Fire ant eradication",
+  "Other / general enquiry",
+] as const;
 
 const quoteSchema = z.object({
   name: z.string().min(2, "Please enter your name"),
   email: z.string().email("Enter a valid email"),
   phone: z.string().min(8, "Enter a valid phone number"),
-  service: z.enum(
-    [
-      "Weed Spraying",
-      "Crop Spraying",
-      "Fire Ant Eradication",
-      "Seeding & Spreading",
-      "Surveying",
-    ]
-  ),
-  propertySize: z.string().min(1, "Please specify property size (e.g. ha)"),
-  location: z.string().min(2, "Enter suburb or postcode"),
-  preferredDate: z.string().optional(),
+  service: z.enum(services, {
+    required_error: "Please select a service",
+  }),
+  sprayArea: z
+    .string()
+    .trim()
+    .min(1, "Please add the approximate area in hectares or acres"),
+  location: z
+    .string()
+    .trim()
+    .min(2, "Enter suburb or area name"),
+  sprayRate: z.string().trim().optional(),
   message: z.string().optional(),
   botcheck: z.string().optional(),
   accept: z
@@ -73,9 +72,9 @@ export function QuoteForm({ inline = false }: { inline?: boolean }) {
         email: data.email,
         phone: data.phone,
         service: data.service,
-        property_size: data.propertySize,
+        spray_area: data.sprayArea,
         location: data.location,
-        preferred_date: data.preferredDate?.trim() || "Not specified",
+        spray_rate_lha: data.sprayRate?.trim() || "Not specified",
         message: data.message?.trim() || "No additional message provided.",
       };
       const res = await fetch("https://api.web3forms.com/submit", {
@@ -129,6 +128,20 @@ export function QuoteForm({ inline = false }: { inline?: boolean }) {
           )}
         </div>
         <div>
+          <Label htmlFor="phone">Phone</Label>
+          <Input
+            id="phone"
+            aria-invalid={!!errors.phone}
+            {...register("phone")}
+            placeholder="0406 371 630"
+          />
+          {errors.phone && (
+            <p className="text-sm text-red-600 mt-1">{errors.phone.message}</p>
+          )}
+        </div>
+      </div>
+      <div className="grid md:grid-cols-2 gap-4">
+        <div>
           <Label htmlFor="email">Email</Label>
           <Input
             id="email"
@@ -141,66 +154,13 @@ export function QuoteForm({ inline = false }: { inline?: boolean }) {
             <p className="text-sm text-red-600 mt-1">{errors.email.message}</p>
           )}
         </div>
-      </div>
-      <div className="grid md:grid-cols-2 gap-4">
         <div>
-          <Label htmlFor="phone">Phone</Label>
-          <Input
-            id="phone"
-            aria-invalid={!!errors.phone}
-            {...register("phone")}
-            placeholder="0406 371 630"
-          />
-          {errors.phone && (
-            <p className="text-sm text-red-600 mt-1">{errors.phone.message}</p>
-          )}
-        </div>
-        <div>
-          <Label htmlFor="service">Service</Label>
-          <Select
-            id="service"
-            aria-invalid={!!errors.service}
-            defaultValue=""
-            {...register("service")}
-          >
-            <option value="" disabled>
-              Select a service
-            </option>
-            {services.map((s) => (
-              <option key={s} value={s}>
-                {s}
-              </option>
-            ))}
-          </Select>
-          {errors.service && (
-            <p className="text-sm text-red-600 mt-1">
-              {errors.service.message}
-            </p>
-          )}
-        </div>
-      </div>
-      <div className="grid md:grid-cols-2 gap-4">
-        <div>
-          <Label htmlFor="propertySize">Property size</Label>
-          <Input
-            id="propertySize"
-            aria-invalid={!!errors.propertySize}
-            {...register("propertySize")}
-            placeholder="e.g. 20 ha"
-          />
-          {errors.propertySize && (
-            <p className="text-sm text-red-600 mt-1">
-              {errors.propertySize.message}
-            </p>
-          )}
-        </div>
-        <div>
-          <Label htmlFor="location">Location</Label>
+          <Label htmlFor="location">Property location (suburb/area)</Label>
           <Input
             id="location"
             aria-invalid={!!errors.location}
             {...register("location")}
-            placeholder="Suburb or postcode"
+            placeholder="Suburb or area"
           />
           {errors.location && (
             <p className="text-sm text-red-600 mt-1">
@@ -211,29 +171,67 @@ export function QuoteForm({ inline = false }: { inline?: boolean }) {
       </div>
       <div className="grid md:grid-cols-2 gap-4">
         <div>
-          <Label htmlFor="preferredDate">Preferred date window</Label>
+          <Label htmlFor="sprayArea">Approximate area to spray</Label>
           <Input
-            id="preferredDate"
-            {...register("preferredDate")}
-            placeholder="e.g. next 2–3 weeks"
+            id="sprayArea"
+            aria-invalid={!!errors.sprayArea}
+            {...register("sprayArea")}
+            placeholder="e.g. 20 ha or 50 acres"
+          />
+          {errors.sprayArea && (
+            <p className="text-sm text-red-600 mt-1">
+              {errors.sprayArea.message}
+            </p>
+          )}
+        </div>
+        <div>
+          <Label htmlFor="sprayRate">Spray rate you'd like applied (L/ha)</Label>
+          <Input
+            id="sprayRate"
+            aria-invalid={!!errors.sprayRate}
+            {...register("sprayRate")}
+            placeholder="Optional – leave blank if unsure"
           />
         </div>
-        <div className="hidden">
-          <Label htmlFor="botcheck">Leave this empty</Label>
-          <Input
-            id="botcheck"
-            tabIndex={-1}
-            aria-hidden
-            {...register("botcheck")}
-          />
-        </div>
+      </div>
+      <div>
+        <Label htmlFor="service">Service</Label>
+        <Select
+          id="service"
+          aria-invalid={!!errors.service}
+          defaultValue=""
+          {...register("service")}
+        >
+          <option value="" disabled>
+            Select a service
+          </option>
+          {services.map((s) => (
+            <option key={s} value={s}>
+              {s}
+            </option>
+          ))}
+        </Select>
+        {errors.service && (
+          <p className="text-sm text-red-600 mt-1">
+            {errors.service.message}
+          </p>
+        )}
       </div>
       <div>
         <Label htmlFor="message">Message</Label>
         <Textarea
           id="message"
           {...register("message")}
-          placeholder="Tell us about your site and goals"
+          placeholder="Tell us about the target weeds/blocks, chemicals, access and timing needs"
+        />
+      </div>
+      <div className="hidden">
+        <Label htmlFor="botcheck">Leave this empty</Label>
+        <Input
+          id="botcheck"
+          tabIndex={-1}
+          aria-hidden
+          {...register("botcheck")}
         />
       </div>
       <div className="flex items-start gap-2">

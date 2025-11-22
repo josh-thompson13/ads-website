@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Request a fast callback for drone services. Call, email, or book a site assessment.",
+    "Request a fast callback for drone services. Call or email and we’ll get you scheduled.",
   alternates: { canonical: "/contact" },
 };
 
@@ -46,12 +46,6 @@ export default function ContactPage() {
           <p>
             <strong>Region:</strong> South East QLD & Northern NSW
           </p>
-          <a
-            className="inline-block mt-2 text-secondary-hover hover:underline"
-            href="#"
-          >
-            Book a site assessment
-          </a>
         </aside>
       </div>
     </section>
