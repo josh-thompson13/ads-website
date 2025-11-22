@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -17,6 +17,9 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # 🔹 make the build job use the same environment that holds your variable
+    environment: github-pages
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -36,7 +39,8 @@ jobs:
           GITHUB_PAGES: "true"
           # Custom domain served from repository root, so no base path prefix
           NEXT_BASE_PATH: ""
-          # Optional analytics/domain envs can be added here if needed
+          # 🔹 pull your env var from the environment/repo vars
+          NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY: ${{ vars.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY }}
         run: |
           npx next build
 
